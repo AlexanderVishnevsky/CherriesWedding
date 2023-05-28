@@ -1,5 +1,3 @@
-import React from 'react';
-
 const WebsiteLayout = () => {
     return (
         <div className="fs">
@@ -26,11 +24,8 @@ const WebsiteLayout = () => {
                                     display: 'flex',
                                 }}
                             >
-                                <h2 style={{ fontFamily: 'monospace', fontWeight: 'lighter' }}>
-                                    🍒
-                                    🍒
-                                    🍒</h2>
-                                </div>
+                                <h2 style={{ fontFamily: 'monospace', fontWeight: 'lighter' }}>🍒 🍒 🍒</h2>
+                            </div>
                         </div>
                     </div>
                 </div>
