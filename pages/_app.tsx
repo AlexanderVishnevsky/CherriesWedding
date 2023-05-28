@@ -1,7 +1,7 @@
 //import 'styles/globals.css';
 import 'components/preview/style.css';
 
-import { createContext, FC } from 'react';
+import { createContext, ReactElement } from 'react';
 
 import { CssBaseline, ThemeProvider } from '@mui/material';
 
@@ -13,12 +13,15 @@ import { CacheProvider } from '@emotion/react';
 import InitScripts from '@ui/common/utils/InitScripts';
 
 import createEmotionCache from '@/config/createEmotionCache';
+import 'public/assets/css/index.css';
 
 const clientSideEmotionCache = createEmotionCache();
 
-export const ColorModeContext = createContext({ toggleColorMode: () => {} });
+export const ColorModeContext = createContext({
+    toggleColorMode: () => {},
+});
 
-const WeddingApp: FC<MyAppProps> = (props) => {
+const WeddingApp = (props: MyAppProps): ReactElement => {
     const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
 
     const { theme, colorMode } = useDetectTheme();

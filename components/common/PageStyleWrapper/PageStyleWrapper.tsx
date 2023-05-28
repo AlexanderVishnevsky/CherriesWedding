@@ -1,24 +1,26 @@
-import { FC } from 'react';
+import { ReactElement } from 'react';
 
 import { useScrollToTop } from '@hooks';
 
 import { JSXChild } from '@/typings/common';
+import { BreakpointTypes } from '@/utils/MUI/breakpointOverrides';
 
 import * as S from './PageStyleWrapper.styles';
 
-type IProps = JSXChild;
+type IProps = { widthType?: BreakpointTypes } & JSXChild;
 
 /**
  * Style Wrapper for pages
+ * @param widthType
  * @param children
  * @constructor
  */
-const PageStyleWrapper: FC<IProps> = ({ children }) => {
+const PageStyleWrapper = ({ widthType = 'laptop', children }: IProps): ReactElement => {
     useScrollToTop();
 
     return (
         <S.BasicLayoutComponent>
-            <S.ContentContainer maxWidth="laptop">{children}</S.ContentContainer>
+            <S.ContentContainer maxWidth={widthType}>{children}</S.ContentContainer>
         </S.BasicLayoutComponent>
     );
 };

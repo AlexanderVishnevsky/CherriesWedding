@@ -1,12 +1,14 @@
 import Head from 'next/head';
 
+import { ReactElement } from 'react';
+
 import { useTheme } from '@mui/material';
 
 import { APP_NAME_CAMEL, APP_SEO_DESCRIPTION } from '@/constants/appConstants';
 
 const path = '/static/icons/favicons';
 
-const InitScripts = (): JSX.Element => {
+const InitScripts = (): ReactElement => {
     const theme = useTheme();
     return (
         <Head>

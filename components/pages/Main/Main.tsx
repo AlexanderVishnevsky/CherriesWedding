@@ -1,20 +1,26 @@
-import { useContext } from 'react';
+import { ReactElement, useContext } from 'react';
 
 import { useTheme } from '@mui/material';
 
 import PageStyleWrapper from '@ui/common/PageStyleWrapper';
+import EmbroideryIcon from '@icons/patterns/embroidery.svg';
+import EmbFireIcon from '@icons/patterns/emb-fire.svg';
 
 import { ColorModeContext } from '../../../pages/_app';
 
 import * as S from './Main.styles';
 
-const Main = (): JSX.Element => {
+const Main = (): ReactElement => {
     const theme = useTheme();
     const colorMode = useContext(ColorModeContext);
     return (
-        <PageStyleWrapper>
+        <PageStyleWrapper widthType={'desktop'}>
             <S.MainLayout>
-                <button onClick={colorMode.toggleColorMode}>{theme.palette.mode} Switch</button>
+                <S.FirstImage>
+                    <EmbroideryIcon id={'emb-big'} alt={'embroidery'} />
+                    <EmbFireIcon id={'emb-fire'} alt={'embroidery-fire'} />
+                </S.FirstImage>
+                <EmbroideryIcon id={'emb-big'} alt={'embroidery-big'} />
             </S.MainLayout>
         </PageStyleWrapper>
     );

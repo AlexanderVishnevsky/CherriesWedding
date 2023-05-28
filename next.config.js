@@ -14,19 +14,43 @@ const workaround = require('next-translate-plugin/lib/cjs/utils.js');
 workaround.defaultLoader =
     '(l, n) => import(`@next-translate-root/public/locales/${l}/${n}.json`).then(m => m.default)';
 
+const nextConfig = {
+    reactStrictMode: true,
+    swcMinify: true,
+};
+
+if (process.env.NODE_ENV !== 'development') {
+    nextConfig.compiler = {
+        removeConsole: {
+            exclude: ['error'],
+        },
+    };
+    nextConfig.eslint = {
+        ignoreDuringBuilds: false,
+    };
+}
+
 const plugins = () => {
     const plugins = [withBundleAnalyzer];
     return plugins.reduce((acc, next) => next(acc), {
-        reactStrictMode: true,
-        swcMinify: true,
-        compiler: {
-            removeConsole: {
-                exclude: ['warn', 'error'],
-            },
+        webpack(config) {
+            config.module.rules.push({
+                test: /\.svg$/i,
+                issuer: /\.[jt]sx?$/,
+                use: [
+                    {
+                        loader: '@svgr/webpack',
+                        options: {
+                            prettier: true,
+                            svgo: true,
+                            icon: true,
+                        },
+                    },
+                ],
+            });
+            return config;
         },
-        eslint: {
-            ignoreDuringBuilds: true,
-        },
+        ...nextConfig,
     });
 };
 

@@ -16,7 +16,7 @@ export const ContentContainer = styled(Container)`
     margin: 0 auto;
     box-sizing: border-box;
     display: block;
-    padding: 0;
+    padding: 20px 0;
     overflow: hidden;
 
     ${({ theme }) => theme.breakpoints.down('tabletLarge')} {
