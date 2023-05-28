@@ -28,8 +28,8 @@ export const defaultZIndex: ZIndex = {
     tooltip: 1500,
 };
 
-export default function createCustomTheme(options: ThemeOptions, ...args: object[]): Theme {
-    return createTheme(
+export const createCustomTheme = (options: ThemeOptions, ...args: object[]): Theme =>
+    createTheme(
         {
             breakpoints: createBreakpoints({
                 values: breakpoints,
@@ -41,4 +41,3 @@ export default function createCustomTheme(options: ThemeOptions, ...args: object
         },
         ...args,
     );
-}

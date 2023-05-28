@@ -59,18 +59,14 @@ module.exports = {
                         position: 'before',
                     },
                     {
-                        pattern: 'next-translate/**',
-                        group: 'internal',
-                        position: 'before',
-                    },
-                    {
                         pattern: '@/**',
                         group: 'internal',
                         position: 'before',
                     },
                     {
-                        pattern: '@/model/**',
+                        pattern: 'next-translate/**',
                         group: 'internal',
+                        position: 'before',
                     },
                 ],
                 pathGroupsExcludedImportTypes: [],

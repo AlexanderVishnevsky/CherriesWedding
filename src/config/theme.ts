@@ -1,13 +1,18 @@
 import { enUS } from '@mui/material/locale';
-import { Theme } from '@mui/material';
+import { PaletteMode, Theme } from '@mui/material';
 import { TypographyVariants } from '@mui/material/styles';
 
-import createCustomTheme, { defaultZIndex } from '@/utils/MUI/themeOverrides';
+import { createCustomTheme, defaultZIndex } from '@/utils/MUI/themeOverrides';
 import { CormorantInfantFont } from '@/config/localFonts';
 
-export const COMMON_COLORS = {
+export const LIGHT_COLORS = {
     primaryLightMain: '#759599',
     backgroundLightDefault: '#F0EADA',
+};
+
+export const DARK_COLORS = {
+    primaryDarkMain: '#E33B0E',
+    backgroundDarkDefault: '#282828',
 };
 
 // Create a theme instance.
@@ -26,18 +31,27 @@ const commonThemeSettings: Pick<Theme, 'direction' | 'zIndex' | 'typography'> = 
     } as TypographyVariants,
 };
 
-const lightTheme: Theme = createCustomTheme(
-    {
-        palette: {
-            primary: {
-                main: COMMON_COLORS.primaryLightMain,
-            },
-            background: {
-                default: COMMON_COLORS.backgroundLightDefault,
-            },
-        },
+const getPaletteTokens = (mode: PaletteMode) => ({
+    palette: {
+        mode,
+        ...(mode === 'dark'
+            ? {
+                  primary: {
+                      main: DARK_COLORS.primaryDarkMain,
+                  },
+                  background: {
+                      default: DARK_COLORS.backgroundDarkDefault,
+                  },
+              }
+            : {
+                  primary: {
+                      main: LIGHT_COLORS.primaryLightMain,
+                  },
+                  background: {
+                      default: LIGHT_COLORS.backgroundLightDefault,
+                  },
+              }),
     },
-    { enUS, ...commonThemeSettings },
-);
+});
 
-export const themes = { lightTheme };
+export { commonThemeSettings, getPaletteTokens };
