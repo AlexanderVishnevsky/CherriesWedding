@@ -1,9 +1,9 @@
-import { , useMemo } from 'react';
+import { useMemo } from 'react';
 
 import { Theme, useMediaQuery } from '@mui/material';
 import { enUS } from '@mui/material/locale';
 
-import { getPaletteTokens, commonThemeSettings } from '@theme';
+import { commonThemeSettings, getPaletteTokens } from '@theme';
 
 import { createCustomTheme } from '@/utils/MUI/themeOverrides';
 import { useAppStore } from '@/context';
