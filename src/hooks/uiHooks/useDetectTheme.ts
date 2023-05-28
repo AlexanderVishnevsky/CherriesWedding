@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 
 import { Theme, useMediaQuery } from '@mui/material';
 import { enUS } from '@mui/material/locale';
@@ -15,7 +15,11 @@ interface IReturnType {
 export const useDetectTheme = (): IReturnType => {
     const isDark: boolean = useMediaQuery('(prefers-color-scheme: dark)');
 
-    const mode = useAppStore((state) => state.mode);
+    const { mode, toggleColorMode } = useAppStore((state) => state);
+
+    useEffect(() => {
+        toggleColorMode(isDark ? 'dark' : 'light');
+    }, [isDark]);
 
     const theme: Theme = useMemo(
         () => createCustomTheme(getPaletteTokens(mode), { enUS, ...commonThemeSettings }),

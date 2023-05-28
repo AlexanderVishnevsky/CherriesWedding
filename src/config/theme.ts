@@ -1,8 +1,7 @@
-import { enUS } from '@mui/material/locale';
 import { PaletteMode, Theme } from '@mui/material';
 import { TypographyVariants } from '@mui/material/styles';
 
-import { createCustomTheme, defaultZIndex } from '@/utils/MUI/themeOverrides';
+import { defaultZIndex } from '@/utils/MUI/themeOverrides';
 import { CormorantInfantFont } from '@/config/localFonts';
 
 export const LIGHT_COLORS = {

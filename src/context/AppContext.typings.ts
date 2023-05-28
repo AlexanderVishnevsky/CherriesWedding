@@ -5,5 +5,5 @@ export type AppState = {
 };
 
 export type AppAction = {
-    toggleColorMode: () => void;
+    toggleColorMode: (mode?: AppState['mode']) => void;
 };

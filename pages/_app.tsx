@@ -1,7 +1,7 @@
 //import 'styles/globals.css';
 import 'components/preview/style.css';
 
-import { createContext, ReactElement } from 'react';
+import { ReactElement } from 'react';
 
 import { CssBaseline, ThemeProvider } from '@mui/material';
 
