@@ -1,11 +1,7 @@
-import Head from 'next/head';
+import { NextPage } from 'next';
 
-import PreviewSite from 'components/preview/PreviewSite';
+import { DynamicPreview } from 'components/preview';
 
-export default function Home() {
-    return (
-        <>
-            <PreviewSite />
-        </>
-    );
-}
+const MainPage: NextPage = () => <DynamicPreview />;
+
+export default MainPage;
