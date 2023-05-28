@@ -11,6 +11,7 @@
         "pre-commit": "yarn run lint && yarn run build",
         "prod-run": "yarn run build && yarn run start",
         "serve": "next start",
+        "postinstall": "husky install",
         "webpack-analyze": "ANALYZE=true next build"
     },
     "dependencies": {
