@@ -17,24 +17,18 @@ import 'public/assets/css/index.css';
 
 const clientSideEmotionCache = createEmotionCache();
 
-export const ColorModeContext = createContext({
-    toggleColorMode: () => {},
-});
-
 const WeddingApp = (props: MyAppProps): ReactElement => {
     const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
 
-    const { theme, colorMode } = useDetectTheme();
+    const { theme } = useDetectTheme();
 
     return (
         <CacheProvider value={emotionCache}>
             <InitScripts />
-            <ColorModeContext.Provider value={colorMode}>
-                <ThemeProvider theme={theme}>
-                    <CssBaseline />
-                    <Component {...pageProps} />
-                </ThemeProvider>
-            </ColorModeContext.Provider>
+            <ThemeProvider theme={theme}>
+                <CssBaseline />
+                <Component {...pageProps} />
+            </ThemeProvider>
         </CacheProvider>
     );
 };
