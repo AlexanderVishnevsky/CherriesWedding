@@ -1,4 +1,3 @@
-//import 'styles/globals.css';
 import 'components/preview/style.css';
 
 import { ReactElement } from 'react';

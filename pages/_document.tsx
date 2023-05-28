@@ -10,7 +10,7 @@ import { CormorantInfantFont } from '@/config/localFonts';
 export default class MyDocument extends Document {
     render() {
         return (
-            <Html lang="en" className={CormorantInfantFont.className}>
+            <Html lang="en" className={CormorantInfantFont.className} style={{ backgroundColor: '#282828' }}>
                 <Head>
                     <meta name="emotion-insertion-point" content="" />
                     {(this.props as any).emotionStyleTags}

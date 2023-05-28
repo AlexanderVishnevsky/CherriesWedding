@@ -7,6 +7,7 @@ import { getPaletteTokens, commonThemeSettings } from '@theme';
 
 import { createCustomTheme } from '@/utils/MUI/themeOverrides';
 import { useAppStore } from '@/context';
+import { useIsomorphicLayoutEffect } from '@/hooks';
 
 interface IReturnType {
     theme: Theme;
@@ -17,7 +18,7 @@ export const useDetectTheme = (): IReturnType => {
 
     const { mode, toggleColorMode } = useAppStore((state) => state);
 
-    useEffect(() => {
+    useIsomorphicLayoutEffect(() => {
         toggleColorMode(isDark ? 'dark' : 'light');
     }, [isDark]);
 

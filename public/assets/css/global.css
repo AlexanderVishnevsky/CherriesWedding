@@ -1,8 +1,14 @@
+:root {
+    --bg-color: #f0eada;
+    --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono',
+        'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+}
+
 * {
     outline: none;
+    box-sizing: border-box;
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
 }
 
 *::before,
@@ -10,13 +16,19 @@
     box-sizing: border-box;
 }
 
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #282828;
+    }
+}
+
+[data-theme='dark'] :root {
+    --bg-color: #282828;
+}
+
 svg {
     /** Fix large viewBox and translates in IE */
     overflow: hidden;
-}
-
-#__next {
-    /*display: flex;*/
 }
 
 img {
@@ -29,8 +41,19 @@ img {
 
 html,
 body {
-    width: 100%;
-    min-width: 320px;
+    max-width: 100vw;
+    min-width: 360px;
+    overflow-x: hidden;
+}
+
+body {
+    background: var(--bg-color);
+}
+
+@media (prefers-color-scheme: dark) {
+    html {
+        color-scheme: dark;
+    }
 }
 
 input,
