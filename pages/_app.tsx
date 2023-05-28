@@ -9,6 +9,7 @@ import { MyAppProps } from '@typings/_appTypings';
 
 import { CacheProvider } from '@emotion/react';
 import { themes } from '@theme';
+import InitScripts from '@common/utils/InitScripts';
 
 import createEmotionCache from '@/config/createEmotionCache';
 
@@ -18,6 +19,7 @@ const WeddingApp: FC<MyAppProps> = (props) => {
     const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
     return (
         <CacheProvider value={emotionCache}>
+            <InitScripts />
             <ThemeProvider theme={themes.lightTheme}>
                 <CssBaseline />
                 <Component {...pageProps} />
