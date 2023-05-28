@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from 'react';
+import { , useMemo } from 'react';
 
 import { Theme, useMediaQuery } from '@mui/material';
 import { enUS } from '@mui/material/locale';
