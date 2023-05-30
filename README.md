@@ -4,22 +4,15 @@
 
   <h1>Вiшнёвае вяселле 🍒</h1>
 
-#### Wedding website
+### Wedding website
 
-<br/>
-<div align="left">
+---
 
-## Deployments 🎮
-
-<br/>
-
-<div style="display:flex;flex-direction: row;align-items: center;justify-content: space-around">
-<div align="center">
-
-[![Vercel](https://img.shields.io/badge/Deployed%20on-VERCEL-black?style=for-the-badge&logo?link=https://run-app-steel.vercel.app/login)](https://logger-chart.vercel.app/)
-
-</div>
-</div>
+<p align="center">
+  <a rel="noopener noreferrer" target="_blank" href="https://cherrys.vercel.app/">
+    <img height="34px" src="https://raw.githubusercontent.com/nextui-org/nextui/main/apps/docs/public/deployed-on-vercel.svg" alt="Deployed on vercel">
+  </a>
+</p>
 
 <div align="left">
 

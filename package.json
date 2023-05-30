@@ -48,6 +48,11 @@
         "prettier": "^2.8.8",
         "typescript": "^5.0.4"
     },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
     "lint-staged": {
         "*.(ts|tsx)": "yarn tsc --noEmit",
         "*.(ts|tsx|js)": [
