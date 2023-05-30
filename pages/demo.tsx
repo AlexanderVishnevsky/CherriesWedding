@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { Button } from '@mui/material';
+import { Box, Button, Container, Stack } from '@mui/material';
 
 const DemoPage = () => {
     const [local, setLocal] = useState<string | undefined>();
@@ -19,7 +19,7 @@ const DemoPage = () => {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ name: 'test', email: 'test@test.com' }),
+                body: JSON.stringify({ type: 'approve', form: 'submit' }),
             });
             const data = await response.json();
             setLocal(data);
@@ -29,17 +29,21 @@ const DemoPage = () => {
     };
 
     return (
-        <div>
-            <Button variant={'outlined'} color={'primary'} onClick={getData}>
-                Get data
-            </Button>
-            <Button variant={'outlined'} color={'primary'} onClick={setData}>
-                Set data
-            </Button>
-            <br />
-            <br />
-            {local && <span style={{ color: 'white' }}>{local}</span>}
-        </div>
+        <Container maxWidth={'mobileLarge'}>
+            <Box sx={{ width: '100%', p: 20 }}>
+                <Stack spacing={2}>
+                    <Button variant={'outlined'} color={'primary'} onClick={getData}>
+                        Get data
+                    </Button>
+                    <Button variant={'outlined'} color={'primary'} onClick={setData}>
+                        Set data
+                    </Button>
+                    <br />
+                    <br />
+                    {local && <span style={{ color: 'white' }}>{local}</span>}
+                </Stack>
+            </Box>
+        </Container>
     );
 };
 
