@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 const Preview = () => (
     <div className="fs">
         <section className="cd-intro">
@@ -62,9 +64,9 @@ const Preview = () => (
                 <div className="square-tower" data-ix="arrow-load">
                     <div className="play-box w-preserve-3d" data-ix="tower-hover-animation">
                         <div className="play-box__top-bar"></div>
-                        <a className="overflow-hidden w-inline-block w-lightbox" href="#">
+                        <Link className="overflow-hidden w-inline-block w-lightbox" href="/">
                             <div className="play-box__play-icon" data-ix="play-icon-on-load"></div>
-                        </a>
+                        </Link>
                     </div>
                     <div className="play-box__square-1 w-preserve-3d"></div>
                     <div className="play-box__square-2 w-preserve-3d"></div>
