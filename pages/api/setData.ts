@@ -39,9 +39,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             //Return the content of the data file in json format
             res.status(200).json(fileContents);
         }
-    } catch (error) {
+    } catch (error: any) {
         console.error(error);
         // Send an error response
-        res.status(500).json('Error storing data');
+        res.status(500).json('Error storing data: ' + (error?.message ?? error));
     }
 }
