@@ -6,7 +6,7 @@ import { promises as fs } from 'fs';
 import { NextApiRequest, NextApiResponse } from 'next';
 
 //Find the absolute path of the json directory
-const jsonDirectory = path.join(process.cwd(), 'json');
+const jsonDirectory = path.join(process.cwd(), 'tmp');
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     try {
