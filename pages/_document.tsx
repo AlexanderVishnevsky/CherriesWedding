@@ -15,7 +15,7 @@ export default class MyDocument extends Document {
                 className={CormorantInfantFont.className + ConnieFont.className}
                 style={{ backgroundColor: '#282828' }}
             >
-                 <Head>
+                <Head>
                     <meta name="emotion-insertion-point" content="" />
                     {(this.props as any).emotionStyleTags}
                 </Head>
