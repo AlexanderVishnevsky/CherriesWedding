@@ -18,3 +18,17 @@ export const CormorantInfantFont = localFont({
     variable: '--CormorantInfantFont',
     fallback: ['system-ui', 'sans-serif'],
 });
+
+export const ConnieFont = localFont({
+    src: [
+        //-------- woff2 --------
+        {
+            path: '../../public/static/fonts/Connie/Connie-400.ttf',
+            weight: '400',
+            style: 'normal',
+        },
+    ],
+    display: 'swap',
+    variable: '--Connie',
+    fallback: ['system-ui', 'sans-serif'],
+});

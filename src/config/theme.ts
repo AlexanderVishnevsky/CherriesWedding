@@ -2,7 +2,7 @@ import { PaletteMode, Theme } from '@mui/material';
 import { TypographyVariants } from '@mui/material/styles';
 
 import { defaultZIndex } from '@/utils/MUI/themeOverrides';
-import { CormorantInfantFont } from '@/config/localFonts';
+import { ConnieFont, CormorantInfantFont } from '@/config/localFonts';
 
 export const LIGHT_COLORS = {
     primaryLightMain: '#759599',
@@ -20,6 +20,14 @@ const commonThemeSettings: Pick<Theme, 'direction' | 'zIndex' | 'typography'> = 
     zIndex: defaultZIndex,
     typography: {
         fontFamily: CormorantInfantFont.style.fontFamily,
+        h2: {
+            fontFamily: ConnieFont.style.fontFamily,
+            fontStyle: 'normal',
+            fontWeight: 400,
+            fontSize: '50px',
+            lineHeight: '76px',
+            letterSpacing: '0.12em',
+        },
         body1: {
             fontFamily: CormorantInfantFont.style.fontFamily,
             fontStyle: 'normal',

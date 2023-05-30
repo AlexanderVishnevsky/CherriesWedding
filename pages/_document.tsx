@@ -1,16 +1,20 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document';
+import Document, { Head, Html, Main, NextScript } from 'next/document';
 
 import * as React from 'react';
 
 import createEmotionServer from '@emotion/server/create-instance';
 
 import createEmotionCache from '@/config/createEmotionCache';
-import { CormorantInfantFont } from '@/config/localFonts';
+import { ConnieFont, CormorantInfantFont } from '@/config/localFonts';
 
 export default class MyDocument extends Document {
     render() {
         return (
-            <Html lang="en" className={CormorantInfantFont.className} style={{ backgroundColor: '#282828' }}>
+            <Html
+                lang="en"
+                className={CormorantInfantFont.className + ConnieFont.className}
+                style={{ backgroundColor: '#282828' }}
+            >
                 <Head>
                     <meta name="emotion-insertion-point" content="" />
                     {(this.props as any).emotionStyleTags}

@@ -11,8 +11,9 @@ module.exports = {
     parserOptions: {
         warnOnUnsupportedTypeScriptVersion: false,
     },
+    ignorePatterns: ['next/**', 'idea/**', 'node_modules/**'],
     rules: {
-        'prettier/prettier': 'error',
+        'prettier/prettier': 'warn',
         'import/prefer-default-export': 'off',
         'no-unused-vars': 'off', // or "@typescript-eslint/no-unused-vars": "off",
         'unused-imports/no-unused-imports': 'warn',
