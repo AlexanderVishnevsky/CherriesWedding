@@ -2,8 +2,6 @@ import { ReactElement } from 'react';
 
 import { Zoom } from '@mui/material';
 
-import { useSwitchTheme } from '@hooks';
-
 import PageStyleWrapper from '@ui/common/PageStyleWrapper';
 import EmbroideryIcon from '@icons/patterns/embroidery.svg';
 import EmbFireIcon from '@icons/patterns/emb-fire.svg';
@@ -14,7 +12,6 @@ import useTranslation from 'next-translate/useTranslation';
 import * as S from './Main.styles';
 
 const Main = (): ReactElement => {
-    const { toggleTheme } = useSwitchTheme();
     const { t } = useTranslation('common');
     return (
         <PageStyleWrapper widthType={'desktop'}>
@@ -32,7 +29,6 @@ const Main = (): ReactElement => {
                             <Picture allSizes src={'/static/images/avatars/we'} />
                         </S.FrameContainer>
                     </Zoom>
-                    <button onClick={() => toggleTheme()}>Click me</button>
                 </S.MainColumn>
                 <EmbroideryIcon id={'emb-big'} alt={'embroidery-big'} />
             </S.MainLayout>

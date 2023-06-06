@@ -2,7 +2,12 @@ import { ReactElement } from 'react';
 
 import { Typography } from '@mui/material';
 
+import { useSwitchTheme } from '@hooks';
+
 import { LocaleType } from '@typings/model';
+
+import SunIcon from '@icons/common/buttons/sun.svg';
+import MoonIcon from '@icons/common/buttons/moon.svg';
 
 import setLanguage from 'next-translate/setLanguage';
 import useTranslation from 'next-translate/useTranslation';
@@ -10,30 +15,41 @@ import useTranslation from 'next-translate/useTranslation';
 import * as S from './Footer.styles';
 
 const Footer = (): ReactElement => {
-    const { t, lang } = useTranslation();
+    const { lang } = useTranslation();
+    const { toggleTheme, isDark } = useSwitchTheme();
 
-    const handleSwitchTranslation = async (lang: LocaleType): Promise<void> => {
-        await setLanguage(lang);
+    const handleSwitchTranslation = async (locale: LocaleType): Promise<void> => {
+        if (lang !== locale) {
+            await setLanguage(locale);
+        }
     };
 
     return (
         <S.FooterLayout>
-            Footer
+            <div />
+            <div />
             <S.FooterSwitcher>
-                <Typography
-                    component={'button'}
-                    variant={'button'}
+                <S.FooterSwitcherText
+                    aria-label="switch BY locale"
+                    disableRipple
+                    disableTouchRipple
+                    isActive={lang === LocaleType.BY}
                     onClick={() => handleSwitchTranslation(LocaleType.BY)}
                 >
-                    Бел
-                </Typography>
-                <Typography
-                    component={'button'}
-                    variant={'button'}
+                    <Typography variant={'button'}>Бел</Typography>
+                </S.FooterSwitcherText>
+                <S.FooterSwitcherText
+                    aria-label="switch RU locale"
+                    disableRipple
+                    disableTouchRipple
+                    isActive={lang === LocaleType.RU}
                     onClick={() => handleSwitchTranslation(LocaleType.RU)}
                 >
-                    Рус
-                </Typography>
+                    <Typography variant={'button'}>Рус</Typography>
+                </S.FooterSwitcherText>
+                <S.Switcher isDark={isDark} onClick={() => toggleTheme()}>
+                    {isDark ? <MoonIcon /> : <SunIcon />}
+                </S.Switcher>
             </S.FooterSwitcher>
         </S.FooterLayout>
     );

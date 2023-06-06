@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 import { Theme, useMediaQuery } from '@mui/material';
 import { enUS } from '@mui/material/locale';
 
-import { commonThemeSettings, getPaletteTokens } from '@theme';
+import { commonDarkThemeSettings, commonThemeSettings, getPaletteTokens } from '@theme';
 
 import { createCustomTheme } from '@/utils/MUI/themeOverrides';
 import { useAppStore } from '@/context';
@@ -23,7 +23,11 @@ export const useDetectTheme = (): IReturnType => {
     }, [isDark]);
 
     const theme: Theme = useMemo(
-        () => createCustomTheme(getPaletteTokens(mode), { enUS, ...commonThemeSettings }),
+        () =>
+            createCustomTheme(getPaletteTokens(mode), {
+                enUS,
+                ...(mode === 'dark' ? commonDarkThemeSettings : commonThemeSettings),
+            }),
         [mode],
     );
 

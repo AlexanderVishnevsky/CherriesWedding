@@ -4,7 +4,7 @@ import { callbackType } from '@typings/common';
 
 import { useAppStore } from '@/context';
 
-type RType = { toggleTheme: callbackType<PaletteMode> };
+type RType = { toggleTheme: callbackType<PaletteMode>; isDark: boolean };
 
 /**
  * Switch theme by condition
@@ -13,6 +13,6 @@ type RType = { toggleTheme: callbackType<PaletteMode> };
  * available themes --> {@interface PaletteMode}
  */
 export const useSwitchTheme = (): RType => {
-    const { toggleTheme } = useAppStore();
-    return { toggleTheme };
+    const { toggleTheme, mode } = useAppStore();
+    return { toggleTheme, isDark: mode === 'dark' };
 };
