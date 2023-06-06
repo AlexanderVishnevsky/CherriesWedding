@@ -16,10 +16,10 @@ interface IReturnType {
 export const useDetectTheme = (): IReturnType => {
     const isDark: boolean = useMediaQuery('(prefers-color-scheme: dark)');
 
-    const { mode, toggleColorMode } = useAppStore((state) => state);
+    const { mode, toggleTheme } = useAppStore((state) => state);
 
     useIsomorphicLayoutEffect(() => {
-        toggleColorMode(isDark ? 'dark' : 'light');
+        toggleTheme(isDark ? 'dark' : 'light');
     }, [isDark]);
 
     const theme: Theme = useMemo(
