@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 import { Theme, useMediaQuery } from '@mui/material';
 import { enUS } from '@mui/material/locale';
 
-import { commonThemeSettings, getPaletteTokens } from '@theme';
+import { commonDarkThemeSettings, commonThemeSettings, getPaletteTokens } from '@theme';
 
 import { createCustomTheme } from '@/utils/MUI/themeOverrides';
 import { useAppStore } from '@/context';
@@ -16,14 +16,18 @@ interface IReturnType {
 export const useDetectTheme = (): IReturnType => {
     const isDark: boolean = useMediaQuery('(prefers-color-scheme: dark)');
 
-    const { mode, toggleColorMode } = useAppStore((state) => state);
+    const { mode, toggleTheme } = useAppStore((state) => state);
 
     useIsomorphicLayoutEffect(() => {
-        toggleColorMode(isDark ? 'dark' : 'light');
+        toggleTheme(isDark ? 'dark' : 'light');
     }, [isDark]);
 
     const theme: Theme = useMemo(
-        () => createCustomTheme(getPaletteTokens(mode), { enUS, ...commonThemeSettings }),
+        () =>
+            createCustomTheme(getPaletteTokens(mode), {
+                enUS,
+                ...(mode === 'dark' ? commonDarkThemeSettings : commonThemeSettings),
+            }),
         [mode],
     );
 

@@ -17,6 +17,11 @@ workaround.defaultLoader =
 const nextConfig = {
     reactStrictMode: true,
     swcMinify: true,
+    i18n: {
+        locales: ['by', 'ru'],
+        defaultLocale: 'by',
+        localeDetection: false,
+    },
 };
 
 if (process.env.NODE_ENV !== 'development') {

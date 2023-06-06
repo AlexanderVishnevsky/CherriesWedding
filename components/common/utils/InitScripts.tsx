@@ -15,7 +15,7 @@ const InitScripts = (): ReactElement => {
             <title>{APP_NAME_CAMEL}</title>
             <meta charSet="utf-8" />
             <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-            <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=5" />
+            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
             <meta httpEquiv="ScreenOrientation" content="autoRotate:disabled" />
             <meta name="apple-mobile-web-app-capable" content="yes" />
             <meta name="mobile-web-app-capable" content="yes" />

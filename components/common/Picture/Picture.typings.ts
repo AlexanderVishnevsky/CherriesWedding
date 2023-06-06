@@ -17,6 +17,7 @@ export interface CommonPictureProps {
     src2x?: EMP<string>;
     srcWebp?: EMP<string>;
     srcWebp2x?: EMP<string>;
+    allSizes?: boolean;
     alt?: string;
     className?: string;
     imageStyle?: CSSProperties;

@@ -113,6 +113,7 @@ const Picture = ({
     src2x,
     srcWebp,
     srcWebp2x,
+    allSizes,
     alt,
     className,
     imageStyle,
@@ -235,11 +236,21 @@ const Picture = ({
                     }}
                     isLazy={isLazy}
                 />
+            ) : allSizes ? (
+                <SourceGroup
+                    images={{
+                        src: `${src}-1x.png`,
+                        src2x: `${src}-2x.png`,
+                        webp: `${src}-1x.webp`,
+                        webp2x: `${src}-2x.webp`,
+                    }}
+                    isLazy={isLazy}
+                />
             ) : null}
             <PictureBase
                 style={imageStyle}
-                src={src ?? undefined}
-                srcSet={src2x ? `${src2x} 2x` : undefined}
+                src={(allSizes ? `${src}-1x.png` : src) ?? undefined}
+                srcSet={src2x ? `${src2x} 2x` : allSizes ? `${src}-2x.png` : undefined}
                 loading={loading}
                 alt={alt ?? ''}
                 ref={(imageNode) => {
