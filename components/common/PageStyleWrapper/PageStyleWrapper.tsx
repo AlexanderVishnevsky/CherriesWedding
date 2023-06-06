@@ -9,7 +9,7 @@ import { BreakpointTypes } from '@/utils/MUI/breakpointOverrides';
 
 import * as S from './PageStyleWrapper.styles';
 
-type IProps = { widthType?: BreakpointTypes; } & JSXChild;
+type IProps = { widthType?: BreakpointTypes } & JSXChild;
 
 /**
  * Style Wrapper for pages
