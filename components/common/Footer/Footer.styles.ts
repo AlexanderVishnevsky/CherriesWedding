@@ -12,6 +12,7 @@ export const FooterLayout = styled('footer')`
     position: absolute;
     bottom: 0;
     right: 20px;
+    z-index: 20;
 `;
 
 export const FooterSwitcher = styled(FlexJCBetween)`

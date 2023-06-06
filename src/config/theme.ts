@@ -1,7 +1,7 @@
 import { PaletteMode, Theme } from '@mui/material';
 import { TypographyVariants } from '@mui/material/styles';
 
-import { defaultZIndex } from '@/utils/MUI/themeOverrides';
+import { breakpoints, defaultZIndex } from '@/utils/MUI/themeOverrides';
 import { ConnieFont, CormorantInfantFont } from '@/config/localFonts';
 
 export const LIGHT_COLORS = {
@@ -19,7 +19,7 @@ export const DARK_COLORS = {
 };
 
 // Create a theme instance.
-const commonThemeSettings: Pick<Theme, 'direction' | 'zIndex' | 'typography'> = {
+const commonThemeSettings: Pick<Theme, 'direction' | 'zIndex' | 'typography' | 'components'> = {
     direction: 'ltr',
     zIndex: defaultZIndex,
     typography: {
@@ -28,9 +28,10 @@ const commonThemeSettings: Pick<Theme, 'direction' | 'zIndex' | 'typography'> = 
             fontFamily: ConnieFont.style.fontFamily,
             fontStyle: 'normal',
             fontWeight: 400,
-            fontSize: '50px',
-            lineHeight: '76px',
+            fontSize: '72px',
+            lineHeight: '109px',
             letterSpacing: '0.12em',
+            textAlign: 'center',
         },
         body1: {
             fontFamily: CormorantInfantFont.style.fontFamily,
@@ -49,6 +50,22 @@ const commonThemeSettings: Pick<Theme, 'direction' | 'zIndex' | 'typography'> = 
             letterSpacing: '0.06em',
         },
     } as TypographyVariants,
+    components: {
+        MuiTypography: {
+            styleOverrides: {
+                h2: {
+                    [`@media (max-width:${breakpoints.tabletLarge}px)`]: {
+                        fontSize: '50px',
+                        lineHeight: '76px',
+                    },
+                    [`@media (max-width:${breakpoints.mobileLarge}px)`]: {
+                        fontSize: '28px',
+                        lineHeight: '42px',
+                    },
+                },
+            },
+        },
+    },
 };
 
 // Override common theme instance with dark theme colors.

@@ -17,7 +17,7 @@ const Main = (): ReactElement => {
         <PageStyleWrapper widthType={'desktop'}>
             <S.MainLayout>
                 <S.FirstImage>
-                    <EmbroideryIcon id={'emb-big'} alt={'embroidery'} />
+                    <EmbroideryIcon id={'emb-left'} alt={'embroidery'} />
                     <EmbFireIcon id={'emb-fire'} alt={'embroidery-fire'} />
                 </S.FirstImage>
                 <S.MainColumn>
@@ -30,7 +30,7 @@ const Main = (): ReactElement => {
                         </S.FrameContainer>
                     </Zoom>
                 </S.MainColumn>
-                <EmbroideryIcon id={'emb-big'} alt={'embroidery-big'} />
+                <EmbroideryIcon id={'emb-right'} alt={'embroidery-big'} />
             </S.MainLayout>
         </PageStyleWrapper>
     );
