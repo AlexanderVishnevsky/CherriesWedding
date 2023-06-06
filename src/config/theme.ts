@@ -37,6 +37,14 @@ const commonThemeSettings: Pick<Theme, 'direction' | 'zIndex' | 'typography'> = 
             fontSize: '20px',
             lineHeight: '30px',
         },
+        button: {
+            fontFamily: ConnieFont.style.fontFamily,
+            fontStyle: 'normal',
+            fontWeight: 400,
+            fontSize: '20px',
+            lineHeight: '26px',
+            letterSpacing: '0.06em',
+        },
     } as TypographyVariants,
 };
 

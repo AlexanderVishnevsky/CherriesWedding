@@ -17,6 +17,7 @@ workaround.defaultLoader =
 const nextConfig = {
     reactStrictMode: true,
     swcMinify: true,
+    locales: false,
 };
 
 if (process.env.NODE_ENV !== 'development') {
