@@ -1,4 +1,4 @@
-import { styled, Container } from '@mui/material';
+import { Container, styled } from '@mui/material';
 
 export const BasicLayoutComponent = styled('div')`
     min-height: calc(var(--vh, 1vh) * 100);
@@ -18,6 +18,7 @@ export const ContentContainer = styled(Container)`
     display: block;
     padding: 20px 0;
     overflow: hidden;
+    position: relative;
 
     ${({ theme }) => theme.breakpoints.down('tabletLarge')} {
         padding: 0 20px;

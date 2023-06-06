@@ -9,6 +9,9 @@ export const FooterLayout = styled('footer')`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: absolute;
+    bottom: 0;
+    right: 20px;
 `;
 
 export const FooterSwitcher = styled(FlexJCBetween)`
