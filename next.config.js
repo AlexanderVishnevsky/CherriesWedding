@@ -6,6 +6,17 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 });
 const nextTranslate = require('next-translate-plugin');
 const workaround = require('next-translate-plugin/lib/cjs/utils.js');
+const runtimeCaching = require('next-pwa/cache');
+const isDev = process.env.NODE_ENV !== 'production';
+const withPWA = require('next-pwa')({
+    disable: isDev,
+    dest: 'public',
+    register: true,
+    skipWaiting: true,
+    runtimeCaching,
+    buildExcludes: [/manifest.json$/],
+    maximumFileSizeToCacheInBytes: 5000000,
+});
 
 /**
  * As a workaround you can change the string of the defaultLoader, this is working fine
@@ -36,7 +47,7 @@ if (process.env.NODE_ENV !== 'development') {
 }
 
 const plugins = () => {
-    const plugins = [withBundleAnalyzer];
+    const plugins = [withPWA, withBundleAnalyzer];
     return plugins.reduce((acc, next) => next(acc), {
         webpack(config) {
             config.module.rules.push({
