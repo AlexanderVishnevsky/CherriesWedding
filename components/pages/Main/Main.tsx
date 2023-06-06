@@ -25,12 +25,7 @@ const Main = (): ReactElement => {
                     <S.StyledTitle variant={'h2'}>{t('title')}</S.StyledTitle>
                     <S.FrameContainer>
                         <div id={'frame'} />
-                        <Picture
-                            src={'/static/images/avatars/we-1x.png'}
-                            src2x={'/static/images/avatars/we-2x.png'}
-                            srcWebp={'/static/images/avatars/we-1x.webp'}
-                            srcWebp2x={'/static/images/avatars/we-2x.webp'}
-                        />
+                        <Picture allSizes src={'/static/images/avatars/we'} />
                     </S.FrameContainer>
                     <button onClick={() => toggleColorMode()}>Click me</button>
                 </S.MainColumn>

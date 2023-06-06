@@ -25,7 +25,7 @@ const WeddingApp = (props: MyAppProps): ReactElement => {
         <CacheProvider value={emotionCache}>
             <InitScripts />
             <ThemeProvider theme={theme}>
-                <CssBaseline />
+                <CssBaseline enableColorScheme />
                 <Component {...pageProps} />
             </ThemeProvider>
         </CacheProvider>

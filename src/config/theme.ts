@@ -7,11 +7,13 @@ import { ConnieFont, CormorantInfantFont } from '@/config/localFonts';
 export const LIGHT_COLORS = {
     primaryLightMain: '#759599',
     backgroundLightDefault: '#F0EADA',
+    primaryLightText: '#39300E',
 };
 
 export const DARK_COLORS = {
     primaryDarkMain: '#E33B0E',
     backgroundDarkDefault: '#282828',
+    primaryDarkText: '#FFFFFF',
 };
 
 // Create a theme instance.
@@ -49,6 +51,10 @@ const getPaletteTokens = (mode: PaletteMode) => ({
                   background: {
                       default: DARK_COLORS.backgroundDarkDefault,
                   },
+                  text: {
+                      primary: DARK_COLORS.primaryDarkText,
+                      default: DARK_COLORS.primaryDarkText,
+                  },
               }
             : {
                   primary: {
@@ -56,6 +62,10 @@ const getPaletteTokens = (mode: PaletteMode) => ({
                   },
                   background: {
                       default: LIGHT_COLORS.backgroundLightDefault,
+                  },
+                  text: {
+                      primary: LIGHT_COLORS.primaryLightText,
+                      default: LIGHT_COLORS.primaryLightText,
                   },
               }),
     },
