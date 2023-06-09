@@ -5,6 +5,7 @@ import { ReactElement } from 'react';
 import { useTheme } from '@mui/material';
 
 import { APP_NAME_CAMEL, APP_SEO_DESCRIPTION } from '@/constants/appConstants';
+import { DARK_COLORS } from '@theme';
 
 const path = '/static/icons/favicons';
 
@@ -24,13 +25,13 @@ const InitScripts = (): ReactElement => {
             <meta name="keywords" content="Wedding,Landing,Traditions,Nomad,Nomad Houses" />
             <meta name="description" content={APP_SEO_DESCRIPTION} />
             {/*Chrome, Firefox OS, Opera, PWA*/}
-            <meta name="theme-color" content={theme.palette.background.default} />
+            <meta name="theme-color" content={DARK_COLORS.backgroundDarkDefault} />
             {/*Windows Phone*/}
-            <meta name="msapplication-navbutton-color" content={theme.palette.background.default} />
+            <meta name="msapplication-navbutton-color" content={DARK_COLORS.backgroundDarkDefault} />
             {/*iOS Safari*/}
-            <meta name="apple-mobile-web-app-status-bar-style" content={theme.palette.background.default} />
-            <meta content={`ya-title=${theme.palette.background.default},ya-dock=fade`} />
-            <meta name="msapplication-navbutton-color" content={theme.palette.background.default} />
+            <meta name="apple-mobile-web-app-status-bar-style" content={DARK_COLORS.backgroundDarkDefault} />
+            <meta content={`ya-title=${DARK_COLORS.backgroundDarkDefault},ya-dock=fade`} />
+            <meta name="msapplication-navbutton-color" content={DARK_COLORS.backgroundDarkDefault} />
 
             <meta name="msapplication-TileImage" content={path + '/mstile-144x144.png'} />
             <meta name="msapplication-square70x70logo" content={path + '/mstile-70x70.png'} />
