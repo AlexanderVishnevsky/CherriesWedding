@@ -24,13 +24,13 @@ const InitScripts = (): ReactElement => {
             <meta name="keywords" content="Wedding,Landing,Traditions,Nomad,Nomad Houses" />
             <meta name="description" content={APP_SEO_DESCRIPTION} />
             {/*Chrome, Firefox OS, Opera, PWA*/}
-            <meta name="theme-color" content={theme.palette.primary.main} />
+            <meta name="theme-color" content={theme.palette.background.default} />
             {/*Windows Phone*/}
-            <meta name="msapplication-navbutton-color" content={theme.palette.primary.main} />
+            <meta name="msapplication-navbutton-color" content={theme.palette.background.default} />
             {/*iOS Safari*/}
-            <meta name="apple-mobile-web-app-status-bar-style" content={theme.palette.primary.main} />
-            <meta content={`ya-title=${theme.palette.primary.main},ya-dock=fade`} />
-            <meta name="msapplication-navbutton-color" content={theme.palette.primary.main} />
+            <meta name="apple-mobile-web-app-status-bar-style" content={theme.palette.background.default} />
+            <meta content={`ya-title=${theme.palette.background.default},ya-dock=fade`} />
+            <meta name="msapplication-navbutton-color" content={theme.palette.background.default} />
 
             <meta name="msapplication-TileImage" content={path + '/mstile-144x144.png'} />
             <meta name="msapplication-square70x70logo" content={path + '/mstile-70x70.png'} />
