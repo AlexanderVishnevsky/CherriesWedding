@@ -19,6 +19,7 @@ const InitScripts = (): ReactElement => {
             <meta httpEquiv="ScreenOrientation" content="autoRotate:disabled" />
             <meta name="apple-mobile-web-app-capable" content="yes" />
             <meta name="mobile-web-app-capable" content="yes" />
+            <meta name="format-detection" content="telephone=no" />
             <meta name="HandheldFriendly" content="true" />
             <meta name="keywords" content="Wedding,Landing,Traditions,Nomad,Nomad Houses" />
             <meta name="description" content={APP_SEO_DESCRIPTION} />
@@ -52,6 +53,7 @@ const InitScripts = (): ReactElement => {
             <link rel="icon" type="image/png" href={path + '/favicon-128x128.png'} sizes="128x128" />
             <link rel="shortcut icon" type="image/png" href={path + '/mstile-70x70.png'} />
             <link rel={'robots'} href={'/robots.txt'} />
+            <link rel="manifest" href="/manifest.json" />
         </Head>
     );
 };

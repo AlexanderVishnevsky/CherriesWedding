@@ -7,13 +7,14 @@ import { commonDarkThemeSettings, commonThemeSettings, getPaletteTokens } from '
 
 import { createCustomTheme } from '@/utils/MUI/themeOverrides';
 import { useAppStore } from '@/context';
-import { useIsomorphicLayoutEffect } from '@/hooks';
+import { useFixedVhProperty, useIsomorphicLayoutEffect } from '@/hooks';
 
 interface IReturnType {
     theme: Theme;
 }
 
 export const useDetectTheme = (): IReturnType => {
+    useFixedVhProperty();
     const isDark: boolean = useMediaQuery('(prefers-color-scheme: dark)');
 
     const { mode, toggleTheme } = useAppStore((state) => state);
