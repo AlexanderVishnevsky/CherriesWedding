@@ -11,7 +11,8 @@ export default class MyDocument extends Document {
     render() {
         return (
             <Html
-                lang="en"
+                lang={'by'}
+                dir={'ltr'}
                 className={CormorantInfantFont.className + ConnieFont.className}
                 style={{ backgroundColor: '#282828' }}
             >
