@@ -50,6 +50,16 @@ body {
     background: var(--bg-color);
 }
 
+html,
+body,
+#__next {
+    height: 100%;
+}
+
+#__next {
+    margin: 0 auto;
+}
+
 @media (prefers-color-scheme: dark) {
     html {
         color-scheme: dark;

@@ -49,16 +49,24 @@ const commonThemeSettings: Pick<Theme, 'direction' | 'zIndex' | 'typography' | '
             lineHeight: '26px',
             letterSpacing: '0.06em',
         },
+        subtitle2: {
+            fontFamily: ConnieFont.style.fontFamily,
+            fontStyle: 'normal',
+            fontWeight: 400,
+            fontSize: '14px',
+            lineHeight: '21px',
+            letterSpacing: '0.12em',
+        },
     } as TypographyVariants,
     components: {
         MuiTypography: {
             styleOverrides: {
                 h2: {
-                    [`@media (max-width:${breakpoints.tabletLarge}px)`]: {
+                    [`@media (min-width:${breakpoints.tabletSmall}px)`]: {
                         fontSize: '50px',
                         lineHeight: '76px',
                     },
-                    [`@media (max-width:${breakpoints.mobileLarge}px)`]: {
+                    [`@media (max-width:${breakpoints.tabletSmall}px)`]: {
                         fontSize: '28px',
                         lineHeight: '42px',
                     },

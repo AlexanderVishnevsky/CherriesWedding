@@ -1,4 +1,4 @@
-import { ButtonBase, styled } from '@mui/material';
+import { ButtonBase, css, styled } from '@mui/material';
 
 import { FlexJCBetween } from '@ui/common/Common.styles';
 import { DARK_COLORS, LIGHT_COLORS } from '@theme';
@@ -10,17 +10,52 @@ export const FooterLayout = styled('footer')`
     align-items: center;
     justify-content: space-between;
     position: absolute;
-    bottom: 0;
-    right: 20px;
+    bottom: 20px;
+    right: 0;
     z-index: 20;
+
+    ${({ theme }) => theme.breakpoints.down('tabletLarge')} {
+        justify-content: center;
+    }
+`;
+
+export const ColWrap = styled(FlexJCBetween)`
+    width: 144px;
 
     ${({ theme }) => theme.breakpoints.down('tabletLarge')} {
         display: none;
     }
 `;
 
-export const FooterSwitcher = styled(FlexJCBetween)`
+export const ButtonNext = styled(ButtonBase)`
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background-color: ${({ theme }) => theme.palette.text.primary};
+    margin-bottom: 6px;
+
+    svg {
+        width: 30px;
+        height: 30px;
+    }
+    ${({ theme }) =>
+        theme.palette.mode === 'dark' &&
+        css`
+            svg {
+                path {
+                    fill: ${DARK_COLORS.backgroundDarkDefault};
+                }
+            }
+        `}
+`;
+
+export const FooterSwitcher = styled(ColWrap)`
     column-gap: 24px;
+    margin-bottom: 40px;
+
+    ${({ theme }) => theme.breakpoints.down('tabletLarge')} {
+        display: none;
+    }
 `;
 
 export const FooterSwitcherText = styled(ButtonBase, { shouldForwardProp: (propName) => propName !== 'isActive' })<{

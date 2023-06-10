@@ -8,6 +8,10 @@ export const FlexCol = styled(FlexRow)`
     flex-direction: column;
 `;
 
+export const FlexColCenter = styled(FlexCol)`
+    align-items: center;
+`;
+
 export const FlexRowCenter = styled(FlexRow)`
     align-items: center;
 `;
