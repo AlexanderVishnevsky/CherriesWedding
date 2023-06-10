@@ -1,51 +1,52 @@
 import { keyframes, styled, Typography } from '@mui/material';
 
-import { FlexCenter, FlexJCBetween, FlexRow } from '@ui/common/Common.styles';
+import { FlexCenter, FlexColCenter, FlexJCBetween, FlexRow } from '@ui/common/Common.styles';
 
 export const MainLayout = styled(FlexJCBetween)`
     width: 100%;
     height: 100%;
     overflow: hidden;
-    position: relative;
+    position: absolute;
+    left: 0;
 
-    #emb-left,
-    #emb-right {
-        width: 200px;
-        height: 756px;
-    }
-
-    #emb-fire {
-        width: 200px;
-        height: 90px;
-    }
     ${({ theme }) => theme.breakpoints.down('tabletLarge')} {
         justify-content: center;
-        #emb-left {
-            position: fixed;
-            left: -130px;
-        }
-        #emb-right {
-            position: fixed;
-            right: -130px;
-        }
-        #emb-fire {
-            display: none;
-        }
     }
 `;
 
 export const FirstImage = styled(FlexRow)`
     flex-direction: column;
-`;
-
-export const MainColumn = styled(FlexCenter)`
-    flex-direction: column;
-    justify-content: space-around;
+    background-image: url('/static/icons/patterns/emb-fire.svg');
+    background-size: contain;
+    max-width: 200px;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
 
     ${({ theme }) => theme.breakpoints.down('tabletLarge')} {
-        justify-content: space-around;
-        height: calc(var(--vh, 1vh) * 100);
-        padding-bottom: 24px;
+        position: fixed;
+        left: -130px;
+        right: initial;
+    }
+`;
+
+export const SecondImage = styled(FirstImage)`
+    background-image: url('/static/icons/patterns/embroidery.svg');
+
+    ${({ theme }) => theme.breakpoints.down('tabletLarge')} {
+        background-image: url('/static/icons/patterns/emb-fire.svg');
+        position: fixed;
+        right: -130px;
+        left: initial;
+    }
+`;
+
+export const MainColumn = styled(FlexColCenter)`
+    justify-content: space-between;
+    height: 80%;
+    padding: 10px 0 40px;
+    ${({ theme }) => theme.breakpoints.down('tabletLarge')} {
+        padding: 32px 0 20px;
     }
 `;
 
@@ -53,11 +54,11 @@ export const StyledTitle = styled(Typography)`
     text-transform: uppercase;
     margin: 0 auto;
     text-align: center;
-    max-width: 508px;
+    max-width: 606px;
     z-index: 2;
     white-space: pre-wrap;
 
-    ${({ theme }) => theme.breakpoints.down('tabletLarge')} {
+    ${({ theme }) => theme.breakpoints.down('tabletSmall')} {
         max-width: 243px;
     }
 `;

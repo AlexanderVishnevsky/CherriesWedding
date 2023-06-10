@@ -3,8 +3,6 @@ import { ReactElement } from 'react';
 import { Zoom } from '@mui/material';
 
 import PageStyleWrapper from '@ui/common/PageStyleWrapper';
-import EmbroideryIcon from '@icons/patterns/embroidery.svg';
-import EmbFireIcon from '@icons/patterns/emb-fire.svg';
 import Picture from '@ui/common/Picture';
 import Header from '@ui/common/Header';
 
@@ -17,10 +15,7 @@ const Main = (): ReactElement => {
     return (
         <PageStyleWrapper widthType={'desktop'}>
             <S.MainLayout>
-                <S.FirstImage>
-                    <EmbroideryIcon id={'emb-left'} alt={'embroidery'} />
-                    <EmbFireIcon id={'emb-fire'} alt={'embroidery-fire'} />
-                </S.FirstImage>
+                <S.FirstImage />
                 <S.MainColumn>
                     <Header />
                     <S.StyledTitle variant={'h2'}>{t('title')}</S.StyledTitle>
@@ -31,7 +26,7 @@ const Main = (): ReactElement => {
                         </S.FrameContainer>
                     </Zoom>
                 </S.MainColumn>
-                <EmbroideryIcon id={'emb-right'} alt={'embroidery-big'} />
+                <S.SecondImage />
             </S.MainLayout>
         </PageStyleWrapper>
     );
