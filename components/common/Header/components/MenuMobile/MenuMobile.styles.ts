@@ -1,5 +1,7 @@
 import { Box, css, Dialog, keyframes, styled, Typography } from '@mui/material';
 
+import { DARK_COLORS, LIGHT_COLORS } from '@theme';
+
 import { ConnieFont } from '@/config/localFonts';
 
 export const StyledDialog = styled(Dialog)``;
@@ -34,7 +36,8 @@ export const BurgerMenu = styled('div')<{ open: boolean }>`
     :before,
     :after,
     div {
-        background: #fff;
+        background-color: ${({ theme }) =>
+            theme.palette.mode === 'light' ? LIGHT_COLORS.primaryLightMain : DARK_COLORS.disabledDarkButton};
         content: '';
         display: block;
         height: 1.5px;
@@ -42,9 +45,20 @@ export const BurgerMenu = styled('div')<{ open: boolean }>`
         margin: 7px 0;
         transition: 0.5s;
     }
-    ${({ open }) =>
+
+    :before,
+    :after {
+        margin: 7px 5px;
+    }
+
+    ${({ open, theme }) =>
         open &&
         css`
+            :before,
+            :after {
+                background-color: ${theme.palette.mode === 'light' && DARK_COLORS.primaryDarkText};
+            }
+
             :before {
                 animation: ${move('8px', '135deg')} 0.7s ease;
                 transform: translateY(8px) rotate(135deg);
