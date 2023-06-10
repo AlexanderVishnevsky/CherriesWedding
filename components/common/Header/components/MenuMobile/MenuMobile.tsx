@@ -16,7 +16,7 @@ const Transition = forwardRef(
             children: ReactElement;
         },
         ref: Ref<unknown>,
-    ) => <Slide direction="up" ref={ref} {...props} />,
+    ) => <Slide direction={'up'} mountOnEnter unmountOnExit ref={ref} {...props} children={props.children} />,
 );
 
 const MenuMobile = (): ReactElement => {
