@@ -2,6 +2,7 @@ import { ReactElement } from 'react';
 
 import { useScrollToTop } from '@hooks';
 
+import Header from '@ui/common/Header';
 import Footer from '@ui/common/Footer';
 
 import { JSXChild } from '@/typings/common';
@@ -23,6 +24,7 @@ const PageStyleWrapper = ({ widthType = 'laptop', children }: IProps): ReactElem
     return (
         <S.BasicLayoutComponent>
             <S.ContentContainer maxWidth={widthType}>
+                <Header />
                 {children}
                 <Footer />
             </S.ContentContainer>
