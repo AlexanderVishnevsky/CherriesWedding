@@ -1,3 +1,5 @@
+import { useRouter } from 'next/router';
+
 import { ReactElement } from 'react';
 
 import { Typography, Zoom } from '@mui/material';
@@ -8,7 +10,10 @@ import { LocaleType } from '@typings/model';
 
 import ThemeSwitcher from '@ui/common/ThemeSwitcher';
 import NextIcon from '@icons/common/arrows/next-icon.svg';
+import BackIcon from '@icons/common/arrows/back-icon.svg';
 import { FlexColCenter } from '@ui/common/Common.styles';
+
+import { moveBack, moveNext, RoutePaths } from '@/routing/routing';
 
 import useTranslation from 'next-translate/useTranslation';
 
@@ -18,18 +23,30 @@ const Footer = (): ReactElement => {
     const { lang, handleSwitchTranslation } = useSwitchLanguage();
     const { isDesktop } = useMedia();
     const { t } = useTranslation('common');
+    const { pathname } = useRouter();
 
     return (
         <S.FooterLayout>
-            <S.ColWrap />
-            <Zoom in style={{ transitionDelay: '700ms' }}>
+            <S.ColWrap>
+                {pathname !== RoutePaths.MAIN && (
+                    <Zoom in>
+                        <FlexColCenter>
+                            <S.ButtonBack onClick={moveBack}>
+                                <BackIcon />
+                            </S.ButtonBack>
+                            <Typography variant={'subtitle2'}>{t('actions.back')}</Typography>
+                        </FlexColCenter>
+                    </Zoom>
+                )}
+            </S.ColWrap>
+            {pathname !== RoutePaths.FAQ && (
                 <FlexColCenter>
-                    <S.ButtonNext>
+                    <S.ButtonNext onClick={moveNext}>
                         <NextIcon />
                     </S.ButtonNext>
                     <Typography variant={'subtitle2'}>{t('actions.next')}</Typography>
                 </FlexColCenter>
-            </Zoom>
+            )}
             {isDesktop && (
                 <S.ColWrap>
                     <S.FooterSwitcherText

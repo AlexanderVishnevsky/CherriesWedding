@@ -1,3 +1,4 @@
+import 'public/assets/css/index.css';
 import React, { ReactElement } from 'react';
 
 import { CssBaseline, ThemeProvider } from '@mui/material';
@@ -8,10 +9,9 @@ import { MyAppProps } from '@typings/_appTypings';
 
 import { CacheProvider } from '@emotion/react';
 import InitScripts from '@ui/common/utils/InitScripts';
+import PageStyleWrapper from '@ui/common/PageStyleWrapper';
 
 import createEmotionCache from '@/config/createEmotionCache';
-
-import 'public/assets/css/index.css';
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -25,7 +25,9 @@ const WeddingApp = (props: MyAppProps): ReactElement => {
             <InitScripts />
             <ThemeProvider theme={theme}>
                 <CssBaseline enableColorScheme />
-                <Component {...pageProps} />
+                <PageStyleWrapper>
+                    <Component {...pageProps} />
+                </PageStyleWrapper>
             </ThemeProvider>
         </CacheProvider>
     );

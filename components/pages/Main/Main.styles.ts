@@ -43,10 +43,10 @@ export const SecondImage = styled(FirstImage)`
 
 export const MainColumn = styled(FlexColCenter)`
     justify-content: space-between;
-    height: 80%;
-    padding: 10px 0 40px;
+    height: 70%;
+    padding: 120px 0 40px;
     ${({ theme }) => theme.breakpoints.down('tabletLarge')} {
-        padding: 32px 0 20px;
+        padding: 96px 0 20px;
     }
 `;
 

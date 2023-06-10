@@ -27,6 +27,29 @@ export const ColWrap = styled(FlexJCBetween)`
     }
 `;
 
+export const ButtonBack = styled(ButtonBase)`
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background-color: ${DARK_COLORS.gray800};
+    margin-bottom: 6px;
+
+    svg {
+        width: 30px;
+        height: 30px;
+    }
+    ${({ theme }) =>
+        theme.palette.mode === 'light' &&
+        css`
+            background-color: rgba(57, 48, 14, 0.2);
+            svg {
+                path {
+                    fill: ${DARK_COLORS.primaryDarkText};
+                }
+            }
+        `}
+`;
+
 export const ButtonNext = styled(ButtonBase)`
     width: 55px;
     height: 55px;

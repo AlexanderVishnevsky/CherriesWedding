@@ -2,7 +2,8 @@ import { ReactElement } from 'react';
 
 import { useScrollToTop } from '@hooks';
 
-import Footer from '@ui/common/Footer';
+import Header from '@ui/common/Header';
+import { DynamicFooter } from '@ui/common/Footer';
 
 import { JSXChild } from '@/typings/common';
 import { BreakpointTypes } from '@/utils/MUI/breakpointOverrides';
@@ -23,8 +24,9 @@ const PageStyleWrapper = ({ widthType = 'laptop', children }: IProps): ReactElem
     return (
         <S.BasicLayoutComponent>
             <S.ContentContainer maxWidth={widthType}>
+                <Header />
                 {children}
-                <Footer />
+                <DynamicFooter />
             </S.ContentContainer>
         </S.BasicLayoutComponent>
     );

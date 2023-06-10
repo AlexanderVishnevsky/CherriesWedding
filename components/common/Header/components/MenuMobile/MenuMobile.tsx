@@ -9,6 +9,7 @@ import { LocaleType } from '@typings/model';
 import { FlexCol } from '@ui/common/Common.styles';
 import * as F from '@ui/common/Footer/Footer.styles';
 import ThemeSwitcher from '@ui/common/ThemeSwitcher';
+import { MenuMobileData } from '@ui/common/Header/components/MenuMobile/MenuMobile.data';
 
 import useTranslation from 'next-translate/useTranslation';
 
@@ -36,8 +37,14 @@ const MenuMobile = (): ReactElement => {
                         </S.BurgerMenu>
                     </Toolbar>
                     <FlexCol sx={{ rowGap: '32px' }}>
-                        {[...Array(5)].map((_, idx) => (
-                            <IconButton key={idx}>
+                        {MenuMobileData.map((moveTo, idx) => (
+                            <IconButton
+                                key={idx}
+                                onClick={async () => {
+                                    await moveTo();
+                                    toggleMenu();
+                                }}
+                            >
                                 <S.StyledMenuItem>{t(`menu.${idx}`)}</S.StyledMenuItem>
                             </IconButton>
                         ))}
