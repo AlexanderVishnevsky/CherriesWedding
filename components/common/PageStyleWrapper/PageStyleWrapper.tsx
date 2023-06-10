@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 
-import { useScrollToTop } from '@hooks';
+import { useMedia, useScrollToTop } from '@hooks';
 
 import Footer from '@ui/common/Footer';
 
@@ -19,12 +19,13 @@ type IProps = { widthType?: BreakpointTypes } & JSXChild;
  */
 const PageStyleWrapper = ({ widthType = 'laptop', children }: IProps): ReactElement => {
     useScrollToTop();
+    const { isDesktop } = useMedia();
 
     return (
         <S.BasicLayoutComponent>
             <S.ContentContainer maxWidth={widthType}>
                 {children}
-                <Footer />
+                {isDesktop && <Footer />}
             </S.ContentContainer>
         </S.BasicLayoutComponent>
     );

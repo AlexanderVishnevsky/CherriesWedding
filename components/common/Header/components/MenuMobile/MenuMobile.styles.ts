@@ -1,19 +1,21 @@
-import { Box, Dialog, IconButton, keyframes, styled, Typography } from '@mui/material';
+import { Box, css, Dialog, keyframes, styled, Typography } from '@mui/material';
+
+import { DARK_COLORS, LIGHT_COLORS } from '@theme';
 
 import { ConnieFont } from '@/config/localFonts';
 
-export const StyledDialog = styled(Dialog)`
-    background-color: ${({ theme }) => theme.palette.background.paper};
-`;
+export const StyledDialog = styled(Dialog)``;
 
 export const MenuMobileLayout = styled(Box)`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
+    background-color: ${({ theme }) =>
+        theme.palette.mode === 'light' ? theme.palette.primary.main : theme.palette.background.paper};
 `;
 
-const move = (deg: string) =>
+const move = (y: string, deg: string) =>
     keyframes({
         '0%': {
             scale: 0.4,
@@ -21,31 +23,54 @@ const move = (deg: string) =>
         },
         '100%': {
             scale: 1,
-            transform: `rotate(${deg})`,
+            transform: `translateY(${y}) rotate(${deg})`,
         },
     });
 
-export const BurgerMenu = styled(IconButton)`
-    margin: 0 auto;
+export const BurgerMenu = styled('div')<{ open: boolean }>`
     position: relative;
-    width: 24px;
-    height: 24px;
+    margin: 0 auto;
+    width: 40px;
+    height: 40px;
 
-    #first-line,
-    #second-line {
-        width: 35px;
-        background: #717171;
+    :before,
+    :after,
+    div {
+        background-color: ${({ theme }) =>
+            theme.palette.mode === 'light' ? LIGHT_COLORS.primaryLightMain : DARK_COLORS.disabledDarkButton};
+        content: '';
+        display: block;
         height: 1.5px;
-        position: absolute;
+        border-radius: 3px;
+        margin: 7px 0;
+        transition: 0.5s;
     }
-    #first-line {
-        transform: rotate(45deg);
-        animation: ${move('45deg')} 0.7s ease;
+
+    :before,
+    :after {
+        margin: 7px 5px;
     }
-    #second-line {
-        transform: rotate(-45deg);
-        animation: ${move('-45deg')} 0.7s ease;
-    }
+
+    ${({ open, theme }) =>
+        open &&
+        css`
+            :before,
+            :after {
+                background-color: ${theme.palette.mode === 'light' && DARK_COLORS.primaryDarkText};
+            }
+
+            :before {
+                animation: ${move('8px', '135deg')} 0.7s ease;
+                transform: translateY(8px) rotate(135deg);
+            }
+            :after {
+                animation: ${move('-8px', '-135deg')} 0.7s ease;
+                transform: translateY(-8px) rotate(-135deg);
+            }
+            div {
+                transform: scale(0);
+            }
+        `}
 `;
 
 export const StyledMenuItem = styled(Typography)`

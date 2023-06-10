@@ -1,5 +1,6 @@
 //------ UI Hooks ------
 export { useDetectTheme } from './uiHooks/useDetectTheme';
+export { useMedia } from './uiHooks/useMedia';
 export { useSwitchTheme } from './uiHooks/useSwitchTheme';
 
 //------ Utils Hooks ------
