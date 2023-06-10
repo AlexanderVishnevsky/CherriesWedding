@@ -1,6 +1,6 @@
 import { forwardRef, ReactElement, Ref, useState } from 'react';
 
-import { IconButton, Slide, Toolbar, Typography } from '@mui/material';
+import { Grow, IconButton, Toolbar, Typography } from '@mui/material';
 import { TransitionProps } from '@mui/material/transitions';
 
 import { useSwitchLanguage } from '@hooks';
@@ -22,7 +22,7 @@ const Transition = forwardRef(
             children: ReactElement;
         },
         ref: Ref<unknown>,
-    ) => <Slide direction={'up'} mountOnEnter unmountOnExit ref={ref} {...props} children={props.children} />,
+    ) => <Grow mountOnEnter unmountOnExit ref={ref} {...props} children={props.children} />,
 );
 
 const MenuMobile = (): ReactElement => {
@@ -39,9 +39,9 @@ const MenuMobile = (): ReactElement => {
             <IconButton onClick={toggleMenu} aria-label="open">
                 <BurgerIcon />
             </IconButton>
-            <S.StyledDialog fullScreen open={openMenu} onClose={toggleMenu} TransitionComponent={Transition}>
+            <S.StyledDialog fullScreen open={openMenu} onClose={toggleMenu}>
                 <S.MenuMobileLayout sx={{ p: 4 }}>
-                    <Toolbar>
+                    <Toolbar sx={{ p: 0, minHeight: '24px' }}>
                         <S.BurgerMenu onClick={toggleMenu} aria-label="close" size={'large'}>
                             <div id={'first-line'} />
                             <div id={'second-line'} />

@@ -103,6 +103,7 @@ const getPaletteTokens = (mode: PaletteMode) => ({
                   },
                   background: {
                       default: DARK_COLORS.backgroundDarkDefault,
+                      paper: DARK_COLORS.backgroundDarkDefault,
                   },
                   text: {
                       primary: DARK_COLORS.primaryDarkText,
@@ -115,6 +116,7 @@ const getPaletteTokens = (mode: PaletteMode) => ({
                   },
                   background: {
                       default: LIGHT_COLORS.backgroundLightDefault,
+                      paper: LIGHT_COLORS.backgroundLightDefault,
                   },
                   text: {
                       primary: LIGHT_COLORS.primaryLightText,

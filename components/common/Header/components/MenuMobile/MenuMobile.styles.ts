@@ -1,16 +1,18 @@
 import { Box, Dialog, IconButton, keyframes, styled, Typography } from '@mui/material';
 
+import { DARK_COLORS } from '@theme';
+
 import { ConnieFont } from '@/config/localFonts';
 
-export const StyledDialog = styled(Dialog)`
-    background-color: ${({ theme }) => theme.palette.background.paper};
-`;
+export const StyledDialog = styled(Dialog)``;
 
 export const MenuMobileLayout = styled(Box)`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
+    background-color: ${({ theme }) =>
+        theme.palette.mode === 'light' ? theme.palette.primary.main : theme.palette.background.paper};
 `;
 
 const move = (deg: string) =>
@@ -34,7 +36,8 @@ export const BurgerMenu = styled(IconButton)`
     #first-line,
     #second-line {
         width: 35px;
-        background: #717171;
+        background-color: ${({ theme }) =>
+            theme.palette.mode === 'light' ? DARK_COLORS.primaryDarkText : DARK_COLORS.disabledDarkButton};
         height: 1.5px;
         position: absolute;
     }

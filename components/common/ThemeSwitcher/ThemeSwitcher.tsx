@@ -8,11 +8,11 @@ import SunIcon from '@icons/common/buttons/sun.svg';
 import * as S from './ThemeSwitcher.styles';
 
 const ThemeSwitcher = ({ large }: { large?: boolean }): ReactElement => {
-    const { toggleTheme, isDark } = useSwitchTheme();
+    const { toggleTheme, isLight } = useSwitchTheme();
 
     return (
-        <S.Switcher large={large} isDark={isDark} onClick={() => toggleTheme()}>
-            {isDark ? <MoonIcon /> : <SunIcon />}
+        <S.Switcher large={large} isLight={isLight} onClick={() => toggleTheme()}>
+            {isLight ? <SunIcon /> : <MoonIcon />}
         </S.Switcher>
     );
 };
