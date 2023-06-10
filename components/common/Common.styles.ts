@@ -4,6 +4,10 @@ export const FlexRow = styled('div')`
     display: flex;
 `;
 
+export const FlexCol = styled(FlexRow)`
+    flex-direction: column;
+`;
+
 export const FlexRowCenter = styled(FlexRow)`
     align-items: center;
 `;

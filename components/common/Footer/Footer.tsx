@@ -2,27 +2,16 @@ import { ReactElement } from 'react';
 
 import { Typography } from '@mui/material';
 
-import { useSwitchTheme } from '@hooks';
+import { useSwitchLanguage } from '@hooks';
 
 import { LocaleType } from '@typings/model';
 
-import SunIcon from '@icons/common/buttons/sun.svg';
-import MoonIcon from '@icons/common/buttons/moon.svg';
-
-import setLanguage from 'next-translate/setLanguage';
-import useTranslation from 'next-translate/useTranslation';
+import ThemeSwitcher from '@ui/common/ThemeSwitcher';
 
 import * as S from './Footer.styles';
 
 const Footer = (): ReactElement => {
-    const { lang } = useTranslation();
-    const { toggleTheme, isDark } = useSwitchTheme();
-
-    const handleSwitchTranslation = async (locale: LocaleType): Promise<void> => {
-        if (lang !== locale) {
-            await setLanguage(locale);
-        }
-    };
+    const { lang, handleSwitchTranslation } = useSwitchLanguage();
 
     return (
         <S.FooterLayout>
@@ -47,9 +36,7 @@ const Footer = (): ReactElement => {
                 >
                     <Typography variant={'button'}>Рус</Typography>
                 </S.FooterSwitcherText>
-                <S.Switcher isDark={isDark} onClick={() => toggleTheme()}>
-                    {isDark ? <MoonIcon /> : <SunIcon />}
-                </S.Switcher>
+                <ThemeSwitcher />
             </S.FooterSwitcher>
         </S.FooterLayout>
     );

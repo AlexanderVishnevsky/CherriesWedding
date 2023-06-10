@@ -43,7 +43,7 @@ export const MainColumn = styled(FlexCenter)`
     justify-content: space-around;
 
     ${({ theme }) => theme.breakpoints.down('tabletLarge')} {
-        justify-content: center;
+        justify-content: space-around;
         height: calc(var(--vh, 1vh) * 100);
         padding-bottom: 24px;
     }
