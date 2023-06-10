@@ -16,6 +16,7 @@ export const DARK_COLORS = {
     backgroundDarkDefault: '#282828',
     primaryDarkText: '#FFFFFF',
     disabledDarkButton: '#717171',
+    gray800: '#393939',
 };
 
 // Create a theme instance.

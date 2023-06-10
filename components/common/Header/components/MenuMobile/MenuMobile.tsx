@@ -38,7 +38,13 @@ const MenuMobile = (): ReactElement => {
                     </Toolbar>
                     <FlexCol sx={{ rowGap: '32px' }}>
                         {MenuMobileData.map((moveTo, idx) => (
-                            <IconButton key={idx} onClick={moveTo}>
+                            <IconButton
+                                key={idx}
+                                onClick={async () => {
+                                    await moveTo();
+                                    toggleMenu();
+                                }}
+                            >
                                 <S.StyledMenuItem>{t(`menu.${idx}`)}</S.StyledMenuItem>
                             </IconButton>
                         ))}

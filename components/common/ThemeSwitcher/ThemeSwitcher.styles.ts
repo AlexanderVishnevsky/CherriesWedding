@@ -1,5 +1,7 @@
 import { ButtonBase, css, keyframes, styled } from '@mui/material';
 
+import { DARK_COLORS } from '@theme';
+
 const fade = keyframes({
     '0%': {
         scale: 1,
@@ -36,8 +38,8 @@ export const Switcher = styled(ButtonBase, {
     ${({ large, isLight, theme }) =>
         large &&
         css`
-            background-color: ${isLight ? 'transparent' : '#393939'};
-            border: ${isLight ? `2px solid ${theme.palette.background.paper}` : `2px solid #393939`};
+            background-color: ${isLight ? 'transparent' : DARK_COLORS.gray800};
+            border: ${isLight ? `2px solid ${theme.palette.background.paper}` : `2px solid ${DARK_COLORS.gray800}`};
             width: 44px;
             height: 44px;
             svg {
