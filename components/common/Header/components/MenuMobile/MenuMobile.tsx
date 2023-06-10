@@ -1,13 +1,11 @@
-import { forwardRef, ReactElement, Ref, useState } from 'react';
+import { ReactElement, useState } from 'react';
 
-import { Grow, IconButton, Toolbar, Typography } from '@mui/material';
-import { TransitionProps } from '@mui/material/transitions';
+import { IconButton, Toolbar, Typography } from '@mui/material';
 
 import { useSwitchLanguage } from '@hooks';
 
 import { LocaleType } from '@typings/model';
 
-import BurgerIcon from '@icons/common/buttons/burger-menu.svg';
 import { FlexCol } from '@ui/common/Common.styles';
 import * as F from '@ui/common/Footer/Footer.styles';
 import ThemeSwitcher from '@ui/common/ThemeSwitcher';
@@ -15,15 +13,6 @@ import ThemeSwitcher from '@ui/common/ThemeSwitcher';
 import useTranslation from 'next-translate/useTranslation';
 
 import * as S from './MenuMobile.styles';
-
-const Transition = forwardRef(
-    (
-        props: TransitionProps & {
-            children: ReactElement;
-        },
-        ref: Ref<unknown>,
-    ) => <Grow mountOnEnter unmountOnExit ref={ref} {...props} children={props.children} />,
-);
 
 const MenuMobile = (): ReactElement => {
     const { t } = useTranslation('common');
@@ -36,15 +25,14 @@ const MenuMobile = (): ReactElement => {
     };
     return (
         <>
-            <IconButton onClick={toggleMenu} aria-label="open">
-                <BurgerIcon />
-            </IconButton>
+            <S.BurgerMenu open={openMenu} onClick={toggleMenu} className={'center'} aria-label="close">
+                <div />
+            </S.BurgerMenu>
             <S.StyledDialog fullScreen open={openMenu} onClose={toggleMenu}>
                 <S.MenuMobileLayout sx={{ p: 4 }}>
                     <Toolbar sx={{ p: 0, minHeight: '24px' }}>
-                        <S.BurgerMenu onClick={toggleMenu} aria-label="close" size={'large'}>
-                            <div id={'first-line'} />
-                            <div id={'second-line'} />
+                        <S.BurgerMenu open={openMenu} onClick={toggleMenu} className={'center'} aria-label="close">
+                            <div />
                         </S.BurgerMenu>
                     </Toolbar>
                     <FlexCol sx={{ rowGap: '32px' }}>

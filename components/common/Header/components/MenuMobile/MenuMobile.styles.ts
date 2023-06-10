@@ -1,6 +1,4 @@
-import { Box, Dialog, IconButton, keyframes, styled, Typography } from '@mui/material';
-
-import { DARK_COLORS } from '@theme';
+import { Box, css, Dialog, keyframes, styled, Typography } from '@mui/material';
 
 import { ConnieFont } from '@/config/localFonts';
 
@@ -15,7 +13,7 @@ export const MenuMobileLayout = styled(Box)`
         theme.palette.mode === 'light' ? theme.palette.primary.main : theme.palette.background.paper};
 `;
 
-const move = (deg: string) =>
+const move = (y: string, deg: string) =>
     keyframes({
         '0%': {
             scale: 0.4,
@@ -23,32 +21,42 @@ const move = (deg: string) =>
         },
         '100%': {
             scale: 1,
-            transform: `rotate(${deg})`,
+            transform: `translateY(${y}) rotate(${deg})`,
         },
     });
 
-export const BurgerMenu = styled(IconButton)`
-    margin: 0 auto;
+export const BurgerMenu = styled('div')<{ open: boolean }>`
     position: relative;
-    width: 24px;
-    height: 24px;
+    margin: 0 auto;
+    width: 40px;
+    height: 40px;
 
-    #first-line,
-    #second-line {
-        width: 35px;
-        background-color: ${({ theme }) =>
-            theme.palette.mode === 'light' ? DARK_COLORS.primaryDarkText : DARK_COLORS.disabledDarkButton};
+    :before,
+    :after,
+    div {
+        background: #fff;
+        content: '';
+        display: block;
         height: 1.5px;
-        position: absolute;
+        border-radius: 3px;
+        margin: 7px 0;
+        transition: 0.5s;
     }
-    #first-line {
-        transform: rotate(45deg);
-        animation: ${move('45deg')} 0.7s ease;
-    }
-    #second-line {
-        transform: rotate(-45deg);
-        animation: ${move('-45deg')} 0.7s ease;
-    }
+    ${({ open }) =>
+        open &&
+        css`
+            :before {
+                animation: ${move('8px', '135deg')} 0.7s ease;
+                transform: translateY(8px) rotate(135deg);
+            }
+            :after {
+                animation: ${move('-8px', '-135deg')} 0.7s ease;
+                transform: translateY(-8px) rotate(-135deg);
+            }
+            div {
+                transform: scale(0);
+            }
+        `}
 `;
 
 export const StyledMenuItem = styled(Typography)`
