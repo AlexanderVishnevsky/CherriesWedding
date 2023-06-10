@@ -11,7 +11,7 @@ module.exports = {
     parserOptions: {
         warnOnUnsupportedTypeScriptVersion: false,
     },
-    ignorePatterns: ['.next/**', '.idea/**', 'node_modules/**', 'public/**'],
+    ignorePatterns: ['.next/**', '.idea/**', 'node_modules/**'],
     rules: {
         'prettier/prettier': 'warn',
         'import/prefer-default-export': 'off',
