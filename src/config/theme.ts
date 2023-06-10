@@ -65,6 +65,19 @@ const commonThemeSettings: Pick<Theme, 'direction' | 'zIndex' | 'typography' | '
                 },
             },
         },
+        MuiIconButton: {
+            defaultProps: {
+                disableRipple: true,
+                disableFocusRipple: true,
+                disableTouchRipple: true,
+            },
+        },
+        MuiButtonBase: {
+            defaultProps: {
+                disableRipple: true,
+                disableTouchRipple: true,
+            },
+        },
     },
 };
 

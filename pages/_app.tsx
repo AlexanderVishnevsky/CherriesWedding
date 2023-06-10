@@ -1,5 +1,3 @@
-import 'components/preview/style.css';
-
 import React, { ReactElement } from 'react';
 
 import { CssBaseline, ThemeProvider } from '@mui/material';

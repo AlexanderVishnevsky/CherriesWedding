@@ -6,6 +6,7 @@ import PageStyleWrapper from '@ui/common/PageStyleWrapper';
 import EmbroideryIcon from '@icons/patterns/embroidery.svg';
 import EmbFireIcon from '@icons/patterns/emb-fire.svg';
 import Picture from '@ui/common/Picture';
+import Header from '@ui/common/Header';
 
 import useTranslation from 'next-translate/useTranslation';
 
@@ -21,6 +22,7 @@ const Main = (): ReactElement => {
                     <EmbFireIcon id={'emb-fire'} alt={'embroidery-fire'} />
                 </S.FirstImage>
                 <S.MainColumn>
+                    <Header />
                     <S.StyledTitle variant={'h2'}>{t('title')}</S.StyledTitle>
 
                     <Zoom in {...{ timeout: 800 }}>
