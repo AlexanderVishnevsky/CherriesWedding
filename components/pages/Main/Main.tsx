@@ -24,7 +24,6 @@ const Main = (): ReactElement => {
                 <S.MainColumn>
                     <Header />
                     <S.StyledTitle variant={'h2'}>{t('title')}</S.StyledTitle>
-
                     <Zoom in {...{ timeout: 800 }}>
                         <S.FrameContainer>
                             <div id={'frame'} />

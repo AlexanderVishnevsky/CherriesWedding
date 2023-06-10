@@ -1,6 +1,13 @@
-import { Box, IconButton, keyframes, styled } from '@mui/material';
+import { Box, IconButton, keyframes, styled, Typography } from '@mui/material';
 
-export const MenuMobileLayout = styled(Box)``;
+import { ConnieFont } from '@/config/localFonts';
+
+export const MenuMobileLayout = styled(Box)`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+`;
 
 const move = (deg: string) =>
     keyframes({
@@ -35,4 +42,13 @@ export const BurgerMenu = styled(IconButton)`
         transform: rotate(-45deg);
         animation: ${move('-45deg')} 0.7s ease;
     }
+`;
+
+export const StyledMenuItem = styled(Typography)`
+    font-family: ${ConnieFont.style.fontFamily};
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 33px;
+    text-transform: uppercase;
 `;
