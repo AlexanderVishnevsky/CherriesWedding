@@ -17,7 +17,7 @@ export const MainLayout = styled(FlexJCBetween)`
 export const FirstImage = styled(FlexRow)`
     flex-direction: column;
     background-image: url('/static/icons/patterns/emb-fire.svg');
-    background-size: contain;
+    background-size: auto;
     max-width: 200px;
     width: 100%;
     height: 100%;
