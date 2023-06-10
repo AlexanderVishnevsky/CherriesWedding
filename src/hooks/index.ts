@@ -6,3 +6,4 @@ export { useSwitchTheme } from './uiHooks/useSwitchTheme';
 export { useFixedVhProperty } from './utilHooks/useFixedVhProperty';
 export { useIsomorphicLayoutEffect } from './utilHooks/useIsomorphicLayoutEffect';
 export { useScrollToTop } from './utilHooks/useScrollToTop';
+export { useSwitchLanguage } from './utilHooks/useSwitchLanguage';

@@ -1,10 +1,15 @@
 import { forwardRef, ReactElement, Ref, useState } from 'react';
 
-import { Dialog, IconButton, Slide, Toolbar } from '@mui/material';
+import { Dialog, IconButton, Slide, Toolbar, Typography } from '@mui/material';
 import { TransitionProps } from '@mui/material/transitions';
+
+import { useSwitchLanguage } from '@hooks';
+
+import { LocaleType } from '@typings/model';
 
 import BurgerIcon from '@icons/common/buttons/burger-menu.svg';
 import { FlexCol } from '@ui/common/Common.styles';
+import * as F from '@ui/common/Footer/Footer.styles';
 
 import useTranslation from 'next-translate/useTranslation';
 
@@ -21,6 +26,7 @@ const Transition = forwardRef(
 
 const MenuMobile = (): ReactElement => {
     const { t } = useTranslation('common');
+    const { lang, handleSwitchTranslation } = useSwitchLanguage();
 
     const [openMenu, setOpenMenu] = useState(false);
 
@@ -47,7 +53,26 @@ const MenuMobile = (): ReactElement => {
                             </IconButton>
                         ))}
                     </FlexCol>
-                    <div />
+                    <F.FooterSwitcher sx={{ width: '87px', height: '30px', m: '0 auto' }}>
+                        <F.FooterSwitcherText
+                            aria-label="switch BY locale"
+                            disableRipple
+                            disableTouchRipple
+                            isActive={lang === LocaleType.BY}
+                            onClick={() => handleSwitchTranslation(LocaleType.BY)}
+                        >
+                            <Typography variant={'button'}>Бел</Typography>
+                        </F.FooterSwitcherText>
+                        <F.FooterSwitcherText
+                            aria-label="switch RU locale"
+                            disableRipple
+                            disableTouchRipple
+                            isActive={lang === LocaleType.RU}
+                            onClick={() => handleSwitchTranslation(LocaleType.RU)}
+                        >
+                            <Typography variant={'button'}>Рус</Typography>
+                        </F.FooterSwitcherText>
+                    </F.FooterSwitcher>
                 </S.MenuMobileLayout>
             </Dialog>
         </>

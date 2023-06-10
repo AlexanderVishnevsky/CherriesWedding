@@ -2,27 +2,19 @@ import { ReactElement } from 'react';
 
 import { Typography } from '@mui/material';
 
-import { useSwitchTheme } from '@hooks';
+import { useSwitchLanguage, useSwitchTheme } from '@hooks';
 
 import { LocaleType } from '@typings/model';
 
 import SunIcon from '@icons/common/buttons/sun.svg';
 import MoonIcon from '@icons/common/buttons/moon.svg';
 
-import setLanguage from 'next-translate/setLanguage';
-import useTranslation from 'next-translate/useTranslation';
-
 import * as S from './Footer.styles';
 
 const Footer = (): ReactElement => {
-    const { lang } = useTranslation();
-    const { toggleTheme, isDark } = useSwitchTheme();
+    const { lang, handleSwitchTranslation } = useSwitchLanguage();
 
-    const handleSwitchTranslation = async (locale: LocaleType): Promise<void> => {
-        if (lang !== locale) {
-            await setLanguage(locale);
-        }
-    };
+    const { toggleTheme, isDark } = useSwitchTheme();
 
     return (
         <S.FooterLayout>
