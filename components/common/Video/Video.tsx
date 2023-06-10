@@ -1,4 +1,4 @@
-import { memo, VideoHTMLAttributes } from 'react';
+import { VideoHTMLAttributes } from 'react';
 
 const Video = ({
     id,
@@ -8,10 +8,10 @@ const Video = ({
     src,
     ...rest
 }: VideoHTMLAttributes<HTMLVideoElement>) => (
-    <video id={id} loop={loop} preload={'auto'} autoPlay={autoPlay} muted={muted} controls {...rest}>
+    <video id={id} loop={loop} autoPlay={autoPlay} muted={muted} controls {...rest}>
         <source src={src} type={'video/mp4'} />
         Your browser does not support the video tag.
     </video>
 );
 
-export default memo(Video);
+export default Video;
