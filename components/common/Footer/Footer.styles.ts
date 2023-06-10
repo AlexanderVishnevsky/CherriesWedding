@@ -13,6 +13,10 @@ export const FooterLayout = styled('footer')`
     bottom: 0;
     right: 20px;
     z-index: 20;
+
+    ${({ theme }) => theme.breakpoints.down('tabletLarge')} {
+        display: none;
+    }
 `;
 
 export const FooterSwitcher = styled(FlexJCBetween)`
