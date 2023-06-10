@@ -49,13 +49,9 @@ export const ButtonNext = styled(ButtonBase)`
         `}
 `;
 
-export const FooterSwitcher = styled(ColWrap)`
+export const FooterSwitcher = styled(FlexJCBetween)`
     column-gap: 24px;
     margin-bottom: 40px;
-
-    ${({ theme }) => theme.breakpoints.down('tabletLarge')} {
-        display: none;
-    }
 `;
 
 export const FooterSwitcherText = styled(ButtonBase, { shouldForwardProp: (propName) => propName !== 'isActive' })<{

@@ -32,27 +32,25 @@ const Footer = (): ReactElement => {
             </Zoom>
             {isDesktop && (
                 <S.ColWrap>
-                    <S.FooterSwitcher>
-                        <S.FooterSwitcherText
-                            aria-label="switch BY locale"
-                            disableRipple
-                            disableTouchRipple
-                            isActive={lang === LocaleType.BY}
-                            onClick={() => handleSwitchTranslation(LocaleType.BY)}
-                        >
-                            <Typography variant={'button'}>Бел</Typography>
-                        </S.FooterSwitcherText>
-                        <S.FooterSwitcherText
-                            aria-label="switch RU locale"
-                            disableRipple
-                            disableTouchRipple
-                            isActive={lang === LocaleType.RU}
-                            onClick={() => handleSwitchTranslation(LocaleType.RU)}
-                        >
-                            <Typography variant={'button'}>Рус</Typography>
-                        </S.FooterSwitcherText>
-                        <ThemeSwitcher />
-                    </S.FooterSwitcher>
+                    <S.FooterSwitcherText
+                        aria-label="switch BY locale"
+                        disableRipple
+                        disableTouchRipple
+                        isActive={lang === LocaleType.BY}
+                        onClick={() => handleSwitchTranslation(LocaleType.BY)}
+                    >
+                        <Typography variant={'button'}>Бел</Typography>
+                    </S.FooterSwitcherText>
+                    <S.FooterSwitcherText
+                        aria-label="switch RU locale"
+                        disableRipple
+                        disableTouchRipple
+                        isActive={lang === LocaleType.RU}
+                        onClick={() => handleSwitchTranslation(LocaleType.RU)}
+                    >
+                        <Typography variant={'button'}>Рус</Typography>
+                    </S.FooterSwitcherText>
+                    <ThemeSwitcher />
                 </S.ColWrap>
             )}
         </S.FooterLayout>
