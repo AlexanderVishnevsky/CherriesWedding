@@ -2,19 +2,16 @@ import { ReactElement } from 'react';
 
 import { Typography } from '@mui/material';
 
-import { useSwitchLanguage, useSwitchTheme } from '@hooks';
+import { useSwitchLanguage } from '@hooks';
 
 import { LocaleType } from '@typings/model';
 
-import SunIcon from '@icons/common/buttons/sun.svg';
-import MoonIcon from '@icons/common/buttons/moon.svg';
+import ThemeSwitcher from '@ui/common/ThemeSwitcher';
 
 import * as S from './Footer.styles';
 
 const Footer = (): ReactElement => {
     const { lang, handleSwitchTranslation } = useSwitchLanguage();
-
-    const { toggleTheme, isDark } = useSwitchTheme();
 
     return (
         <S.FooterLayout>
@@ -39,9 +36,7 @@ const Footer = (): ReactElement => {
                 >
                     <Typography variant={'button'}>Рус</Typography>
                 </S.FooterSwitcherText>
-                <S.Switcher isDark={isDark} onClick={() => toggleTheme()}>
-                    {isDark ? <MoonIcon /> : <SunIcon />}
-                </S.Switcher>
+                <ThemeSwitcher />
             </S.FooterSwitcher>
         </S.FooterLayout>
     );

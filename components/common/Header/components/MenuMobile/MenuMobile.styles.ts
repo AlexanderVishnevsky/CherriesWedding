@@ -1,6 +1,10 @@
-import { Box, IconButton, keyframes, styled, Typography } from '@mui/material';
+import { Box, Dialog, IconButton, keyframes, styled, Typography } from '@mui/material';
 
 import { ConnieFont } from '@/config/localFonts';
+
+export const StyledDialog = styled(Dialog)`
+    background-color: ${({ theme }) => theme.palette.background.paper};
+`;
 
 export const MenuMobileLayout = styled(Box)`
     display: flex;
