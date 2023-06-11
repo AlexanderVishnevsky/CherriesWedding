@@ -36,7 +36,7 @@ export const Map = styled('div')`
 
     ${({ theme }) => theme.breakpoints.down('tabletSmall')} {
         position: relative;
-        height: calc(100vw + 40px);
+        height: 80vw;
         width: 100vw;
         margin-left: -20px;
         background-size: calc(100% + 40px);
