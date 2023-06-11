@@ -37,14 +37,14 @@ export const Map = styled('div')`
 
     ${({ theme }) => theme.breakpoints.down('tabletSmall')} {
         position: relative;
-        height: 80vw;
-        width: 100vw;
-        left: 0;
+        height: 100vw;
+        width: 140vw;
+        right: 0;
         margin-left: 0;
         background-size: calc(100% + 40px);
-        background-position: center top;
-        margin-bottom: -10vw;
-        margin-top: 5px;
+        background-position: 20vw top;
+        margin-bottom: -20vw;
+        margin-top: 25px;
     }
 `;
 
