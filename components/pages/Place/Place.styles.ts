@@ -1,4 +1,4 @@
-import { styled } from '@mui/material';
+import { ButtonBase, styled } from '@mui/material';
 
 import { FlexColCenter } from '@ui/common/Common.styles';
 
@@ -85,7 +85,7 @@ export const MapTextContainer = styled('div')`
 
 export const VideoContainer = styled('div')`
     position: relative;
-    margin: 124px auto;
+    margin: 124px auto 40px;
     border-radius: 44px;
 
     #bg-video {
@@ -95,11 +95,35 @@ export const VideoContainer = styled('div')`
     }
 
     ${({ theme }) => theme.breakpoints.down('tabletSmall')} {
-        margin: 54px auto;
+        margin: 54px auto 0;
         #bg-video {
             width: 100vw;
             margin-left: -20px;
             border-radius: 0;
         }
+    }
+`;
+
+export const Location = styled(ButtonBase)`
+    margin-bottom: 124px;
+    display: flex;
+    align-items: center;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    column-gap: 5px;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: 0.04em;
+    text-decoration-line: underline;
+    text-transform: uppercase;
+    font-family: Helvetica, -apple-system, sans-serif;
+    z-index: 2;
+    svg {
+        width: 19px;
+        height: 22px;
+    }
+    :hover {
+        text-decoration-line: underline;
     }
 `;
