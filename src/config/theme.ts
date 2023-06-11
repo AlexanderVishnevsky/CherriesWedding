@@ -16,6 +16,7 @@ export const DARK_COLORS = {
     backgroundDarkDefault: '#282828',
     primaryDarkText: '#FFFFFF',
     disabledDarkButton: '#717171',
+    gray100: 'rgba(145, 141, 132, 0.2)',
     gray800: '#393939',
 };
 
@@ -25,6 +26,16 @@ const commonThemeSettings: Pick<Theme, 'direction' | 'zIndex' | 'typography' | '
     zIndex: defaultZIndex,
     typography: {
         fontFamily: CormorantInfantFont.style.fontFamily,
+        h1: {
+            fontFamily: ConnieFont.style.fontFamily,
+            fontStyle: 'normal',
+            fontWeight: 400,
+            fontSize: '160px',
+            lineHeight: '243px',
+            letterSpacing: '0.12em',
+            textTransform: 'uppercase',
+            color: DARK_COLORS.gray100,
+        },
         h2: {
             fontFamily: ConnieFont.style.fontFamily,
             fontStyle: 'normal',
@@ -33,6 +44,20 @@ const commonThemeSettings: Pick<Theme, 'direction' | 'zIndex' | 'typography' | '
             lineHeight: '109px',
             letterSpacing: '0.12em',
             textAlign: 'center',
+        },
+        h3: {
+            fontFamily: ConnieFont.style.fontFamily,
+            fontStyle: 'normal',
+            fontWeight: 400,
+            fontSize: '60px',
+            lineHeight: '91px',
+        },
+        h5: {
+            fontFamily: ConnieFont.style.fontFamily,
+            fontStyle: 'normal',
+            fontWeight: 400,
+            fontSize: '26px',
+            lineHeight: '39px',
         },
         body1: {
             fontFamily: CormorantInfantFont.style.fontFamily,
@@ -54,6 +79,14 @@ const commonThemeSettings: Pick<Theme, 'direction' | 'zIndex' | 'typography' | '
             fontFamily: ConnieFont.style.fontFamily,
             fontStyle: 'normal',
             fontWeight: 400,
+            fontSize: '18px',
+            lineHeight: '22px',
+            letterSpacing: '0.06em',
+        },
+        caption: {
+            fontFamily: ConnieFont.style.fontFamily,
+            fontStyle: 'normal',
+            fontWeight: 400,
             fontSize: '14px',
             lineHeight: '21px',
             letterSpacing: '0.12em',
@@ -62,6 +95,12 @@ const commonThemeSettings: Pick<Theme, 'direction' | 'zIndex' | 'typography' | '
     components: {
         MuiTypography: {
             styleOverrides: {
+                h1: {
+                    [`@media (max-width:${breakpoints.tabletLarge}px)`]: {
+                        fontSize: '72px',
+                        lineHeight: '109px',
+                    },
+                },
                 h2: {
                     [`@media (min-width:${breakpoints.tabletSmall}px)`]: {
                         fontSize: '50px',
@@ -70,6 +109,12 @@ const commonThemeSettings: Pick<Theme, 'direction' | 'zIndex' | 'typography' | '
                     [`@media (max-width:${breakpoints.tabletSmall}px)`]: {
                         fontSize: '28px',
                         lineHeight: '42px',
+                    },
+                },
+                h3: {
+                    [`@media (max-width:${breakpoints.tabletLarge}px)`]: {
+                        fontSize: '44px',
+                        lineHeight: '44px',
                     },
                 },
             },
