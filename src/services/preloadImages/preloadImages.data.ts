@@ -5,4 +5,8 @@ import { imgFormats } from './preloadImages.typings';
  * @param path
  * @param format
  */
-export const imgBundle = (path: string, format: imgFormats): string[] => [`${path}/place/Poster.png`];
+export const imgBundle = (format: imgFormats): string[] => [
+    `/static/images/place/Poster.png`,
+    `/static/icons/place/map.svg`,
+    `/static/icons/common/arrows/back-icon.svg`,
+];

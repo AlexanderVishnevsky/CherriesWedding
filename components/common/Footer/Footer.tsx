@@ -34,7 +34,7 @@ const Footer = (): ReactElement => {
                             <S.ButtonBack onClick={moveBack}>
                                 <BackIcon />
                             </S.ButtonBack>
-                            <Typography variant={'subtitle2'}>{t('actions.back')}</Typography>
+                            <Typography variant={'caption'}>{t('actions.back')}</Typography>
                         </FlexColCenter>
                     </Zoom>
                 )}
@@ -44,7 +44,7 @@ const Footer = (): ReactElement => {
                     <S.ButtonNext onClick={moveNext}>
                         <NextIcon />
                     </S.ButtonNext>
-                    <Typography variant={'subtitle2'}>{t('actions.next')}</Typography>
+                    <Typography variant={'caption'}>{t('actions.next')}</Typography>
                 </FlexColCenter>
             )}
             {isDesktop && (

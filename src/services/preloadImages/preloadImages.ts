@@ -13,7 +13,7 @@ const usePreloadImages = (bandWidth: number = 2): void => {
     useEffect(() => {
         setTimeout(() => {
             const { format } = isWebPSupported();
-            getImages(imgBundle('/static/images', format), bandWidth).catch(console.error);
+            getImages(imgBundle(format), bandWidth).catch(console.error);
         }, 1000);
     }, []);
 };
