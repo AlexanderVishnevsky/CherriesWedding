@@ -15,30 +15,32 @@ export const PlaceLayout = styled(FlexColCenter)`
 export const PlaceMap = styled('div')`
     height: fit-content;
     width: 100%;
+    max-width: ${({ theme }) => `${theme.breakpoints.values['desktop']}px`};
     position: relative;
+    text-align: center;
     ${({ theme }) => theme.breakpoints.down('tabletSmall')} {
         margin-top: 32px;
-        text-align: center;
     }
 `;
 
 export const Map = styled('div')`
     position: absolute;
     background-image: url('/static/icons/place/map.svg');
-    background-size: contain;
+    background-size: 80%;
     background-repeat: no-repeat;
-    background-position: right bottom;
+    background-position: right 20px;
     height: 100%;
     width: 100%;
     margin: 0;
-    right: 0;
+    right: -28%;
     bottom: 0;
 
     ${({ theme }) => theme.breakpoints.down('tabletSmall')} {
         position: relative;
         height: 80vw;
         width: 100vw;
-        margin-left: -20px;
+        left: 0;
+        margin-left: 0;
         background-size: calc(100% + 40px);
         background-position: center top;
         margin-bottom: -10vw;
@@ -47,16 +49,18 @@ export const Map = styled('div')`
 `;
 
 export const MapTextContainer = styled('div')`
-    width: 382px;
+    width: 500px;
+    margin: 0 auto;
+
     #t1 {
         margin-top: 56px;
-        text-align: left;
+        text-align: center;
     }
     #t2 {
-        text-align: right;
+        text-align: center;
     }
     #t3 {
-        text-align: left;
+        text-align: center;
         margin: 76px 0 47px;
     }
 

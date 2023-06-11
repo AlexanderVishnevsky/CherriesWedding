@@ -6,12 +6,14 @@ import { DARK_COLORS, LIGHT_COLORS } from '@theme';
 export const FooterLayout = styled('footer')`
     height: 82px;
     width: 100%;
+    max-width: ${({ theme }) => `${theme.breakpoints.values['desktop']}px`};
     display: flex;
     align-items: center;
     justify-content: space-between;
     position: absolute;
     bottom: 20px;
-    right: 0;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 20;
 
     ${({ theme }) => theme.breakpoints.down('tabletLarge')} {

@@ -11,7 +11,6 @@ export const BasicLayoutComponent = styled('div')`
 `;
 
 export const ContentContainer = styled(Container)`
-    max-width: ${({ theme }) => `${theme.breakpoints.values['laptop']}px`};
     width: 100%;
     min-height: calc(var(--vh, 1vh) * 100);
     margin: 0 auto;

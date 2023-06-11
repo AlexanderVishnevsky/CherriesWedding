@@ -12,9 +12,9 @@ const Place = (): ReactElement => {
     const { t } = useTranslation('place');
     return (
         <S.PlaceLayout>
+            <Typography variant={'h1'}>{t('place')}</Typography>
+            <S.Map />
             <S.PlaceMap>
-                <Typography variant={'h1'}>{t('place')}</Typography>
-                <S.Map />
                 <S.MapTextContainer>
                     <Typography id="t1" variant={'h3'}>
                         {t('location')}
