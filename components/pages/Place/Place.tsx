@@ -1,9 +1,10 @@
+import Link from 'next/link';
+
 import { ReactElement } from 'react';
 
 import { Typography } from '@mui/material';
 
 import { DynamicVideo } from '@ui/common/Video';
-import { FlexJCBetween } from '@ui/common/Common.styles';
 import SendIcon from '@icons/place/send-icon.svg';
 
 import { URLS } from '@/constants/url';
@@ -53,12 +54,22 @@ const Place = (): ReactElement => {
                     id="bg-video"
                 />
             </S.VideoContainer>
-            <FlexJCBetween>
+            <S.Links>
                 <S.Location onClick={copyToClipboard}>
                     <SendIcon />
                     55.650538, 26.995473
                 </S.Location>
-            </FlexJCBetween>
+                <Typography variant={'h4'}>{t('nomad.title')}</Typography>
+                <S.LinkData>
+                    <Typography variant={'overline'}>{t('nomad.link')}</Typography>
+                    <Typography variant={'overline'}>
+                        &nbsp;
+                        <Link href={URLS.NOMAD_VID} target={'_blank'} style={{ textDecoration: 'underline' }}>
+                            {t('nomad.title')}
+                        </Link>
+                    </Typography>
+                </S.LinkData>
+            </S.Links>
         </S.PlaceLayout>
     );
 };

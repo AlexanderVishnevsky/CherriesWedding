@@ -52,6 +52,13 @@ const commonThemeSettings: Pick<Theme, 'direction' | 'zIndex' | 'typography' | '
             fontSize: '60px',
             lineHeight: '91px',
         },
+        h4: {
+            fontFamily: ConnieFont.style.fontFamily,
+            fontStyle: 'normal',
+            fontWeight: 400,
+            fontSize: '40px',
+            lineHeight: '61px',
+        },
         h5: {
             fontFamily: ConnieFont.style.fontFamily,
             fontStyle: 'normal',
@@ -91,6 +98,16 @@ const commonThemeSettings: Pick<Theme, 'direction' | 'zIndex' | 'typography' | '
             lineHeight: '21px',
             letterSpacing: '0.12em',
         },
+        overline: {
+            fontFamily: 'Helvetica',
+            fontStyle: 'normal',
+            fontWeight: 400,
+            fontSize: '10px',
+            lineHeight: '13px',
+            letterSpacing: '0.12em',
+            textTransform: 'none',
+            color: DARK_COLORS.disabledDarkButton,
+        },
     } as TypographyVariants,
     components: {
         MuiTypography: {
@@ -115,6 +132,12 @@ const commonThemeSettings: Pick<Theme, 'direction' | 'zIndex' | 'typography' | '
                     [`@media (max-width:${breakpoints.tabletLarge}px)`]: {
                         fontSize: '44px',
                         lineHeight: '44px',
+                    },
+                },
+                h4: {
+                    [`@media (max-width:${breakpoints.tabletLarge}px)`]: {
+                        fontSize: '28px',
+                        lineHeight: '30px',
                     },
                 },
             },

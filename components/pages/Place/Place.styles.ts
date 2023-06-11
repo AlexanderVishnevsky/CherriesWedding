@@ -1,6 +1,6 @@
-import { ButtonBase, styled } from '@mui/material';
+import { ButtonBase, css, styled } from '@mui/material';
 
-import { FlexColCenter } from '@ui/common/Common.styles';
+import { FlexCol, FlexColCenter, FlexJCBetween } from '@ui/common/Common.styles';
 
 export const PlaceLayout = styled(FlexColCenter)`
     width: 100%;
@@ -8,7 +8,7 @@ export const PlaceLayout = styled(FlexColCenter)`
     padding: 56px 0 56px;
 
     ${({ theme }) => theme.breakpoints.down('tabletLarge')} {
-        padding: 64px 0 120px;
+        padding: 86px 0 120px;
     }
 `;
 
@@ -37,13 +37,13 @@ export const Map = styled('div')`
 
     ${({ theme }) => theme.breakpoints.down('tabletSmall')} {
         position: relative;
-        height: 100vw;
+        height: 70vw;
         width: 140vw;
         right: 0;
         margin-left: 0;
         background-size: calc(100% + 40px);
         background-position: 20vw top;
-        margin-bottom: -20vw;
+        margin-bottom: 0;
         margin-top: 25px;
     }
 `;
@@ -104,8 +104,23 @@ export const VideoContainer = styled('div')`
     }
 `;
 
+export const Links = styled(FlexJCBetween)`
+    width: 100%;
+    max-width: 1100px;
+    align-items: flex-end;
+    margin-bottom: 88px;
+    z-index: 2;
+
+    ${({ theme }) => theme.breakpoints.down('tabletSmall')} {
+        flex-direction: column;
+        align-items: center;
+        row-gap: 14px;
+        margin-top: 54px;
+        margin-bottom: 48px;
+    }
+`;
+
 export const Location = styled(ButtonBase)`
-    margin-bottom: 124px;
     display: flex;
     align-items: center;
     font-style: normal;
@@ -117,13 +132,38 @@ export const Location = styled(ButtonBase)`
     letter-spacing: 0.04em;
     text-decoration-line: underline;
     text-transform: uppercase;
+    margin-bottom: 6px;
     font-family: Helvetica, -apple-system, sans-serif;
-    z-index: 2;
+
     svg {
         width: 19px;
         height: 22px;
     }
     :hover {
         text-decoration-line: underline;
+    }
+    ${({ theme }) =>
+        theme.palette.mode === 'light' &&
+        css`
+            svg {
+                path {
+                    fill: ${theme.palette.text.primary};
+                }
+            }
+        `}
+
+    ${({ theme }) => theme.breakpoints.down('tabletSmall')} {
+        order: 2;
+    }
+`;
+
+export const LinkData = styled(FlexCol)`
+    text-align: right;
+    margin-bottom: 6px;
+
+    ${({ theme }) => theme.breakpoints.down('tabletSmall')} {
+        flex-direction: row;
+        margin-top: 42px;
+        order: 3;
     }
 `;
