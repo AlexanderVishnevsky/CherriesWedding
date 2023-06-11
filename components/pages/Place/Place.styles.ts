@@ -16,7 +16,7 @@ export const PlaceMap = styled('div')`
     height: fit-content;
     width: 100%;
     position: relative;
-    ${({ theme }) => theme.breakpoints.down('tabletLarge')} {
+    ${({ theme }) => theme.breakpoints.down('tabletSmall')} {
         margin-top: 32px;
         text-align: center;
     }
@@ -34,11 +34,14 @@ export const Map = styled('div')`
     right: 0;
     bottom: 0;
 
-    ${({ theme }) => theme.breakpoints.down('tabletLarge')} {
+    ${({ theme }) => theme.breakpoints.down('tabletSmall')} {
         position: relative;
-        height: calc(100vw);
-        background-position: center bottom;
-        margin-bottom: -25vw;
+        height: calc(100vw + 40px);
+        width: 100vw;
+        margin-left: -20px;
+        background-size: calc(100% + 40px);
+        background-position: center top;
+        margin-bottom: -10vw;
         margin-top: 5px;
     }
 `;
@@ -57,7 +60,7 @@ export const MapTextContainer = styled('div')`
         margin: 76px 0 47px;
     }
 
-    ${({ theme }) => theme.breakpoints.down('tabletLarge')} {
+    ${({ theme }) => theme.breakpoints.down('tabletSmall')} {
         width: 320px;
         margin: 0 auto;
 
@@ -85,5 +88,14 @@ export const VideoContainer = styled('div')`
         width: 100%;
         max-height: 620px;
         border-radius: 44px;
+    }
+
+    ${({ theme }) => theme.breakpoints.down('tabletSmall')} {
+        margin: 54px auto;
+        #bg-video {
+            width: 100vw;
+            margin-left: -20px;
+            border-radius: 0;
+        }
     }
 `;
