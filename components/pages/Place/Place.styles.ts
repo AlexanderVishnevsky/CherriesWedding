@@ -50,7 +50,7 @@ export const MapTextContainer = styled('div')`
     width: 382px;
     #t1 {
         margin-top: 56px;
-        text-align: right;
+        text-align: left;
     }
     #t2 {
         text-align: right;
