@@ -12,7 +12,7 @@ export const handleScrollTop = (): void => {
         if (isBrowser) {
             window.scroll({
                 top: 0,
-                behavior: 'auto',
+                behavior: 'smooth',
             });
         }
     } catch (e) {

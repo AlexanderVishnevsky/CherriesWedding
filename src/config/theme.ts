@@ -8,6 +8,7 @@ export const LIGHT_COLORS = {
     primaryLightMain: '#759599',
     backgroundLightDefault: '#F0EADA',
     primaryLightText: '#39300E',
+    secondaryLightText: '#3E5052',
     disabledLightButton: 'rgba(62, 80, 82, 0.5)',
     gray800: '#DDD7C9',
 };
@@ -16,6 +17,8 @@ export const DARK_COLORS = {
     primaryDarkMain: '#E33B0E',
     backgroundDarkDefault: '#282828',
     primaryDarkText: '#FFFFFF',
+    secondaryDarkText: '#d0d6d7',
+    customDarkText: '#BDC4C6',
     disabledDarkButton: '#717171',
     gray100: 'rgba(145, 141, 132, 0.2)',
     gray800: '#393939',
@@ -31,8 +34,8 @@ const commonThemeSettings: Pick<Theme, 'direction' | 'zIndex' | 'typography' | '
             fontFamily: ConnieFont.style.fontFamily,
             fontStyle: 'normal',
             fontWeight: 400,
-            fontSize: '160px',
-            lineHeight: '243px',
+            fontSize: '120px',
+            lineHeight: '182px',
             letterSpacing: '0.12em',
             textTransform: 'uppercase',
             color: LIGHT_COLORS.gray800,
@@ -45,6 +48,7 @@ const commonThemeSettings: Pick<Theme, 'direction' | 'zIndex' | 'typography' | '
             lineHeight: '109px',
             letterSpacing: '0.12em',
             textAlign: 'center',
+            color: LIGHT_COLORS.primaryLightText,
         },
         h3: {
             fontFamily: ConnieFont.style.fontFamily,
@@ -52,6 +56,7 @@ const commonThemeSettings: Pick<Theme, 'direction' | 'zIndex' | 'typography' | '
             fontWeight: 400,
             fontSize: '60px',
             lineHeight: '91px',
+            color: LIGHT_COLORS.primaryLightText,
         },
         h4: {
             fontFamily: ConnieFont.style.fontFamily,
@@ -59,6 +64,7 @@ const commonThemeSettings: Pick<Theme, 'direction' | 'zIndex' | 'typography' | '
             fontWeight: 400,
             fontSize: '40px',
             lineHeight: '61px',
+            color: LIGHT_COLORS.primaryLightText,
         },
         h5: {
             fontFamily: ConnieFont.style.fontFamily,
@@ -66,17 +72,19 @@ const commonThemeSettings: Pick<Theme, 'direction' | 'zIndex' | 'typography' | '
             fontWeight: 400,
             fontSize: '26px',
             lineHeight: '39px',
+            color: LIGHT_COLORS.primaryLightText,
         },
         body1: {
             fontFamily: CormorantInfantFont.style.fontFamily,
             fontStyle: 'normal',
+            color: LIGHT_COLORS.secondaryLightText,
             fontWeight: 400,
             fontSize: '20px',
             lineHeight: '30px',
         },
         button: {
             fontFamily: ConnieFont.style.fontFamily,
-            color: LIGHT_COLORS.primaryLightText,
+            color: LIGHT_COLORS.secondaryLightText,
             fontStyle: 'normal',
             fontWeight: 400,
             fontSize: '20px',
@@ -84,15 +92,17 @@ const commonThemeSettings: Pick<Theme, 'direction' | 'zIndex' | 'typography' | '
             letterSpacing: '0.06em',
         },
         subtitle2: {
-            fontFamily: ConnieFont.style.fontFamily,
+            fontFamily: CormorantInfantFont.style.fontFamily,
             fontStyle: 'normal',
-            fontWeight: 400,
-            fontSize: '18px',
-            lineHeight: '22px',
+            color: LIGHT_COLORS.secondaryLightText,
+            fontWeight: 600,
+            fontSize: '20px',
+            lineHeight: '28px',
             letterSpacing: '0.06em',
         },
         caption: {
             fontFamily: ConnieFont.style.fontFamily,
+            color: LIGHT_COLORS.secondaryLightText,
             fontStyle: 'normal',
             fontWeight: 400,
             fontSize: '14px',
@@ -168,9 +178,37 @@ const commonDarkThemeSettings: Pick<Theme, 'direction' | 'zIndex' | 'typography'
             ...commonThemeSettings.typography.h1,
             color: DARK_COLORS.gray800,
         },
+        h2: {
+            ...commonThemeSettings.typography.h2,
+            color: DARK_COLORS.primaryDarkText,
+        },
+        h3: {
+            ...commonThemeSettings.typography.h3,
+            color: DARK_COLORS.primaryDarkText,
+        },
+        h4: {
+            ...commonThemeSettings.typography.h4,
+            color: DARK_COLORS.primaryDarkText,
+        },
+        h5: {
+            ...commonThemeSettings.typography.h5,
+            color: DARK_COLORS.primaryDarkText,
+        },
+        body1: {
+            ...commonThemeSettings.typography.body1,
+            color: DARK_COLORS.secondaryDarkText,
+        },
         button: {
             ...commonThemeSettings.typography.button,
             color: DARK_COLORS.primaryDarkText,
+        },
+        subtitle2: {
+            ...commonThemeSettings.typography.subtitle2,
+            color: DARK_COLORS.secondaryDarkText,
+        },
+        caption: {
+            ...commonThemeSettings.typography.caption,
+            color: DARK_COLORS.secondaryDarkText,
         },
     } as TypographyVariants,
 };
@@ -189,6 +227,7 @@ const getPaletteTokens = (mode: PaletteMode) => ({
                   },
                   text: {
                       primary: DARK_COLORS.primaryDarkText,
+                      secondary: DARK_COLORS.primaryDarkText,
                       default: DARK_COLORS.primaryDarkText,
                   },
               }
@@ -202,6 +241,7 @@ const getPaletteTokens = (mode: PaletteMode) => ({
                   },
                   text: {
                       primary: LIGHT_COLORS.primaryLightText,
+                      secondary: LIGHT_COLORS.secondaryLightText,
                       default: LIGHT_COLORS.primaryLightText,
                   },
               }),

@@ -22,8 +22,8 @@ type IProps = { widthType?: BreakpointTypes } & JSXChild;
  * @constructor
  */
 const PageStyleWrapper = ({ widthType = 'desktop', children }: IProps): ReactElement => {
-    useScrollToTop();
     const { pathname } = useRouter();
+    useScrollToTop(pathname);
 
     return (
         <S.BasicLayoutComponent>

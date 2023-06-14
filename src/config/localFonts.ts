@@ -1,22 +1,12 @@
 import localFont from 'next/font/local';
+import { Cormorant_Infant } from 'next/font/google';
 
-export const CormorantInfantFont = localFont({
-    src: [
-        //-------- woff2 --------
-        {
-            path: '../../public/static/fonts/CormorantInfant/CormorantInfant-400.woff2',
-            weight: '400',
-            style: 'normal',
-        },
-        {
-            path: '../../public/static/fonts/CormorantInfant/CormorantInfant-600.woff2',
-            weight: '600',
-            style: 'normal',
-        },
-    ],
+export const CormorantInfantFont = Cormorant_Infant({
     display: 'swap',
+    weight: ['400', '600'],
     variable: '--CormorantInfantFont',
     fallback: ['system-ui', 'sans-serif'],
+    subsets: ['latin', 'cyrillic', 'cyrillic-ext'],
 });
 
 export const ConnieFont = localFont({

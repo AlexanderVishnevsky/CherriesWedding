@@ -21,6 +21,7 @@ const agendaBundle = (format: imgFormats): string[] => [
     `/static/images/agenda/3-1.${format}`,
     `/static/images/agenda/3-2.${format}`,
     `/static/images/agenda/3-3.${format}`,
+    `/static/images/agenda/3-4.${format}`,
 ];
 
 export const imagesByRoute = (format: imgFormats): Record<string, string[]> => ({

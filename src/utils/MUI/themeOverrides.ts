@@ -14,7 +14,7 @@ export const breakpoints = {
 
     laptop: 1216,
 
-    desktop: 1500,
+    desktop: 1400,
 };
 
 export const defaultZIndex: ZIndex = {

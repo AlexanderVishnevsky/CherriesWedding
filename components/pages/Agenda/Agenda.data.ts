@@ -89,6 +89,12 @@ export const AgendaData: AgendaType[] = [
                 title: 'agenda:day3.2.title',
                 text: 'agenda:day3.2.text',
             },
+            {
+                id: 12,
+                url: '/static/images/agenda/3-4',
+                title: 'agenda:day3.3.title',
+                text: 'agenda:day3.3.text',
+            },
         ],
     },
 ];

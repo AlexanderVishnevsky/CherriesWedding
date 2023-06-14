@@ -25,6 +25,13 @@ const Agenda = (): ReactElement => {
 
     return (
         <S.Layout>
+            <S.AgendaTitle variant={'h1'}>{t('common:menu.2')}</S.AgendaTitle>
+            <S.FirstImage />
+            <S.Header>
+                <Typography variant={'h4'}>{t('header.title')}</Typography>
+                <Typography variant={'subtitle2'}>{t('header.subTitle')}</Typography>
+            </S.Header>
+            <S.FirstImage />
             {AgendaData.map((agenda, idx) => (
                 <S.DayLayout key={idx}>
                     <S.Dates>

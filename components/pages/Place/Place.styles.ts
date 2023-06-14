@@ -59,7 +59,7 @@ export const MapTextContainer = styled('div')`
     margin: 0 auto;
 
     #t1 {
-        margin-top: 56px;
+        margin-top: 64px;
         text-align: center;
     }
     #t2 {

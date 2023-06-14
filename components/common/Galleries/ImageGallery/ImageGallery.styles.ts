@@ -1,6 +1,6 @@
 import { css, styled } from '@mui/material';
 
-import { ConnieFont } from '@/config/localFonts';
+import { ConnieFont, CormorantInfantFont } from '@/config/localFonts';
 
 export const ImageGalleryLayout = styled('div')`
     display: flex;
@@ -14,7 +14,7 @@ export const ImageGalleryLayout = styled('div')`
         height: 60vh;
         min-width: 200px;
         width: 100%;
-        border: 2px solid #bdc4c6;
+        border: ${({ theme }) => (theme.palette.mode === 'light' ? '2px solid #000000' : '2px solid #bdc4c6')};
         border-radius: 44px;
         color: #fff;
         cursor: pointer;
@@ -57,14 +57,14 @@ export const ImageGalleryLayout = styled('div')`
         text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
 
         span {
-            font-family: ${ConnieFont.style.fontFamily};
+            font-family: ${CormorantInfantFont.style.fontFamily};
             position: relative;
             font-style: normal;
             top: 21px;
             left: 0;
             font-weight: 400;
             font-size: 20px;
-            line-height: 24px;
+            line-height: 22px;
             letter-spacing: 0.06em;
             text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
         }
