@@ -125,8 +125,8 @@ const commonThemeSettings: Pick<Theme, 'direction' | 'zIndex' | 'typography' | '
             styleOverrides: {
                 h1: {
                     [`@media (max-width:${breakpoints.tabletLarge}px)`]: {
-                        fontSize: '72px',
-                        lineHeight: '109px',
+                        fontSize: '50px',
+                        lineHeight: '76px',
                     },
                 },
                 h2: {

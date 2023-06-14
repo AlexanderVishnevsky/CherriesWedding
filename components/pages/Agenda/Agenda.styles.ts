@@ -9,6 +9,9 @@ export const Layout = styled('div')`
 
 export const DayLayout = styled('div')`
     margin-top: 140px;
+    ${({ theme }) => theme.breakpoints.down('tabletSmall')} {
+        margin-top: 0;
+    }
 `;
 
 export const Dates = styled(FlexRow)`
@@ -18,6 +21,16 @@ export const Dates = styled(FlexRow)`
         margin-left: 40px;
         margin-bottom: 8px;
         color: ${({ theme }) => theme.palette.mode === 'dark' && DARK_COLORS.customDarkText};
+    }
+
+    ${({ theme }) => theme.breakpoints.down('tabletSmall')} {
+        flex-direction: column;
+        align-items: flex-start;
+
+        h5 {
+            margin-left: 0;
+            margin-top: 14px;
+        }
     }
 `;
 
@@ -33,8 +46,14 @@ export const FirstImage = styled('div')`
     max-width: 840px;
     margin: 0 auto;
     overflow: hidden;
+    background-size: contain;
     background-image: url('/static/icons/patterns/emb-fire-90.svg');
     background-repeat: no-repeat;
+
+    ${({ theme }) => theme.breakpoints.down('tabletSmall')} {
+        margin-left: -20px;
+        width: calc(100% + 40px);
+    }
 `;
 
 export const Header = styled('div')`
@@ -48,5 +67,27 @@ export const Header = styled('div')`
 
     h6 {
         margin: 0 auto 92px;
+    }
+
+    ${({ theme }) => theme.breakpoints.down('tabletSmall')} {
+        h4 {
+            margin: 56px auto 40px;
+        }
+
+        h6 {
+            margin: 0 auto 72px;
+        }
+    }
+
+    ${({ theme }) => theme.breakpoints.down('mobileLarge')} {
+        h4 {
+            margin: 26px auto 40px;
+        }
+    }
+
+    ${({ theme }) => theme.breakpoints.down('mobileMedium')} {
+        h4 {
+            margin: -20px auto 40px;
+        }
     }
 `;
