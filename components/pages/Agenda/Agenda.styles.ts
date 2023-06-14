@@ -10,7 +10,7 @@ export const Layout = styled('div')`
 export const DayLayout = styled('div')`
     margin-top: 140px;
     ${({ theme }) => theme.breakpoints.down('tabletSmall')} {
-        margin-top: 0;
+        margin-top: 60px;
     }
 `;
 
@@ -23,13 +23,22 @@ export const Dates = styled(FlexRow)`
         color: ${({ theme }) => theme.palette.mode === 'dark' && DARK_COLORS.customDarkText};
     }
 
-    ${({ theme }) => theme.breakpoints.down('tabletSmall')} {
+    ${({ theme }) => theme.breakpoints.down('tabletLarge')} {
         flex-direction: column;
         align-items: flex-start;
+        margin-bottom: 0;
+
+        h3 {
+            font-size: 28px;
+            line-height: 30px;
+        }
 
         h5 {
             margin-left: 0;
+            margin-bottom: 0;
             margin-top: 14px;
+            font-size: 14px;
+            line-height: 21px;
         }
     }
 `;
