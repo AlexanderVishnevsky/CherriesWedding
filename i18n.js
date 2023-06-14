@@ -4,5 +4,6 @@ module.exports = {
     pages: {
         '*': ['common'],
         '/place': ['common', 'place'],
+        '/agenda': ['common', 'agenda'],
     },
 };

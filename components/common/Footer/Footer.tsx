@@ -14,6 +14,7 @@ import BackIcon from '@icons/common/arrows/back-icon.svg';
 import { FlexColCenter } from '@ui/common/Common.styles';
 
 import { moveBack, moveNext, RoutePaths } from '@/routing/routing';
+import usePreloadImages from '@/services/preloadImages';
 
 import useTranslation from 'next-translate/useTranslation';
 
@@ -24,6 +25,7 @@ const Footer = (): ReactElement => {
     const { isDesktop } = useMedia();
     const { t } = useTranslation('common');
     const { pathname } = useRouter();
+    usePreloadImages();
 
     return (
         <S.FooterLayout>

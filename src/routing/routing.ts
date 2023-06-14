@@ -15,7 +15,7 @@ export enum RoutePaths {
 
 type RType = Record<RoutePaths, { prev: NUL<RoutePaths>; next: NUL<RoutePaths> }>;
 
-const RouteChain: RType = {
+export const RouteChain: RType = {
     [RoutePaths.MAIN]: {
         prev: null,
         next: RoutePaths.PLACE,
