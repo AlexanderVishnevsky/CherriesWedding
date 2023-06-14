@@ -7,12 +7,14 @@ export const ImageGalleryMobileLayout = styled('div')`
     padding: 24px 20px 40px;
     overflow-x: scroll;
     column-gap: 20px;
+    scroll-snap-type: x mandatory;
 `;
 
 export const MobileCardWrapper = styled('div')`
     width: 320px;
     position: relative;
     text-align: center;
+    scroll-snap-align: center;
 
     h5 {
         margin: 20px 0 12px;
