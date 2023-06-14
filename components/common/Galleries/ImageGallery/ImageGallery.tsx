@@ -1,22 +1,12 @@
-import { ReactElement } from 'react';
+import { memo, ReactElement } from 'react';
 
 import { Typography } from '@mui/material';
 
-import { Translate } from 'next-translate';
-
-import { GalleryDataType } from '../../pages/Agenda/Agenda.typings';
+import { GalleryTypings } from '../Gallery.typings';
 
 import * as S from './ImageGallery.styles';
 
-interface IProps {
-    cardsData: Array<GalleryDataType>;
-    pickCard: (galleryKey: number, cardID: number) => void;
-    galleryKey: number;
-    activeId: number;
-    t: Translate;
-}
-
-const ImageGallery = ({ cardsData, pickCard, galleryKey, activeId, t }: IProps): ReactElement => (
+const ImageGallery = ({ cardsData, pickCard, galleryKey, activeId, t }: GalleryTypings): ReactElement => (
     <S.ImageGalleryLayout>
         {cardsData.map((card) => (
             <S.Card
@@ -36,4 +26,4 @@ const ImageGallery = ({ cardsData, pickCard, galleryKey, activeId, t }: IProps):
     </S.ImageGalleryLayout>
 );
 
-export default ImageGallery;
+export default memo(ImageGallery);

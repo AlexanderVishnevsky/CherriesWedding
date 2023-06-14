@@ -1,4 +1,4 @@
-import { ButtonBase, css, styled } from '@mui/material';
+import { ButtonBase, css, styled, Typography } from '@mui/material';
 
 import { FlexCol, FlexColCenter, FlexJCBetween } from '@ui/common/Common.styles';
 
@@ -6,6 +6,10 @@ export const PlaceLayout = styled(FlexColCenter)`
     width: 100%;
 
     padding: 56px 0 56px;
+
+    h1 {
+        z-index: 2;
+    }
 
     ${({ theme }) => theme.breakpoints.down('tabletLarge')} {
         padding: 86px 0 120px;
@@ -18,6 +22,7 @@ export const PlaceMap = styled('div')`
     max-width: ${({ theme }) => `${theme.breakpoints.values['desktop']}px`};
     position: relative;
     text-align: center;
+    z-index: 2;
     ${({ theme }) => theme.breakpoints.down('tabletSmall')} {
         margin-top: 32px;
     }
@@ -34,6 +39,7 @@ export const Map = styled('div')`
     margin: 0;
     right: -28%;
     bottom: 0;
+    z-index: 1;
 
     ${({ theme }) => theme.breakpoints.down('tabletSmall')} {
         position: relative;
@@ -110,6 +116,7 @@ export const Links = styled(FlexJCBetween)`
     align-items: flex-end;
     margin-bottom: 88px;
     z-index: 2;
+    position: relative;
 
     ${({ theme }) => theme.breakpoints.down('tabletSmall')} {
         flex-direction: column;
@@ -165,5 +172,18 @@ export const LinkData = styled(FlexCol)`
         flex-direction: row;
         margin-top: 42px;
         order: 3;
+    }
+`;
+
+export const NomadTitle = styled(Typography)`
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    ${({ theme }) => theme.breakpoints.down('tabletSmall')} {
+        position: relative;
+        text-align: center;
+        left: auto;
+        transform: unset;
     }
 `;

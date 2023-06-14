@@ -59,7 +59,7 @@ const Place = (): ReactElement => {
                     <SendIcon />
                     55.650538, 26.995473
                 </S.Location>
-                <Typography variant={'h4'}>{t('nomad.title')}</Typography>
+                <S.NomadTitle variant={'h4'}>{t('nomad.title')}</S.NomadTitle>
                 <S.LinkData>
                     <Typography variant={'overline'}>{t('nomad.link')}</Typography>
                     <Typography variant={'overline'}>

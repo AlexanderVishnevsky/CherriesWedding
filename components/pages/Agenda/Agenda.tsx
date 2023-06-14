@@ -2,7 +2,9 @@ import { ReactElement, useState } from 'react';
 
 import { Typography } from '@mui/material';
 
-import { DynamicImageGallery } from '@ui/common/ImageGallery';
+import { useMedia } from '@hooks';
+
+import { DynamicImageGallery, DynamicImageGalleryMobile } from '@ui/common/Galleries';
 
 import useTranslation from 'next-translate/useTranslation';
 
@@ -11,12 +13,15 @@ import * as S from './Agenda.styles';
 
 const Agenda = (): ReactElement => {
     const { t } = useTranslation('agenda');
+    const { isMobile } = useMedia();
 
     const [activeId, setActiveId] = useState<number[]>([0, 4, 9]);
 
     const pickCard = (galleryKey: number, cardID: number) => {
         setActiveId((prevState) => ({ ...prevState, [galleryKey]: cardID }));
     };
+
+    const Gallery = isMobile ? DynamicImageGalleryMobile : DynamicImageGallery;
 
     return (
         <S.Layout>
@@ -26,7 +31,7 @@ const Agenda = (): ReactElement => {
                         <Typography variant={'h3'}>{t('common.day', { count: agenda.day })}</Typography>
                         <Typography variant={'h5'}>{t(`common.weekend.${idx}`, { date: agenda.date })}</Typography>
                     </S.Dates>
-                    <DynamicImageGallery
+                    <Gallery
                         cardsData={agenda.cards}
                         pickCard={pickCard}
                         galleryKey={idx}

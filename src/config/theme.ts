@@ -9,6 +9,7 @@ export const LIGHT_COLORS = {
     backgroundLightDefault: '#F0EADA',
     primaryLightText: '#39300E',
     disabledLightButton: 'rgba(62, 80, 82, 0.5)',
+    gray800: '#DDD7C9',
 };
 
 export const DARK_COLORS = {
@@ -34,7 +35,7 @@ const commonThemeSettings: Pick<Theme, 'direction' | 'zIndex' | 'typography' | '
             lineHeight: '243px',
             letterSpacing: '0.12em',
             textTransform: 'uppercase',
-            color: DARK_COLORS.gray100,
+            color: LIGHT_COLORS.gray800,
         },
         h2: {
             fontFamily: ConnieFont.style.fontFamily,
@@ -163,6 +164,10 @@ const commonDarkThemeSettings: Pick<Theme, 'direction' | 'zIndex' | 'typography'
     ...commonThemeSettings,
     typography: {
         ...commonThemeSettings.typography,
+        h1: {
+            ...commonThemeSettings.typography.h1,
+            color: DARK_COLORS.gray800,
+        },
         button: {
             ...commonThemeSettings.typography.button,
             color: DARK_COLORS.primaryDarkText,
