@@ -43,7 +43,7 @@ export const SecondImage = styled(FirstImage)`
 
 export const MainColumn = styled(FlexColCenter)`
     justify-content: space-between;
-    height: 70%;
+    height: 80%;
     padding: 120px 0 40px;
     ${({ theme }) => theme.breakpoints.down('tabletLarge')} {
         padding: 96px 0 20px;
@@ -55,7 +55,7 @@ export const StyledTitle = styled(Typography)`
     margin: 0 auto;
     text-align: center;
     max-width: 606px;
-    z-index: 2;
+    z-index: 3;
     white-space: pre-wrap;
 
     ${({ theme }) => theme.breakpoints.down('tabletSmall')} {
@@ -82,8 +82,8 @@ export const FrameContainer = styled(FlexCenter)`
         background-image: url('/static/icons/patterns/main-frame.svg');
         background-size: contain;
         background-repeat: no-repeat;
-        width: 100%;
-        height: 100%;
+        width: 220px;
+        height: 220px;
         position: absolute;
 
         animation: ${spinX} 15s infinite linear;
