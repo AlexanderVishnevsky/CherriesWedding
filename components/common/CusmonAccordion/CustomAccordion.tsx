@@ -2,15 +2,15 @@ import Link from 'next/link';
 
 import { ReactElement, useState } from 'react';
 
-import useTranslation from 'next-translate/useTranslation';
+import { Translate } from 'next-translate';
+
 import Trans from 'next-translate/Trans';
 
 import * as S from './CustomAccordion.styles';
 
 const CardNumber = 5;
 
-const CustomAccordion = (): ReactElement => {
-    const { t } = useTranslation('faq');
+const CustomAccordion = ({ t }: { t: Translate }): ReactElement => {
     const [active, setActive] = useState<boolean[]>(new Array(CardNumber).fill(false));
 
     const handleActiveChange = (num: number) => {
