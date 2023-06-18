@@ -65,6 +65,7 @@ export const Question = styled(BaseText)`
 
     ${({ theme }) => theme.breakpoints.down('tabletLarge')} {
         margin: 20px auto 5px;
+        font-size: 17px;
     }
 `;
 
@@ -91,7 +92,7 @@ export const Answer = styled(InputBase)`
     ${({ theme }) => theme.breakpoints.down('tabletLarge')} {
         width: calc(100% - 40px);
         margin: 12px auto 6px;
-        font-size: 15px;
+        font-size: 17px;
         z-index: 2;
     }
 `;
