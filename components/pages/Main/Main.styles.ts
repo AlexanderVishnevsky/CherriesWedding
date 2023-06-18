@@ -63,7 +63,7 @@ export const StyledTitle = styled(Typography)`
     }
 `;
 
-const spinX = keyframes`
+export const spinX = keyframes`
     0% {
       transform: rotate(0deg);
     }

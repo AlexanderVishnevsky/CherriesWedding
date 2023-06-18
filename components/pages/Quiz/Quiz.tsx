@@ -1,6 +1,6 @@
 import { ReactElement, useState } from 'react';
 
-import { Button, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 
 import * as S from './Quiz.styles';
 import { sendPostData } from './Quiz.api';
@@ -22,9 +22,9 @@ const Quiz = (): ReactElement => {
     return (
         <S.Layout>
             <Typography variant={'h1'}>Coming soon...</Typography>
-            <Button onClick={handleClick} disabled={isLoading}>
-                {isLoading ? 'loading...' : 'Send'}
-            </Button>
+            {/*<Button onClick={handleClick} disabled={isLoading}>*/}
+            {/*    {isLoading ? 'loading...' : 'Send'}*/}
+            {/*</Button>*/}
         </S.Layout>
     );
 };
