@@ -7,9 +7,10 @@ import { FlexRowCenter } from '@ui/common/Common.styles';
 
 import useTranslation from 'next-translate/useTranslation';
 
-import * as S from './Quiz.styles';
 import { DynamicSendButton } from './components/SendButton';
 import QuizCard from './components/QuizCard';
+import { DynamicDarkPatterns } from './components/DarkPatterns';
+import * as S from './Quiz.styles';
 
 const Quiz = (): ReactElement => {
     const { t } = useTranslation('quiz');
@@ -30,6 +31,7 @@ const Quiz = (): ReactElement => {
                 ))}
             </S.QuizWrapper>
             <DynamicSendButton />
+            <DynamicDarkPatterns />
         </S.Layout>
     );
 };
