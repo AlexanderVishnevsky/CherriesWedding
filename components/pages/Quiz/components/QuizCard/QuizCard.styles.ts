@@ -15,7 +15,7 @@ export const CardLayout = styled(FlexColCenter)`
 
     ${({ theme }) => theme.breakpoints.down('tabletLarge')} {
         justify-content: flex-start;
-        min-width: 320px;
+        width: 320px;
         width: 100%;
         border-radius: 22px;
         height: 200px;
