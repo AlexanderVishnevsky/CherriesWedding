@@ -27,7 +27,9 @@ const PageStyleWrapper = ({ widthType = 'desktop', children }: IProps): ReactEle
 
     return (
         <S.BasicLayoutComponent>
-            <S.ContentContainer maxWidth={pathname === RoutePaths.PLACE ? undefined : widthType}>
+            <S.ContentContainer
+                maxWidth={pathname === RoutePaths.PLACE || pathname === RoutePaths.QUIZ ? undefined : widthType}
+            >
                 <Header />
                 {children}
                 <DynamicFooter />

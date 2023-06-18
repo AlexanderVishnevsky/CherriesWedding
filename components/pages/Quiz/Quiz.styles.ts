@@ -1,10 +1,22 @@
-import { styled } from '@mui/material';
+import { styled, Typography } from '@mui/material';
 
-export const Layout = styled('div')`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 80vh;
+import { FlexColCenter } from '@ui/common/Common.styles';
+
+export const Layout = styled(FlexColCenter)`
     width: 100%;
-    text-align: center;
+
+    padding: 56px 0 200px;
+
+    h1 {
+        z-index: 2;
+    }
+`;
+
+export const QuizWrapper = styled(FlexColCenter)`
+    row-gap: 49px;
+    margin: 49px auto;
+`;
+
+export const QuestionNumber = styled(Typography)`
+    margin-right: 20px;
 `;
