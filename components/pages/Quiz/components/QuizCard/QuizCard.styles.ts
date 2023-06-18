@@ -16,7 +16,6 @@ export const CardLayout = styled(FlexColCenter)`
     ${({ theme }) => theme.breakpoints.down('tabletLarge')} {
         justify-content: flex-start;
         width: 320px;
-        width: 100%;
         border-radius: 22px;
         height: 200px;
         padding-bottom: 20px;
@@ -49,7 +48,9 @@ export const AddImage = styled(Picture)`
     }
 
     ${({ theme }) => theme.breakpoints.down('tabletLarge')} {
-        display: none;
+        img {
+            display: none;
+        }
     }
 `;
 
