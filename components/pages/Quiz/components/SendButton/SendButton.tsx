@@ -1,7 +1,10 @@
 import { ReactElement, useState } from 'react';
 
+import { Box, CircularProgress } from '@mui/material';
+import { green } from '@mui/material/colors';
+
 import { sendPostData } from '@ui/pages/Quiz/Quiz.api';
-import { QuizState } from '@ui/pages/Quiz/Quiz.typings';
+import { QuizAction, QuizState } from '@ui/pages/Quiz/Quiz.typings';
 
 import { moveNext } from '@/routing/routing';
 
@@ -10,7 +13,9 @@ import useTranslation from 'next-translate/useTranslation';
 import * as S from './SendButton.styles';
 import { MUIButtonColors } from './SendButton.typings';
 
-const SendButton = (state: QuizState): ReactElement => {
+type IProps = QuizState & Pick<QuizAction, 'clearState'>
+
+const SendButton = (state: IProps): ReactElement => {
     const { t } = useTranslation('common');
     const [buttonState, setButtonState] = useState<MUIButtonColors>('inherit');
 
@@ -20,6 +25,7 @@ const SendButton = (state: QuizState): ReactElement => {
         setButtonState(val ? 'success' : 'error');
         if (val) {
             setTimeout(() => {
+                state.clearState();
                 moveNext();
             }, 1000);
         } else {
@@ -29,20 +35,35 @@ const SendButton = (state: QuizState): ReactElement => {
         }
     };
     return (
-        <S.Layout
-            disabled={
-                state.allergies === '' ||
-                state.name === '' ||
-                state.drinks === '' ||
-                state.transfer === '' ||
-                buttonState === 'info'
-            }
-            variant={'outlined'}
-            onClick={handleClick}
-            color={buttonState}
-        >
-            {t('common:actions.send')}
-        </S.Layout>
+        <Box sx={{ position: 'relative' }}>
+            <S.Layout
+                disabled={
+                    state.allergies === '' ||
+                    state.name === '' ||
+                    state.drinks === '' ||
+                    state.transfer === '' ||
+                    buttonState === 'info'
+                }
+                variant={'outlined'}
+                onClick={handleClick}
+                color={buttonState}
+            >
+                {t('common:actions.send')}
+            </S.Layout>
+            {buttonState === 'info' && (
+                <CircularProgress
+                    size={24}
+                    sx={{
+                        color: green[50],
+                        position: 'absolute',
+                        top: '50%',
+                        left: '50%',
+                        marginTop: '-12px',
+                        marginLeft: '-12px',
+                    }}
+                />
+            )}
+        </Box>
     );
 };
 
