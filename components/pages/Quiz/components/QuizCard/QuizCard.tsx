@@ -1,7 +1,5 @@
 import { ReactElement } from 'react';
 
-import { Typography } from '@mui/material';
-
 import * as S from './QuizCard.styles';
 import { QuizCardType } from './QuizCard.typings';
 
@@ -18,7 +16,7 @@ const QuizCard = ({
         <S.CardLayout key={id}>
             <div>
                 <S.Question variant={'h5'}>{question}</S.Question>
-                {hint && <Typography variant={'caption'}>{hint}</Typography>}
+                {hint && <S.BaseText variant={'caption'}>{hint}</S.BaseText>}
             </div>
             <S.MainImage
                 allSizes

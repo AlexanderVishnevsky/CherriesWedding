@@ -5,7 +5,7 @@ import Picture from '@ui/common/Picture';
 import { FlexColCenter } from '@ui/common/Common.styles';
 
 export const CardLayout = styled(FlexColCenter)`
-    background: ${LIGHT_COLORS.primaryLightMain};
+    background-color: ${LIGHT_COLORS.primaryLightMain};
     border-radius: 44px;
     width: 649px;
     height: 294px;
@@ -34,7 +34,11 @@ export const AddImage = styled(Picture)`
     }
 `;
 
-export const Question = styled(Typography)`
+export const BaseText = styled(Typography)`
+    color: ${DARK_COLORS.primaryDarkText};
+`;
+
+export const Question = styled(BaseText)`
     margin: 31px auto 11px;
     max-width: 379px;
 `;
@@ -42,6 +46,6 @@ export const Question = styled(Typography)`
 export const Answer = styled(InputBase)`
     border-bottom: 2px solid ${DARK_COLORS.primaryDarkText};
     margin: 12px auto 68px;
-    //height: 112px;
+    color: ${DARK_COLORS.primaryDarkText};
     width: 378px;
 `;
