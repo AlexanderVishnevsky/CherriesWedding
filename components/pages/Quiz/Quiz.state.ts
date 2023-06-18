@@ -7,5 +7,6 @@ export const useQuizState = create<QuizState & QuizAction>((set) => ({
     transfer: '',
     drinks: '',
     allergies: '',
-    updateState: (value, field) => set((state) => ({ ...state, [field]: value })),
+    updateState: (newState) => set((state) => ({ ...state, [newState.field]: newState.value })),
+    clearState: () => set({ name: '', transfer: '', drinks: '', allergies: '' }),
 }));

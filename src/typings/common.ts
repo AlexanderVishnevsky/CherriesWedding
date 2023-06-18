@@ -18,7 +18,13 @@ export type EMP<T> = T | undefined;
 export type EMP_NUL<T> = NUL<T> | undefined;
 
 /**
- * Callback type
- * Can be empty: {@example () => void} or filled {@example (value: string) => void}
+ * Empty Callback type
+ * @example (value: string) => void
  */
 export type callbackType<T = any> = (value?: T) => void;
+
+/**
+ * Filled callback type
+ * @example (value: string) => void
+ */
+export type filledCallbackType<T, K = void> = (value: T) => K;

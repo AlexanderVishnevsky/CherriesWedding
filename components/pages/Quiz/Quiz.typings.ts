@@ -1,3 +1,5 @@
+import { callbackType, filledCallbackType } from '@typings/common';
+
 export type QuizState = {
     name: string;
     transfer: string;
@@ -13,5 +15,6 @@ export enum QuizFields {
 }
 
 export type QuizAction = {
-    updateState: (value: string, field: QuizFields) => void;
+    updateState: filledCallbackType<{ value: string; field: QuizFields }>;
+    clearState: callbackType;
 };

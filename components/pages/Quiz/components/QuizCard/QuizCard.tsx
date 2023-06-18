@@ -24,7 +24,7 @@ const QuizCard = ({
         const newValue = e.target.value;
 
         if (!newValue.match(/[%<>\\$'"]/)) {
-            handleChange(newValue, stateKey);
+            handleChange({ value: newValue, field: stateKey });
         }
     };
 

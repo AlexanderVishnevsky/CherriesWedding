@@ -1,5 +1,7 @@
 import { SxProps } from '@mui/system';
 
+import { filledCallbackType } from '@typings/common';
+
 import { QuizFields } from '@ui/pages/Quiz/Quiz.typings';
 
 export interface QuizCardType {
@@ -13,5 +15,5 @@ export interface QuizCardType {
     imgMobStyles?: SxProps;
     state: string;
     stateKey: QuizFields;
-    handleChange: (value: string, field: QuizFields) => void;
+    handleChange: filledCallbackType<{ value: string; field: QuizFields }>;
 }

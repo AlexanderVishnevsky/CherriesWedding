@@ -29,7 +29,18 @@ const SendButton = (state: QuizState): ReactElement => {
         }
     };
     return (
-        <S.Layout disabled={buttonState === 'info'} variant={'outlined'} onClick={handleClick} color={buttonState}>
+        <S.Layout
+            disabled={
+                state.allergies === '' ||
+                state.name === '' ||
+                state.drinks === '' ||
+                state.transfer === '' ||
+                buttonState === 'info'
+            }
+            variant={'outlined'}
+            onClick={handleClick}
+            color={buttonState}
+        >
             {t('common:actions.send')}
         </S.Layout>
     );
