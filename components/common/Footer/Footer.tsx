@@ -11,9 +11,10 @@ import { LocaleType } from '@typings/model';
 import ThemeSwitcher from '@ui/common/ThemeSwitcher';
 import NextIcon from '@icons/common/arrows/next-icon.svg';
 import BackIcon from '@icons/common/arrows/back-icon.svg';
+import RestartIcon from '@icons/common/arrows/restart-icon.svg';
 import { FlexColCenter } from '@ui/common/Common.styles';
 
-import { moveBack, moveNext, RoutePaths } from '@/routing/routing';
+import { moveBack, moveNext, moveToMain, RoutePaths } from '@/routing/routing';
 import usePreloadImages from '@/services/preloadImages';
 
 import useTranslation from 'next-translate/useTranslation';
@@ -41,7 +42,14 @@ const Footer = (): ReactElement => {
                     </Zoom>
                 )}
             </S.ColWrap>
-            {pathname !== RoutePaths.FAQ && (
+            {pathname === RoutePaths.FAQ ? (
+                <FlexColCenter>
+                    <S.ButtonNext onClick={moveToMain}>
+                        <RestartIcon />
+                    </S.ButtonNext>
+                    <Typography variant={'caption'}>{t('actions.toStart')}</Typography>
+                </FlexColCenter>
+            ) : (
                 <FlexColCenter>
                     <S.ButtonNext onClick={moveNext}>
                         <NextIcon />

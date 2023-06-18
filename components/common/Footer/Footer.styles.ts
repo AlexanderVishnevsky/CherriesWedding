@@ -35,6 +35,11 @@ export const ButtonBack = styled(ButtonBase)`
     border-radius: 50%;
     background-color: ${DARK_COLORS.gray800};
     margin-bottom: 6px;
+    transition: background-color 0.2s ease-in-out;
+
+    :hover {
+        background-color: ${DARK_COLORS.disabledDarkButton};
+    }
 
     svg {
         width: 30px;
@@ -44,6 +49,9 @@ export const ButtonBack = styled(ButtonBase)`
         theme.palette.mode === 'light' &&
         css`
             background-color: rgba(57, 48, 14, 0.2);
+            :hover {
+                background-color: rgba(57, 48, 14, 0.3);
+            }
             svg {
                 path {
                     fill: ${DARK_COLORS.primaryDarkText};
@@ -56,8 +64,13 @@ export const ButtonNext = styled(ButtonBase)`
     width: 55px;
     height: 55px;
     border-radius: 50%;
-    background-color: ${({ theme }) => theme.palette.text.primary};
+    background-color: ${LIGHT_COLORS.primaryLightText};
     margin-bottom: 6px;
+    transition: background-color 0.2s ease-in-out;
+
+    :hover {
+        background-color: ${LIGHT_COLORS.primaryLightMain};
+    }
 
     svg {
         width: 30px;
@@ -66,6 +79,10 @@ export const ButtonNext = styled(ButtonBase)`
     ${({ theme }) =>
         theme.palette.mode === 'dark' &&
         css`
+            background-color: ${DARK_COLORS.gray200};
+            :hover {
+                background-color: ${DARK_COLORS.customDarkText};
+            }
             svg {
                 path {
                     fill: ${DARK_COLORS.backgroundDarkDefault};

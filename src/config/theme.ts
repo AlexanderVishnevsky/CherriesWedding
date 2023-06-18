@@ -21,6 +21,7 @@ export const DARK_COLORS = {
     customDarkText: '#BDC4C6',
     disabledDarkButton: '#717171',
     gray100: 'rgba(145, 141, 132, 0.2)',
+    gray200: '#D0D6D7',
     gray800: '#393939',
 };
 
