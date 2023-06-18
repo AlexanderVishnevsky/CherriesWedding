@@ -1,8 +1,12 @@
 import { QuizCardType } from '@ui/pages/Quiz/components/QuizCard/QuizCard.typings';
+import { QuizFields } from '@ui/pages/Quiz/Quiz.typings';
 
-export const QuizData: Array<Omit<QuizCardType, 'question' | 'hint'> & { withHint: boolean }> = [
+type DataType = Array<Omit<QuizCardType, 'question' | 'hint' | 'state' | 'handleChange'> & { withHint: boolean }>;
+
+export const QuizData: DataType = [
     {
         id: 1,
+        stateKey: QuizFields.name,
         imgName: 'side-jungle',
         fieldType: 'text',
         withHint: true,
@@ -18,6 +22,7 @@ export const QuizData: Array<Omit<QuizCardType, 'question' | 'hint'> & { withHin
     },
     {
         id: 2,
+        stateKey: QuizFields.transfer,
         imgName: 'bus',
         fieldType: 'select',
         withHint: true,
@@ -32,6 +37,7 @@ export const QuizData: Array<Omit<QuizCardType, 'question' | 'hint'> & { withHin
     },
     {
         id: 3,
+        stateKey: QuizFields.drinks,
         imgName: 'martini',
         fieldType: 'text',
         withHint: true,
@@ -46,6 +52,7 @@ export const QuizData: Array<Omit<QuizCardType, 'question' | 'hint'> & { withHin
     },
     {
         id: 4,
+        stateKey: QuizFields.allergies,
         imgName: 'hanging',
         fieldType: 'text',
         addImgName: 'flower',

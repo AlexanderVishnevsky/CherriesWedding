@@ -3,6 +3,7 @@ import { ReactElement } from 'react';
 import { Typography } from '@mui/material';
 
 import { QuizData } from '@ui/pages/Quiz/Quiz.data';
+import { useQuizState } from '@ui/pages/Quiz/Quiz.state';
 
 import useTranslation from 'next-translate/useTranslation';
 
@@ -13,6 +14,7 @@ import * as S from './Quiz.styles';
 
 const Quiz = (): ReactElement => {
     const { t } = useTranslation('quiz');
+    const { updateState, ...state } = useQuizState();
 
     return (
         <S.Layout>
@@ -22,6 +24,8 @@ const Quiz = (): ReactElement => {
                     <S.Question key={quiz.id}>
                         <Typography variant={'h4'}>{quiz.id}.</Typography>
                         <QuizCard
+                            state={state[quiz.stateKey]}
+                            handleChange={updateState}
                             question={t(`questions.${idx}.question`)}
                             hint={quiz.withHint ? t(`questions.${idx}.hint`) : undefined}
                             {...quiz}
@@ -29,7 +33,7 @@ const Quiz = (): ReactElement => {
                     </S.Question>
                 ))}
             </S.QuizWrapper>
-            <DynamicSendButton />
+            <DynamicSendButton {...state} />
             <DynamicDarkPatterns />
         </S.Layout>
     );

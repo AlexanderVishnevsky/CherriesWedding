@@ -1,6 +1,7 @@
 import { ReactElement, useState } from 'react';
 
 import { sendPostData } from '@ui/pages/Quiz/Quiz.api';
+import { QuizState } from '@ui/pages/Quiz/Quiz.typings';
 
 import { moveNext } from '@/routing/routing';
 
@@ -9,18 +10,13 @@ import useTranslation from 'next-translate/useTranslation';
 import * as S from './SendButton.styles';
 import { MUIButtonColors } from './SendButton.typings';
 
-const SendButton = (): ReactElement => {
+const SendButton = (state: QuizState): ReactElement => {
     const { t } = useTranslation('common');
     const [buttonState, setButtonState] = useState<MUIButtonColors>('inherit');
 
     const handleClick = async () => {
         setButtonState('info');
-        const val: boolean = await sendPostData({
-            name: 'Name',
-            transfer: 'transfer',
-            drinks: 'alco',
-            allergies: 'no',
-        });
+        const val: boolean = await sendPostData(state);
         setButtonState(val ? 'success' : 'error');
         if (val) {
             setTimeout(() => {
