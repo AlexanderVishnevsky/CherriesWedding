@@ -2,7 +2,7 @@ import { RoutePaths } from '@/routing/routing';
 
 import { imgFormats } from './preloadImages.typings';
 
-const placeBundle = (format: imgFormats): string[] => [
+const placeBundle = [
     `/static/images/place/Poster.png`,
     `/static/icons/place/map.svg`,
     `/static/icons/common/arrows/back-icon.svg`,
@@ -24,7 +24,18 @@ const agendaBundle = (format: imgFormats): string[] => [
     `/static/images/agenda/3-4.${format}`,
 ];
 
+const quizBundle = (format: imgFormats): string[] => [
+    `/static/images/figures/side-jungle-2x.${format}`,
+    `/static/images/figures/bus-2x.${format}`,
+    `/static/images/figures/martini-2x.${format}`,
+    `/static/images/figures/hanging-2x.${format}`,
+    `/static/images/figures/flower-2x.${format}`,
+    `static/icons/patterns/dark-pattern.svg`,
+];
+
 export const imagesByRoute = (format: imgFormats): Record<string, string[]> => ({
-    [RoutePaths.PLACE]: placeBundle(format),
+    [RoutePaths.PLACE]: placeBundle,
     [RoutePaths.AGENDA]: agendaBundle(format),
+    [RoutePaths.QUIZ]: quizBundle(format),
+    [RoutePaths.FAQ]: [],
 });
