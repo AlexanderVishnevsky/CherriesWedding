@@ -1,30 +1,19 @@
-import { ReactElement, useState } from 'react';
+import { ReactElement } from 'react';
 
 import { Typography } from '@mui/material';
 
+import useTranslation from 'next-translate/useTranslation';
+
 import * as S from './Quiz.styles';
-import { sendPostData } from './Quiz.api';
+import { DynamicSendButton } from './components/SendButton';
 
 const Quiz = (): ReactElement => {
-    const [isLoading, setIsLoading] = useState(false);
-
-    const handleClick = async () => {
-        setIsLoading(true);
-        const val: boolean = await sendPostData({
-            name: 'Name',
-            transfer: 'transfer',
-            drinks: 'alco',
-            allergies: 'no',
-        });
-        setIsLoading(!val);
-    };
+    const { t } = useTranslation('quiz');
 
     return (
         <S.Layout>
-            <Typography variant={'h1'}>Coming soon...</Typography>
-            {/*<Button onClick={handleClick} disabled={isLoading}>*/}
-            {/*    {isLoading ? 'loading...' : 'Send'}*/}
-            {/*</Button>*/}
+            <Typography variant={'h1'}>{t('title')}</Typography>
+            <DynamicSendButton />
         </S.Layout>
     );
 };

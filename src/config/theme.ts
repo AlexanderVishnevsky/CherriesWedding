@@ -166,6 +166,23 @@ const commonThemeSettings: Pick<Theme, 'direction' | 'zIndex' | 'typography' | '
                 disableTouchRipple: true,
             },
         },
+        MuiButton: {
+            styleOverrides: {
+                outlined: {
+                    borderRadius: '18px',
+                    padding: '22px 76px',
+                    fontFamily: CormorantInfantFont.style.fontFamily,
+                    textTransform: 'capitalize',
+                    borderWidth: '2px',
+                    fontStyle: 'normal',
+                    fontWeight: 600,
+                    fontSize: '18px',
+                    lineHeight: '22px',
+                    textAlign: 'center',
+                    letterSpacing: '0.06em',
+                },
+            },
+        },
     },
 };
 

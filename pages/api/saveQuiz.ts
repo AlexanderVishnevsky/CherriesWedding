@@ -7,7 +7,7 @@ import { google } from 'googleapis';
  * @param req
  * @param res
  */
-export async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void> {
+async function saveQuiz(req: NextApiRequest, res: NextApiResponse): Promise<void> {
     try {
         if (req.method === 'POST') {
             const { name, transfer, drinks, allergies } = req.body;
@@ -44,3 +44,5 @@ export async function handler(req: NextApiRequest, res: NextApiResponse): Promis
         res.status(400);
     }
 }
+
+export default saveQuiz;

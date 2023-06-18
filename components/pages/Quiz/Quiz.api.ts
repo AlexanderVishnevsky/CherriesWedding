@@ -5,6 +5,11 @@ import axios, { AxiosResponse } from 'axios';
  * @param data
  */
 export const sendPostData = async (data: Record<string, any>): Promise<boolean> => {
-    const res: AxiosResponse = await axios.post('/api/saveQuiz', data);
-    return res.status < 300;
+    try {
+        const res: AxiosResponse = await axios.post('/api/saveQuiz', data);
+        return res.status < 300;
+    } catch (e) {
+        console.error('[saveQuiz error]: ', e);
+        return false;
+    }
 };
