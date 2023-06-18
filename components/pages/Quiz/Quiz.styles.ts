@@ -10,6 +10,10 @@ export const Layout = styled(FlexColCenter)`
     h1 {
         z-index: 2;
     }
+
+    ${({ theme }) => theme.breakpoints.down('tabletLarge')} {
+        padding: 100px 0 160px;
+    }
 `;
 
 export const QuizWrapper = styled(FlexColCenter)`

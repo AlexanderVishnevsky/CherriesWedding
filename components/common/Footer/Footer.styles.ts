@@ -5,7 +5,7 @@ import { DARK_COLORS, LIGHT_COLORS } from '@theme';
 
 export const FooterLayout = styled('footer')`
     height: 82px;
-    width: 100%;
+    width: calc(100% - 40px);
     max-width: ${({ theme }) => `${theme.breakpoints.values['desktop']}px`};
     display: flex;
     align-items: center;

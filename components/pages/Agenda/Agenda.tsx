@@ -13,7 +13,7 @@ import * as S from './Agenda.styles';
 
 const Agenda = (): ReactElement => {
     const { t } = useTranslation('agenda');
-    const { isMobile } = useMedia();
+    const { isMobile } = useMedia('desktop');
 
     const [activeId, setActiveId] = useState<number[]>([0, 4, 9]);
 

@@ -80,7 +80,7 @@ export const Header = styled('div')`
 
     ${({ theme }) => theme.breakpoints.down('tabletSmall')} {
         h4 {
-            margin: 56px auto 40px;
+            margin: 40px auto 40px;
         }
 
         h6 {
@@ -90,13 +90,13 @@ export const Header = styled('div')`
 
     ${({ theme }) => theme.breakpoints.down('mobileLarge')} {
         h4 {
-            margin: 26px auto 40px;
+            margin: -20px auto 40px;
         }
     }
 
     ${({ theme }) => theme.breakpoints.down('mobileMedium')} {
         h4 {
-            margin: -20px auto 40px;
+            margin: -40px auto 40px;
         }
     }
 `;
