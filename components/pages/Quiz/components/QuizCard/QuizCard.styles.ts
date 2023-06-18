@@ -65,7 +65,9 @@ export const Question = styled(BaseText)`
 
     ${({ theme }) => theme.breakpoints.down('tabletLarge')} {
         margin: 20px auto 5px;
-        font-size: 17px;
+        max-width: 280px;
+        font-size: 18px;
+        line-height: 28px;
     }
 `;
 
