@@ -8,11 +8,16 @@ export const Left = styled('img')`
     height: 100%;
 
     ${({ theme }) => theme.breakpoints.down('tabletLarge')} {
-        display: none;
+        left: -120px;
     }
 `;
 
 export const Right = styled(Left)`
     left: auto;
     right: 0;
+
+    ${({ theme }) => theme.breakpoints.down('tabletLarge')} {
+        left: auto;
+        right: -120px;
+    }
 `;

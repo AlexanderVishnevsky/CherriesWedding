@@ -170,7 +170,7 @@ const commonThemeSettings: Pick<Theme, 'direction' | 'zIndex' | 'typography' | '
             styleOverrides: {
                 outlined: {
                     borderRadius: '18px',
-                    padding: '22px 76px',
+                    padding: '20px 76px',
                     fontFamily: CormorantInfantFont.style.fontFamily,
                     textTransform: 'capitalize',
                     borderWidth: '2px',
@@ -180,6 +180,9 @@ const commonThemeSettings: Pick<Theme, 'direction' | 'zIndex' | 'typography' | '
                     lineHeight: '22px',
                     textAlign: 'center',
                     letterSpacing: '0.06em',
+                    [`@media (max-width:${breakpoints.tabletLarge}px)`]: {
+                        padding: '17px 76px',
+                    },
                 },
             },
         },

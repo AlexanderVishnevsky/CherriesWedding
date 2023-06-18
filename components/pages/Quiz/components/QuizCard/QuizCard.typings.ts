@@ -1,4 +1,4 @@
-import { CSSProperties } from 'react';
+import { SxProps } from '@mui/system';
 
 export interface QuizCardType {
     id: number;
@@ -7,5 +7,6 @@ export interface QuizCardType {
     hint?: string;
     fieldType?: 'text' | 'select';
     addImgName?: string;
-    imgStyles?: CSSProperties;
+    imgStyles?: SxProps;
+    imgMobStyles?: SxProps;
 }

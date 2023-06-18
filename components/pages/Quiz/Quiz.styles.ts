@@ -1,6 +1,6 @@
-import { styled, Typography } from '@mui/material';
+import { styled } from '@mui/material';
 
-import { FlexColCenter } from '@ui/common/Common.styles';
+import { FlexColCenter, FlexRowCenter } from '@ui/common/Common.styles';
 
 export const Layout = styled(FlexColCenter)`
     width: 100%;
@@ -14,9 +14,15 @@ export const Layout = styled(FlexColCenter)`
 
 export const QuizWrapper = styled(FlexColCenter)`
     row-gap: 49px;
-    margin: 49px auto;
+    margin: 49px auto 86px;
+    z-index: 2;
 `;
 
-export const QuestionNumber = styled(Typography)`
-    margin-right: 20px;
+export const Question = styled(FlexRowCenter)`
+    column-gap: 20px;
+    ${({ theme }) => theme.breakpoints.down('tabletLarge')} {
+        column-gap: 0;
+        row-gap: 24px;
+        flex-direction: column;
+    }
 `;
