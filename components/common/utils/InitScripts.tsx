@@ -6,7 +6,7 @@ import { DARK_COLORS } from '@theme';
 
 import { APP_NAME_CAMEL, APP_SEO_DESCRIPTION } from '@/constants/appConstants';
 
-const path = '/static/icons/favicons';
+const path = 'static/icons/favicons';
 
 const InitScripts = (): ReactElement => {
     // const theme = useTheme();
