@@ -18,7 +18,7 @@ export const Layout = styled(FlexColCenter)`
     }
 
     ${({ theme }) => theme.breakpoints.down('tabletLarge')} {
-        padding: 86px 0 120px;
+        padding: 86px 0 35vh;
 
         h1 {
             margin-bottom: 46px;
@@ -50,5 +50,9 @@ export const IconWrapper = styled('div')`
     .couple {
         width: 123px;
         height: 70px;
+    }
+
+    ${({ theme }) => theme.breakpoints.down('tabletLarge')} {
+        margin: 30vh 0 28px;
     }
 `;

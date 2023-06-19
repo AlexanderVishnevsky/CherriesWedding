@@ -16,21 +16,26 @@ export const CustomAccordionLayout = styled('div')`
 
 export const AccItem = styled((props: AccordionProps) => (
     <MuiAccordion disableGutters elevation={0} square {...props} children={props.children} />
-))(({ theme, expanded }) => ({
-    border: `2px solid ${
-        expanded
-            ? LIGHT_COLORS.primaryLightMain
-            : theme.palette.mode === 'light'
-            ? '#000000'
-            : DARK_COLORS.disabledDarkButton
-    }`,
-    borderRadius: '30px',
-    width: '100%',
-    padding: '32px',
-    textAlign: 'center',
-    backgroundColor: expanded ? LIGHT_COLORS.primaryLightMain : 'transparent',
-    color: expanded ? DARK_COLORS.primaryDarkText : '',
-}));
+))`
+    border: ${({ expanded, theme }) =>
+        `2px solid ${
+            expanded
+                ? LIGHT_COLORS.primaryLightMain
+                : theme.palette.mode === 'light'
+                ? '#000000'
+                : DARK_COLORS.disabledDarkButton
+        }`};
+    border-radius: 30px;
+    width: 100%;
+    padding: 32px;
+    text-align: center;
+    background-color: ${({ expanded }) => (expanded ? LIGHT_COLORS.primaryLightMain : 'transparent')};
+    color: ${({ expanded }) => (expanded ? DARK_COLORS.primaryDarkText : '')};
+
+    ${({ theme }) => theme.breakpoints.down('tabletLarge')} {
+        padding: 15px 0 23px;
+    }
+`;
 
 export const AccTitle = styled(AccordionSummary)`
     font-family: ${ConnieFont.style.fontFamily};
