@@ -103,6 +103,7 @@ export const VideoContainer = styled('div')`
 
     ${({ theme }) => theme.breakpoints.down('tabletSmall')} {
         margin: 54px auto 0;
+        width: 100%;
         #bg-video {
             width: 100vw;
             margin-left: -20px;
