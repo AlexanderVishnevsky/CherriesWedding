@@ -51,7 +51,7 @@ const InitScripts = (): ReactElement => {
             <link rel="icon" type="image/png" href={path + '/favicon-32x32.png'} sizes="32x32" />
             <link rel="icon" type="image/png" href={path + '/favicon-16x16.png'} sizes="16x16" />
             <link rel="icon" type="image/png" href={path + '/favicon-128x128.png'} sizes="128x128" />
-            <link rel="shortcut icon" type="image/png" href={path + '/mstile-70x70.png'} />
+            <link rel="shortcut icon" type="image/x-icon" href={'favicon.ico'} />
             <link rel={'robots'} href={'/robots.txt'} />
             <link rel="manifest" href="/manifest.json" />
         </Head>
