@@ -1,3 +1,5 @@
+import { useRouter } from 'next/router';
+
 import { ReactElement, useState } from 'react';
 
 import { IconButton, Toolbar, Typography } from '@mui/material';
@@ -18,6 +20,7 @@ import * as S from './MenuMobile.styles';
 const MenuMobile = (): ReactElement => {
     const { t } = useTranslation('common');
     const { lang, handleSwitchTranslation } = useSwitchLanguage();
+    const { pathname } = useRouter();
 
     const [openMenu, setOpenMenu] = useState(false);
 
@@ -37,7 +40,7 @@ const MenuMobile = (): ReactElement => {
                         </S.BurgerMenu>
                     </Toolbar>
                     <FlexCol sx={{ rowGap: '32px' }}>
-                        {MenuMobileData.map((moveTo, idx) => (
+                        {MenuMobileData.map(({ moveTo, path }, idx) => (
                             <IconButton
                                 key={idx}
                                 onClick={async () => {
@@ -45,7 +48,7 @@ const MenuMobile = (): ReactElement => {
                                     toggleMenu();
                                 }}
                             >
-                                <S.StyledMenuItem>{t(`menu.${idx}`)}</S.StyledMenuItem>
+                                <S.StyledMenuItem isActive={pathname === path}>{t(`menu.${idx}`)}</S.StyledMenuItem>
                             </IconButton>
                         ))}
                     </FlexCol>

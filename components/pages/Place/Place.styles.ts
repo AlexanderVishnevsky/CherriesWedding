@@ -91,8 +91,7 @@ export const MapTextContainer = styled('div')`
 
 export const VideoContainer = styled('div')`
     position: relative;
-    margin: 124px auto 40px;
-    width: calc(100% - 40px);
+    margin: 124px 20px 40px;
     border-radius: 44px;
 
     #bg-video {

@@ -10,7 +10,7 @@ export const Layout = styled('div')`
 export const DayLayout = styled('div')`
     margin-top: 140px;
     ${({ theme }) => theme.breakpoints.down('tabletSmall')} {
-        margin-top: 60px;
+        margin-top: -20px;
     }
 `;
 
@@ -78,9 +78,17 @@ export const Header = styled('div')`
         margin: 0 auto 92px;
     }
 
+    ${({ theme }) => theme.breakpoints.down('tabletLarge')} {
+        h4 {
+            font-size: 44px;
+            line-height: 44px;
+            max-width: 320px;
+        }
+    }
+
     ${({ theme }) => theme.breakpoints.down('tabletSmall')} {
         h4 {
-            margin: 40px auto 40px;
+            margin: 0 auto 40px;
         }
 
         h6 {

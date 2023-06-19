@@ -21,7 +21,7 @@ const InitScripts = (): ReactElement => {
             <meta name="mobile-web-app-capable" content="yes" />
             <meta name="format-detection" content="telephone=no" />
             <meta name="HandheldFriendly" content="true" />
-            <meta name="keywords" content="Wedding,Landing,Traditions,Nomad,Nomad Houses" />
+            <meta name="keywords" content="Wedding,Landing,Traditions,Nomad,Nomad Houses,Braslav,Belarus" />
             <meta name="description" content={APP_SEO_DESCRIPTION} />
             {/*Chrome, Firefox OS, Opera, PWA*/}
             <meta name="theme-color" content={DARK_COLORS.backgroundDarkDefault} />

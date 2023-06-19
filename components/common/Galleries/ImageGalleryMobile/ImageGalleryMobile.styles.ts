@@ -4,7 +4,7 @@ export const ImageGalleryMobileLayout = styled('div')`
     display: flex;
     width: 100vw;
     margin-left: -20px;
-    padding: 24px 0 40px;
+    padding: 24px 20px 40px;
     overflow-x: scroll;
     column-gap: 20px;
     scroll-snap-type: x mandatory;

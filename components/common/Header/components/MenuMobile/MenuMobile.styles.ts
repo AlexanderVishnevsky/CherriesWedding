@@ -73,11 +73,21 @@ export const BurgerMenu = styled('div')<{ open: boolean }>`
         `}
 `;
 
-export const StyledMenuItem = styled(Typography)`
+export const StyledMenuItem = styled(Typography)<{ isActive: boolean }>`
     font-family: ${ConnieFont.style.fontFamily};
     font-style: normal;
     font-weight: 400;
     font-size: 22px;
     line-height: 33px;
     text-transform: uppercase;
+
+  color: ${({ isActive, theme }) =>
+      theme.palette.mode === 'light' && isActive
+          ? DARK_COLORS.primaryDarkText
+          : theme.palette.mode === 'light' && !isActive
+          ? LIGHT_COLORS.secondaryLightText
+          : theme.palette.mode === 'dark' && isActive
+          ? DARK_COLORS.primaryDarkText
+          : DARK_COLORS.disabledDarkButton};
+}
 `;
