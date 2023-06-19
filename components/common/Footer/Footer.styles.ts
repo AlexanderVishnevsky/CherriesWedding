@@ -37,7 +37,7 @@ export const ButtonBack = styled(ButtonBase)`
     margin-bottom: 6px;
     transition: background-color 0.2s ease-in-out;
 
-    :hover {
+    :active {
         background-color: ${DARK_COLORS.disabledDarkButton};
     }
 
@@ -49,7 +49,7 @@ export const ButtonBack = styled(ButtonBase)`
         theme.palette.mode === 'light' &&
         css`
             background-color: rgba(57, 48, 14, 0.2);
-            :hover {
+            :active {
                 background-color: rgba(57, 48, 14, 0.3);
             }
             svg {
@@ -68,7 +68,7 @@ export const ButtonNext = styled(ButtonBase)`
     margin-bottom: 6px;
     transition: background-color 0.2s ease-in-out;
 
-    :hover {
+    :active {
         background-color: ${LIGHT_COLORS.primaryLightMain};
     }
 
@@ -80,7 +80,7 @@ export const ButtonNext = styled(ButtonBase)`
         theme.palette.mode === 'dark' &&
         css`
             background-color: ${DARK_COLORS.gray200};
-            :hover {
+            :active {
                 background-color: ${DARK_COLORS.customDarkText};
             }
             svg {
