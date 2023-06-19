@@ -10,7 +10,8 @@ export const Layout = styled('div')`
 export const DayLayout = styled('div')`
     margin-top: 140px;
     ${({ theme }) => theme.breakpoints.down('tabletSmall')} {
-        margin-top: -20px;
+        margin-top: 0;
+        margin-bottom: 20px;
     }
 `;
 
