@@ -13,7 +13,7 @@ import useTranslation from 'next-translate/useTranslation';
 import * as S from './SendButton.styles';
 import { MUIButtonColors } from './SendButton.typings';
 
-type IProps = QuizState & Pick<QuizAction, 'clearState'>
+type IProps = QuizState & Pick<QuizAction, 'clearState'>;
 
 const SendButton = (state: IProps): ReactElement => {
     const { t } = useTranslation('common');

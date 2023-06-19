@@ -187,6 +187,23 @@ const commonThemeSettings: Pick<Theme, 'direction' | 'zIndex' | 'typography' | '
                 },
             },
         },
+        MuiNativeSelect: {
+            styleOverrides: {
+                select: {
+                    backgroundColor: 'transparent',
+                },
+            },
+        },
+        MuiInputBase: {
+            styleOverrides: {
+                input: {
+                    backgroundColor: 'transparent',
+                    '&:focus': {
+                        backgroundColor: 'transparent',
+                    },
+                },
+            },
+        },
     },
 };
 

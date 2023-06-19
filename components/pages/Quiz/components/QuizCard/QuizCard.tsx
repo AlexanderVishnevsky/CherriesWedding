@@ -2,6 +2,8 @@ import { ChangeEvent, ReactElement } from 'react';
 
 import { useMedia } from '@hooks';
 
+import { DynamicQuizSelect } from '@ui/pages/Quiz/components/QuizSelect';
+
 import * as S from './QuizCard.styles';
 import { QuizCardType } from './QuizCard.typings';
 
@@ -20,7 +22,7 @@ const QuizCard = ({
 }: QuizCardType): ReactElement => {
     const { isDesktop } = useMedia();
 
-    const handleChangeInput = (e: ChangeEvent<HTMLInputElement>) => {
+    const handleChangeInput = (e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>): void => {
         const newValue = e.target.value;
 
         if (!newValue.match(/[%<>\\$'"]/)) {
@@ -32,7 +34,16 @@ const QuizCard = ({
         <S.CardLayout key={id}>
             <S.Question variant={'h5'}>{question}</S.Question>
             {hint && <S.Hint variant={'caption'}>{hint}</S.Hint>}
-            <S.Answer multiline maxRows={isDesktop ? 3 : 2} value={state} onChange={handleChangeInput} />
+            {fieldType === 'select' ? (
+                <DynamicQuizSelect handleChangeInput={handleChangeInput} />
+            ) : (
+                <S.Answer
+                    multiline
+                    maxRows={isDesktop ? 3 : 2}
+                    value={state}
+                    onChange={(e: ChangeEvent<HTMLInputElement>) => handleChangeInput(e)}
+                />
+            )}
             <S.MainImage
                 allSizes
                 src={`/static/images/figures/${imgName}`}
