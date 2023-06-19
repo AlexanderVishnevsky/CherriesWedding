@@ -181,9 +181,6 @@ const commonThemeSettings: Pick<Theme, 'direction' | 'zIndex' | 'typography' | '
                     lineHeight: '22px',
                     textAlign: 'center',
                     letterSpacing: '0.06em',
-                    [`@media (max-width:${breakpoints.tabletLarge}px)`]: {
-                        padding: '17px 76px',
-                    },
                 },
             },
         },
