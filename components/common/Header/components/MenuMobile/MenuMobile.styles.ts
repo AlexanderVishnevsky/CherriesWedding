@@ -27,7 +27,7 @@ const move = (y: string, deg: string) =>
         },
     });
 
-export const BurgerMenu = styled('div')<{ open: boolean }>`
+export const BurgerMenu = styled('button')<{ open: boolean }>`
     position: relative;
     margin: 0 auto;
     width: 40px;
