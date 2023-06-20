@@ -14,6 +14,7 @@ export const Layout = styled(FlexColCenter)`
     }
 
     h5 {
+        text-align: center;
         margin-bottom: 120px;
     }
 
