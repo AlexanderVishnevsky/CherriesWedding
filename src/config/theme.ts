@@ -201,6 +201,15 @@ const commonThemeSettings: Pick<Theme, 'direction' | 'zIndex' | 'typography' | '
                 },
             },
         },
+        MuiAccordion: {
+            styleOverrides: {
+                root: {
+                    '::before': {
+                        backgroundColor: 'transparent',
+                    },
+                },
+            },
+        },
     },
 };
 

@@ -11,7 +11,7 @@ const ThemeSwitcher = ({ large }: { large?: boolean }): ReactElement => {
     const { toggleTheme, isLight } = useSwitchTheme();
 
     return (
-        <S.Switcher large={large} isLight={isLight} onClick={() => toggleTheme()}>
+        <S.Switcher large={large} isLight={isLight} onClick={() => toggleTheme()} aria-label={'theme-switcher'}>
             {isLight ? <SunIcon /> : <MoonIcon />}
         </S.Switcher>
     );

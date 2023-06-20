@@ -34,7 +34,7 @@ const Footer = (): ReactElement => {
                 {pathname !== RoutePaths.MAIN && (
                     <Zoom in>
                         <FlexColCenter>
-                            <S.ButtonBack onClick={moveBack}>
+                            <S.ButtonBack onClick={moveBack} aria-label={'back'}>
                                 <BackIcon />
                             </S.ButtonBack>
                             <Typography variant={'caption'}>{t('actions.back')}</Typography>
@@ -44,14 +44,14 @@ const Footer = (): ReactElement => {
             </S.ColWrap>
             {pathname === RoutePaths.FAQ ? (
                 <FlexColCenter>
-                    <S.ButtonNext onClick={moveToMain}>
+                    <S.ButtonNext onClick={moveToMain} aria-label={'main-page'}>
                         <RestartIcon />
                     </S.ButtonNext>
                     <Typography variant={'caption'}>{t('actions.toStart')}</Typography>
                 </FlexColCenter>
             ) : (
                 <FlexColCenter>
-                    <S.ButtonNext onClick={moveNext}>
+                    <S.ButtonNext onClick={moveNext} aria-label={'next'}>
                         <NextIcon />
                     </S.ButtonNext>
                     <Typography variant={'caption'}>{t('actions.next')}</Typography>

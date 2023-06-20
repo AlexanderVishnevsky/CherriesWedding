@@ -33,7 +33,7 @@ export const AccItem = styled((props: AccordionProps) => (
     color: ${({ expanded }) => (expanded ? DARK_COLORS.primaryDarkText : '')};
 
     ${({ theme }) => theme.breakpoints.down('tabletLarge')} {
-        padding: 15px 0 23px;
+        padding: 15px 4px 23px;
     }
 `;
 
@@ -76,7 +76,7 @@ export const AccDetails = styled(AccordionDetails)`
 
 export const List = styled('ul')`
     max-width: 375px;
-    width: 100%;
+    width: calc(100% - 32px);
     margin: 0 auto;
     text-align: left;
 

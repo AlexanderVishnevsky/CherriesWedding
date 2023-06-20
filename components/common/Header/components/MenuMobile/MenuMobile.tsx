@@ -29,7 +29,7 @@ const MenuMobile = (): ReactElement => {
     };
     return (
         <>
-            <S.BurgerMenu open={openMenu} onClick={toggleMenu} className={'center'} aria-label="close">
+            <S.BurgerMenu open={openMenu} onClick={toggleMenu} className={'center'} aria-label="menu">
                 <div />
             </S.BurgerMenu>
             <S.StyledDialog fullScreen open={openMenu} onClose={toggleMenu}>
@@ -43,6 +43,7 @@ const MenuMobile = (): ReactElement => {
                         {MenuMobileData.map(({ moveTo, path }, idx) => (
                             <IconButton
                                 key={idx}
+                                aria-label={t(`menu.${idx}`)}
                                 onClick={async () => {
                                     await moveTo();
                                     toggleMenu();
