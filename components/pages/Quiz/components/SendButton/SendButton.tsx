@@ -1,6 +1,6 @@
 import { ReactElement, useState } from 'react';
 
-import { Box, CircularProgress } from '@mui/material';
+import { CircularProgress } from '@mui/material';
 import { green } from '@mui/material/colors';
 
 import { sendPostData } from '@ui/pages/Quiz/Quiz.api';
@@ -35,8 +35,8 @@ const SendButton = (state: IProps): ReactElement => {
         }
     };
     return (
-        <Box sx={{ position: 'relative' }}>
-            <S.Layout
+        <S.Layout>
+            <S.StyledSendButton
                 disabled={
                     state.allergies === '' ||
                     state.name === '' ||
@@ -49,7 +49,7 @@ const SendButton = (state: IProps): ReactElement => {
                 color={buttonState}
             >
                 {t('common:actions.send')}
-            </S.Layout>
+            </S.StyledSendButton>
             {buttonState === 'info' && (
                 <CircularProgress
                     size={24}
@@ -63,7 +63,7 @@ const SendButton = (state: IProps): ReactElement => {
                     }}
                 />
             )}
-        </Box>
+        </S.Layout>
     );
 };
 
