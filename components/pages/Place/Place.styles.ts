@@ -141,7 +141,10 @@ export const Location = styled(ButtonBase)`
     text-decoration-line: underline;
     text-transform: uppercase;
     margin-bottom: 6px;
-    font-family: Helvetica, -apple-system, sans-serif;
+    font-family:
+        Helvetica,
+        -apple-system,
+        sans-serif;
 
     svg {
         width: 19px;
