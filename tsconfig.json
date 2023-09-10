@@ -31,8 +31,13 @@
         "esModuleInterop": true,
         "resolveJsonModule": true,
         "isolatedModules": true,
-        "incremental": true
+        "incremental": true,
+        "plugins": [
+            {
+                "name": "next"
+            }
+        ]
     },
     "exclude": ["node_modules"],
-    "include": ["next-env.d.ts", "src/utils/MUI/breakpointOverrides.d.ts", "**/*.ts", "**/*.tsx"]
+    "include": ["next-env.d.ts", "src/utils/MUI/breakpointOverrides.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"]
 }

@@ -1,4 +1,6 @@
-import { useRouter } from 'next/router';
+'use client';
+
+import { usePathname } from 'next/navigation';
 
 import { ReactElement } from 'react';
 
@@ -22,7 +24,7 @@ type IProps = { widthType?: BreakpointTypes } & JSXChild;
  * @constructor
  */
 const PageStyleWrapper = ({ widthType = 'desktop', children }: IProps): ReactElement => {
-    const { pathname } = useRouter();
+    const pathname = usePathname();
     useScrollToTop(pathname);
 
     return (

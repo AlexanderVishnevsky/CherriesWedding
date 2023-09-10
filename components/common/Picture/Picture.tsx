@@ -1,3 +1,5 @@
+'use client';
+
 import { breakpoints } from '@/utils/MUI/themeOverrides';
 import { BreakpointTypes } from '@/utils/MUI/breakpointOverrides';
 

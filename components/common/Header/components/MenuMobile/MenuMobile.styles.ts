@@ -1,3 +1,7 @@
+'use client';
+
+import Link from 'next/link';
+
 import { Box, css, Dialog, keyframes, styled, Typography } from '@mui/material';
 
 import { DARK_COLORS, LIGHT_COLORS } from '@theme';
@@ -90,4 +94,9 @@ export const StyledMenuItem = styled(Typography)<{ isActive: boolean }>`
           ? DARK_COLORS.primaryDarkText
           : DARK_COLORS.disabledDarkButton};
 }
+`;
+
+export const CustomLink = styled(Link)`
+    margin: 0 auto;
+    width: fit-content;
 `;

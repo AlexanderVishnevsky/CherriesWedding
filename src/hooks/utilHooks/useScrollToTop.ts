@@ -1,3 +1,5 @@
+'use client';
+
 import { useIsomorphicLayoutEffect } from '@hooks';
 
 import { handleScrollTop } from '@/utils/browserUtils';

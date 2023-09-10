@@ -1,9 +1,9 @@
-import { moveToAgenda, moveToFAQ, moveToMain, moveToPlace, moveToQuiz, RoutePaths } from '@/routing/routing';
+import { RoutePaths } from '@/routing/routing';
 
 export const MenuMobileData = [
-    { path: RoutePaths.MAIN, moveTo: moveToMain },
-    { path: RoutePaths.PLACE, moveTo: moveToPlace },
-    { path: RoutePaths.AGENDA, moveTo: moveToAgenda },
-    { path: RoutePaths.QUIZ, moveTo: moveToQuiz },
-    { path: RoutePaths.FAQ, moveTo: moveToFAQ },
+    { path: RoutePaths.MAIN },
+    { path: RoutePaths.PLACE },
+    { path: RoutePaths.AGENDA },
+    { path: RoutePaths.QUIZ },
+    { path: RoutePaths.FAQ },
 ];

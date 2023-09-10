@@ -1,3 +1,8 @@
+'use client';
+
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+
 import { ReactElement, useState } from 'react';
 
 import { CircularProgress } from '@mui/material';
@@ -17,6 +22,7 @@ type IProps = QuizState & Pick<QuizAction, 'clearState'>;
 
 const SendButton = (state: IProps): ReactElement => {
     const { t } = useTranslation('common');
+    const pathname = usePathname();
     const [buttonState, setButtonState] = useState<MUIButtonColors>('inherit');
 
     const handleClick = async () => {
@@ -26,7 +32,6 @@ const SendButton = (state: IProps): ReactElement => {
         if (val) {
             setTimeout(() => {
                 state.clearState();
-                moveNext();
             }, 1000);
         } else {
             setTimeout(() => {
@@ -36,20 +41,21 @@ const SendButton = (state: IProps): ReactElement => {
     };
     return (
         <S.Layout>
-            <S.StyledSendButton
-                disabled={
-                    state.allergies === '' ||
-                    state.name === '' ||
-                    state.drinks === '' ||
-                    state.transfer === '' ||
-                    buttonState === 'info'
-                }
-                variant={'outlined'}
-                onClick={handleClick}
-                color={buttonState}
-            >
-                {t('common:actions.send')}
-            </S.StyledSendButton>
+            <Link href={moveNext(pathname)} onClick={handleClick}>
+                <S.StyledSendButton
+                    disabled={
+                        state.allergies === '' ||
+                        state.name === '' ||
+                        state.drinks === '' ||
+                        state.transfer === '' ||
+                        buttonState === 'info'
+                    }
+                    variant={'outlined'}
+                    color={buttonState}
+                >
+                    {t('common:actions.send')}
+                </S.StyledSendButton>
+            </Link>
             {buttonState === 'info' && (
                 <CircularProgress
                     size={24}

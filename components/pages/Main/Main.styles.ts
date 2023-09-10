@@ -1,3 +1,5 @@
+'use client';
+
 import { css, keyframes, styled, Typography } from '@mui/material';
 
 import { FlexCenter, FlexColCenter, FlexJCBetween, FlexRow } from '@ui/common/Common.styles';

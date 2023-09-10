@@ -1,3 +1,5 @@
+'use client';
+
 import { useIsomorphicLayoutEffect } from '@hooks';
 
 export const useFixedVhProperty = ({ shouldListenResize } = { shouldListenResize: true }): void => {
