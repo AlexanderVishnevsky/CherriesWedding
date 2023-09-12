@@ -5,7 +5,6 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
     enabled: process.env.ANALYZE === 'true',
 });
 const nextTranslate = require('next-translate-plugin');
-const workaround = require('next-translate-plugin/lib/cjs/utils.js');
 const runtimeCaching = require('next-pwa/cache');
 const isDev = process.env.NODE_ENV !== 'production';
 const withPWA = require('next-pwa')({
@@ -17,13 +16,6 @@ const withPWA = require('next-pwa')({
     buildExcludes: [/manifest.json$/],
     maximumFileSizeToCacheInBytes: 5000000,
 });
-
-/**
- * As a workaround you can change the string of the defaultLoader, this is working fine
- * @see https://github.com/aralroca/next-translate/issues/851#issuecomment-1445018647
- */
-workaround.defaultLoader =
-    '(l, n) => import(`@next-translate-root/public/locales/${l}/${n}.json`).then(m => m.default)';
 
 const nextConfig = {
     reactStrictMode: true,

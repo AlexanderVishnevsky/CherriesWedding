@@ -13,23 +13,18 @@ export const getImages = async (paths: Array<string>, bandWidth: number) => {
 
     const getNextImage = (): NUL<ImageObjectType> => images.find((image) => image.status === 'IDLE') ?? null;
 
-    const preFetch = (imageObject: ImageObjectType): Promise<unknown> => {
+    const preFetch = async (imageObject: ImageObjectType): Promise<unknown> => {
         imageObject.status = 'IN_PROGRESS';
 
-        return fetchImage(imageObject.path).then((image) => {
-            imageObject.result = image;
-            imageObject.status = 'SUCCESS';
-
-            if (imageObject.result) {
-                window.preloadImages.push(imageObject.result);
-            }
-
-            const nextImage = getNextImage();
-
-            if (nextImage) {
-                return preFetch(nextImage);
-            }
-        });
+        imageObject.result = await fetchImage(imageObject.path);
+        imageObject.status = 'SUCCESS';
+        if (imageObject.result) {
+            window.preloadImages.push(imageObject.result);
+        }
+        const nextImage = getNextImage();
+        if (nextImage) {
+            return preFetch(nextImage);
+        }
     };
 
     return Promise.all(images.slice(0, bandWidth).map(preFetch));

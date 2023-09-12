@@ -8,22 +8,13 @@ import { DynamicVideo } from '@ui/common/Video';
 import SendIcon from '@icons/place/send-icon.svg';
 
 import { URLS } from '@/constants/url';
-import { isBrowser } from '@/utils/browserUtils';
+import { copyToClipboard } from '@/utils/browserUtils';
 
 import useTranslation from 'next-translate/useTranslation';
 
 import * as S from './Place.styles';
 
-const copyToClipboard = async (): Promise<void> => {
-    if (isBrowser) {
-        try {
-            await navigator.clipboard.writeText('55.650538, 26.995473');
-        } catch (e) {
-            console.error(e);
-        }
-        window.open(URLS.GMAPS, '_blank');
-    }
-};
+const NOMAD_GEO = '55.650538, 26.995473';
 
 const Place = (): ReactElement => {
     const { t } = useTranslation('place');
@@ -55,9 +46,9 @@ const Place = (): ReactElement => {
                 />
             </S.VideoContainer>
             <S.Links>
-                <S.Location onClick={copyToClipboard}>
+                <S.Location onClick={() => copyToClipboard(NOMAD_GEO)}>
                     <SendIcon />
-                    55.650538, 26.995473
+                    {NOMAD_GEO}
                 </S.Location>
                 <S.NomadTitle variant={'h4'}>{t('nomad.title')}</S.NomadTitle>
                 <S.LinkData>
