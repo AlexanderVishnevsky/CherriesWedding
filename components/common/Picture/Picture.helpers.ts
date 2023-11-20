@@ -21,10 +21,10 @@ export function createMediaQuery({ min, max }: MediaQueryParams): string {
     return min && max
         ? `(min-width: ${min}px) and (max-width: ${max - 0.02}px)`
         : min
-        ? `(min-width: ${min}px)`
-        : max
-        ? `(max-width: ${max - 0.02}px)`
-        : '';
+          ? `(min-width: ${min}px)`
+          : max
+            ? `(max-width: ${max - 0.02}px)`
+            : '';
 }
 
 export const DATA_URL_REGEX =

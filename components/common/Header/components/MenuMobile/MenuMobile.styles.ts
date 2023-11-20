@@ -85,9 +85,9 @@ export const StyledMenuItem = styled(Typography)<{ isActive: boolean }>`
       theme.palette.mode === 'light' && isActive
           ? DARK_COLORS.primaryDarkText
           : theme.palette.mode === 'light' && !isActive
-          ? LIGHT_COLORS.secondaryLightText
-          : theme.palette.mode === 'dark' && isActive
-          ? DARK_COLORS.primaryDarkText
-          : DARK_COLORS.disabledDarkButton};
+            ? LIGHT_COLORS.secondaryLightText
+            : theme.palette.mode === 'dark' && isActive
+              ? DARK_COLORS.primaryDarkText
+              : DARK_COLORS.disabledDarkButton};
 }
 `;

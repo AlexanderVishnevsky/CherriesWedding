@@ -106,9 +106,9 @@ export const FooterSwitcherText = styled(ButtonBase, { shouldForwardProp: (propN
             theme.palette.mode === 'light' && isActive
                 ? LIGHT_COLORS.primaryLightText
                 : theme.palette.mode === 'light' && !isActive
-                ? LIGHT_COLORS.disabledLightButton
-                : theme.palette.mode === 'dark' && isActive
-                ? DARK_COLORS.primaryDarkText
-                : DARK_COLORS.disabledDarkButton};
+                  ? LIGHT_COLORS.disabledLightButton
+                  : theme.palette.mode === 'dark' && isActive
+                    ? DARK_COLORS.primaryDarkText
+                    : DARK_COLORS.disabledDarkButton};
     }
 `;
