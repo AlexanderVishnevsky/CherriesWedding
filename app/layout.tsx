@@ -12,9 +12,11 @@ import { DEFAULT_SEO } from '@/constants/appConstants';
 
 export const metadata: Metadata = DEFAULT_SEO;
 
-const WeddingApp = ({ children }: PropsWithChildren): ReactElement => (
+export const generateStaticParams = async () => [{ lang: 'be' }, { lang: 'ru' }];
+
+const WeddingApp = ({ children, params }: PropsWithChildren & { params: Record<string, any> }): ReactElement => (
     <html
-        lang={'be'}
+        lang={params.lang}
         dir={'ltr'}
         className={CormorantInfantFont.className + ConnieFont.className}
         style={{ backgroundColor: '#282828' }}
