@@ -22,8 +22,8 @@ export const AccItem = styled((props: AccordionProps) => (
             expanded
                 ? LIGHT_COLORS.primaryLightMain
                 : theme.palette.mode === 'light'
-                ? '#000000'
-                : DARK_COLORS.disabledDarkButton
+                  ? '#000000'
+                  : DARK_COLORS.disabledDarkButton
         }`};
     border-radius: 30px;
     width: 100%;
