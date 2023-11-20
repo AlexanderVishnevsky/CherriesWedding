@@ -1,3 +1,5 @@
+'use client';
+
 import { LocaleType } from '@typings/model';
 
 import useTranslation from 'next-translate/useTranslation';

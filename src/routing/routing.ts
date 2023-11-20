@@ -39,5 +39,5 @@ const RouteChain: RType = {
 /**
  * Switch between routes
  */
-export const moveNext = (pathname: string): string => RouteChain[pathname as RoutePaths].next ?? '';
-export const moveBack = (pathname: string): string => RouteChain[pathname as RoutePaths].prev ?? '';
+export const moveNext = (pathname: string): string => RouteChain[pathname as RoutePaths]?.next ?? '';
+export const moveBack = (pathname: string): string => RouteChain[pathname as RoutePaths]?.prev ?? '';

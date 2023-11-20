@@ -4,23 +4,18 @@ import { ReactElement } from 'react';
 
 import { DARK_COLORS } from '@theme';
 
-import { APP_NAME_CAMEL, APP_SEO_DESCRIPTION } from '@/constants/appConstants';
-
 const path = 'static/icons/favicons';
 
 const InitScripts = (): ReactElement => (
     <Head>
-        <title>{APP_NAME_CAMEL}</title>
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
         <meta httpEquiv="ScreenOrientation" content="autoRotate:disabled" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="mobile-web-app-capable" content="yes" />
-        <meta name="format-detection" content="telephone=no" />
+        <meta name="format-detection" content="telephone=no, email=no, address=no" />
         <meta name="HandheldFriendly" content="true" />
-        <meta name="keywords" content="Wedding,Landing,Traditions,Nomad,Nomad Houses,Braslav,Belarus" />
-        <meta name="description" content={APP_SEO_DESCRIPTION} />
         {/*Chrome, Firefox OS, Opera, PWA*/}
         <meta name="theme-color" content={DARK_COLORS.backgroundDarkDefault} />
         {/*Windows Phone*/}

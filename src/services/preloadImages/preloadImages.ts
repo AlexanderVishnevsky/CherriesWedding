@@ -24,8 +24,8 @@ const usePreloadImages = (bandWidth: number = 2): void => {
                 moveNext(pathname) !== ''
                     ? moveNext(pathname)
                     : moveBack(pathname) !== ''
-                    ? moveBack(pathname)
-                    : RoutePaths.PLACE;
+                      ? moveBack(pathname)
+                      : RoutePaths.PLACE;
             getImages(imagesByRoute(format)[nextPath], bandWidth).catch(console.error);
         }, 1000);
     }, [pathname]);
