@@ -6,10 +6,10 @@
         "dev": "next dev",
         "build": "next build",
         "start": "next start",
-        "lint": "echo \"---> LINT: \" && yarn tsc --build --clean && yarn eslint . --quiet --fix && yarn prettier --write .",
-        "post-update": "echo \"---> DEPENDENCES UPDATE: \" && yarn upgrade --latest",
-        "pre-commit": "yarn run lint && yarn run build",
-        "prod-run": "yarn run build && yarn run start",
+        "lint": "echo \"---> LINT: \" && pnpm tsc --build --clean && pnpm eslint . --quiet --fix && pnpm prettier --write .",
+        "post-update": "echo \"---> DEPENDENCES UPDATE: \" && pnpm upgrade --latest",
+        "pre-commit": "pnpm run lint && pnpm run build",
+        "prod-run": "pnpm run build && pnpm run start",
         "serve": "next start",
         "postinstall": "husky install",
         "webpack-analyze": "ANALYZE=true next build"
@@ -19,38 +19,39 @@
         "@emotion/react": "^11.11.1",
         "@emotion/server": "^11.11.0",
         "@emotion/styled": "^11.11.0",
-        "@mui/material": "^5.14.5",
-        "axios": "^1.4.0",
-        "googleapis": "^126.0.0",
-        "next": "^13.4.18",
+        "@mui/material": "^5.14.18",
+        "@mui/system": "^5.14.18",
+        "axios": "^1.6.2",
+        "googleapis": "^128.0.0",
+        "next": "^14.0.3",
         "next-pwa": "^5.6.0",
-        "next-translate": "^2.5.3",
+        "next-translate": "^2.6.2",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
-        "zustand": "^4.4.1"
+        "zustand": "^4.4.6"
     },
     "devDependencies": {
-        "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-        "@next/bundle-analyzer": "^13.4.18",
-        "@next/eslint-plugin-next": "^13.4.18",
+        "@babel/plugin-transform-private-property-in-object": "^7.23.3",
+        "@next/bundle-analyzer": "^14.0.3",
+        "@next/eslint-plugin-next": "^14.0.3",
         "@svgr/webpack": "^8.1.0",
-        "@types/node": "^20.5.1",
-        "@types/react": "^18.2.20",
-        "@types/react-dom": "^18.2.7",
-        "@typescript-eslint/eslint-plugin": "^6.4.0",
-        "@typescript-eslint/parser": "^6.4.0",
-        "eslint": "^8.47.0",
-        "eslint-config-next": "^13.4.18",
+        "@types/node": "^20.9.2",
+        "@types/react": "^18.2.37",
+        "@types/react-dom": "^18.2.15",
+        "@typescript-eslint/eslint-plugin": "^6.11.0",
+        "@typescript-eslint/parser": "^6.11.0",
+        "eslint": "^8.54.0",
+        "eslint-config-next": "^14.0.3",
         "eslint-config-prettier": "^9.0.0",
         "eslint-config-react-app": "^7.0.1",
         "eslint-plugin-flowtype": "^8.0.3",
-        "eslint-plugin-prettier": "^5.0.0",
+        "eslint-plugin-prettier": "^5.0.1",
         "eslint-plugin-unused-imports": "^3.0.0",
         "husky": "^8.0.3",
-        "lint-staged": "^14.0.0",
-        "next-translate-plugin": "^2.5.2",
-        "prettier": "^3.0.2",
-        "typescript": "^5.1.6"
+        "lint-staged": "^15.1.0",
+        "next-translate-plugin": "2.6.2",
+        "prettier": "^3.1.0",
+        "typescript": "^5.2.2"
     },
     "husky": {
         "hooks": {
@@ -58,12 +59,12 @@
         }
     },
     "lint-staged": {
-        "*.(ts|tsx)": "yarn tsc --noEmit",
+        "*.(ts|tsx)": "pnpm tsc --noEmit",
         "*.(ts|tsx|js)": [
-            "yarn eslint --fix ${filenames.join(' ')}",
-            "yarn prettier --write ${filenames.join(' ')}"
+            "pnpm eslint --fix ${filenames.join(' ')}",
+            "pnpm prettier --write ${filenames.join(' ')}"
         ],
-        "**/*.(md|json)": "yarn prettier --write ${filenames.join(' ')}"
+        "**/*.(md|json)": "pnpm prettier --write ${filenames.join(' ')}"
     },
     "browserslist": {
         "production": [

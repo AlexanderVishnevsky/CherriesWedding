@@ -2,20 +2,19 @@
 
 import { usePathname } from 'next/navigation';
 
-import { ReactElement } from 'react';
+import { PropsWithChildren, ReactElement } from 'react';
 
 import { useScrollToTop } from '@hooks';
 
 import Header from '@ui/common/Header';
 import { DynamicFooter } from '@ui/common/Footer';
 
-import { JSXChild } from '@/typings/common';
 import { BreakpointTypes } from '@/utils/MUI/breakpointOverrides';
 import { RoutePaths } from '@/routing/routing';
 
 import * as S from './PageStyleWrapper.styles';
 
-type IProps = { widthType?: BreakpointTypes } & JSXChild;
+type IProps = PropsWithChildren<{ widthType?: BreakpointTypes }>;
 
 /**
  * Style Wrapper for pages

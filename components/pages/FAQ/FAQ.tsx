@@ -17,7 +17,7 @@ const FAQ = (): ReactElement => {
     return (
         <S.Layout>
             <Typography variant={'h1'}>FAQ</Typography>
-            <CustomAccordion t={t} />
+            <CustomAccordion />
             <S.IconWrapper>
                 <SunIcon className={'sun'} />
                 <CoupleIcon className={'couple'} />
