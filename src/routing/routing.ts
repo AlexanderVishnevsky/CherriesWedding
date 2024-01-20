@@ -46,13 +46,10 @@ export const RouteChain: RType = {
 const RouterInstance = async (pathname: NUL<RoutePaths>): Promise<boolean> => {
     if (pathname) {
         const finalPath = Router.pathname.slice(0, Router.pathname.lastIndexOf('/'));
-        const finalPathAs = Router.asPath.slice(0, Router.asPath.lastIndexOf('/'));
 
-        const query = Router.query;
+        const url = { ...Router, pathname: finalPath + pathname };
 
-        const url = { pathname: finalPath + pathname, query };
-        const urlAs = { pathname: finalPathAs + pathname, query };
-        return Router.push(url, urlAs, { shallow: true });
+        return Router.push(url, undefined, { shallow: true });
     }
     return false;
 };

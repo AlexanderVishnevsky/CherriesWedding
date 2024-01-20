@@ -21,16 +21,29 @@ const SendButton = (state: IProps): ReactElement => {
 
     const handleClick = async () => {
         setButtonState('info');
-        const val: boolean = await sendPostData(state);
-        setButtonState(val ? 'success' : 'error');
-        if (val) {
-            setTimeout(() => {
-                state.clearState();
-                moveNext();
-            }, 1000);
+        /**
+         * Quiz has already expired
+         */
+        const q = new Date();
+
+        const currentDate = new Date(q.getFullYear(), q.getMonth() + 1, q.getDay());
+        const weddingDate = new Date('2023-07-07');
+        if (currentDate < weddingDate) {
+            const val: boolean = await sendPostData(state);
+            setButtonState(val ? 'success' : 'error');
+            if (val) {
+                setTimeout(() => {
+                    state.clearState();
+                    moveNext();
+                }, 1000);
+            } else {
+                setTimeout(() => {
+                    setButtonState('inherit');
+                }, 2000);
+            }
         } else {
             setTimeout(() => {
-                setButtonState('inherit');
+                setButtonState('error');
             }, 2000);
         }
     };
@@ -48,7 +61,7 @@ const SendButton = (state: IProps): ReactElement => {
                 onClick={handleClick}
                 color={buttonState}
             >
-                {t('common:actions.send')}
+                {t(buttonState === 'error' ? 'quiz:error' : 'common:actions.send')}
             </S.StyledSendButton>
             {buttonState === 'info' && (
                 <CircularProgress
